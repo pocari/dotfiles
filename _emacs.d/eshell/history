@@ -1,0 +1,8 @@
+ls
+svn -
+svn -v
+svn help
+svn --version
+ls
+exit
+exit
