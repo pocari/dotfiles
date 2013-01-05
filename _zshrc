@@ -1,5 +1,6 @@
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/dotfiles/bin
 
 alias ls='ls -GF'
 alias la='ls -a'
