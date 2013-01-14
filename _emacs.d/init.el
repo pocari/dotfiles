@@ -6,6 +6,24 @@
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
 
+(defvar os-type nil)
+(cond ((string-match "apple-darwin" system-configuration) ;; Mac
+       (setq os-type 'mac))
+      ((string-match "linux" system-configuration)        ;; Linux
+       (setq os-type 'linux))
+      ((string-match "freebsd" system-configuration)      ;; FreeBSD
+       (setq os-type 'bsd))
+      ((string-match "mingw" system-configuration)        ;; Windows
+       (setq os-type 'win)))
+(defun macp ()
+  (eq os-type 'mac))
+(defun linuxp ()
+  (eq os-type 'linux))
+(defun bsdp ()
+  (eq os-type 'freebsd))
+(defun winp ()
+  (eq os-type 'win))
+
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
 

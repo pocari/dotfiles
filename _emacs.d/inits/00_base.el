@@ -107,11 +107,15 @@
 ;;ファイルをドラッグして開くときに新規フレームではなく、新規バッファで開く
 (setq ns-pop-up-frames nil)
 
-;; font
-(create-fontset-from-ascii-font "Ricty-16:weight=normal:slant=normal" nil "ricty")
-(set-fontset-font "fontset-ricty"
-                  'unicode
-                  (font-spec :family "Ricty" :size 16)
-                  nil
-                  'append)
-(add-to-list 'default-frame-alist '(font . "fontset-ricty"))
+(cond ((macp)
+       ;; font
+       (create-fontset-from-ascii-font "Ricty-16:weight=normal:slant=normal" nil "ricty")
+       (set-fontset-font "fontset-ricty"
+			 'unicode
+			 (font-spec :family "Ricty" :size 16)
+			 nil
+			 'append)
+       (add-to-list 'default-frame-alist '(font . "fontset-ricty")))
+      (t
+       (add-to-list 'default-frame-alist '(font . "ricty-13.5"))))
+
