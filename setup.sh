@@ -6,7 +6,7 @@ for file in ${DOT_FILES[@]}
 do
     src_file=$(echo ${file} | sed 's/^\./_/')
     if [ ! -L $HOME/$file -a -f $HOME/$file ]; then
-      mv $HOME/$file $HOME/$file_
+      mv $HOME/$file $HOME/${file}_
     fi
 
     ln -snf $HOME/dotfiles/$src_file $HOME/$file
