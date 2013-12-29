@@ -28,6 +28,7 @@
   (eq os-type 'win))
 
 (require 'init-loader)
+(setq init-loader-show-log-after-init nil) ; 起動時のログバッファを表示しない
 (init-loader-load "~/.emacs.d/inits")
 
 ;; auto-install
