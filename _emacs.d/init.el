@@ -32,3 +32,6 @@
 (require 'auto-install)
 (setq auto-install-directory "~/.emacs.d/auto-install/")
 ;(auto-install-update-emacswiki-package-name nil)
+
+;;行番号表示
+(global-linum-mode t)

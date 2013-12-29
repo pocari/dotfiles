@@ -118,4 +118,3 @@
        (add-to-list 'default-frame-alist '(font . "fontset-ricty")))
       (t
        (add-to-list 'default-frame-alist '(font . "ricty-13.5"))))
-
