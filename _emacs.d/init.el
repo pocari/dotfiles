@@ -2,6 +2,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (add-to-list 'load-path "~/.emacs.d/auto-install")
 
+;;; 起動直後のfind-fileのパスを~/にする
+(cd "~/")
+
 (let ((default-directory "~/.emacs.d/site-lisp/"))
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
