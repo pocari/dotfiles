@@ -1,0 +1,5 @@
+"The prefix key.
+nnoremap    [unite]   <Nop>
+nmap    <Leader>f [unite]
+
+nnoremap [unite]b :<C-u>Unite<Space>bookmark<CR>

@@ -1,0 +1,2 @@
+"" [:e .]のように気軽に起動できるようにする
+let g:vimfiler_as_default_explorer = 1
