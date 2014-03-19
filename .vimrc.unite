@@ -2,4 +2,5 @@
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 
-nnoremap [unite]b :<C-u>Unite<Space>bookmark<CR>
+nnoremap [unite]c :<C-u>Unite<Space>bookmark<CR>
+nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>

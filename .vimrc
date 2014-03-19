@@ -1,15 +1,14 @@
 " Neo Bundle
-source ~/dotfiles2/.vimrc.bundle
+source ~/dotfiles/.vimrc.bundle
 
 "basic settings
-source ~/dotfiles2/.vimrc.basic
+source ~/dotfiles/.vimrc.basic
 
 " Unite
-source ~/dotfiles2/.vimrc.unite
+source ~/dotfiles/.vimrc.unite
 
 " VimFiler
-source ~/dotfiles2/.vimrc.vimfiler
+source ~/dotfiles/.vimrc.vimfiler
 
 " indent
-source ~/dotfiles2/.vimrc.indent
-
+source ~/dotfiles/.vimrc.indent
