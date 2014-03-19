@@ -1,3 +1,5 @@
+# vim: ft=sh 
+
 alias ls='ls --color=tty'
 
 

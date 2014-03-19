@@ -1,2 +1,23 @@
 :set autoindent
 :set smartindent
+
+"タブの画面上での幅
+set tabstop=2
+" インデントの設定をファイルタイプ別に行う
+"   (shiftwidth=スマートインデントの幅)
+"   (tabstop=タブの画面上での幅)
+"   (softtabstop=??? デフォルトは tabstop と同じらしい)
+augroup vimrc
+autocmd! FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
+autocmd! FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
+autocmd! FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType sh   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+"
+" タブをスペースに展開しない (expandtab:展開する)
+set expandtab
+" 自動的にインデントする (noautoindent:インデントしない)
+set autoindent
+" バックスペースでインデントや改行を削除できるようにする
+set backspace=indent,eol,start
