@@ -12,3 +12,7 @@ source ~/dotfiles/_vimrc.vimfiler
 
 " indent
 source ~/dotfiles/_vimrc.indent
+
+" NeoComplete
+source ~/dotfiles/_vimrc.complete
+

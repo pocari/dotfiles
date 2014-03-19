@@ -22,6 +22,8 @@ NeoBundle 'Shougo/vimproc', {
 		\ }
 NeoBundle 'thinca/vim-quickrun'
 
+NeoBundle 'Shougo/neocomplete'
+
 filetype plugin on
 
 NeoBundleCheck

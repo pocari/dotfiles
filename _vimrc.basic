@@ -14,3 +14,7 @@ set smartindent "改行時に入力された行の末尾に合わせて次の行
 set wildmenu " コマンドライン補完するときに強化されたものを使う(参照 :help wildmenu)
 set formatoptions+=mM " テキスト挿入中の自動折り返しを日本語に対応させる
 set modeline " モードラインを有効にする
+source $VIMRUNTIME/macros/matchit.vim " ()対応の拡張rubyのdo...endにも対応
+set incsearch "インクリメンタルサーチ
+set ignorecase "大文字小文字無視
+set smartindent "でもちょっと大文字も考慮

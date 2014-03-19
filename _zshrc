@@ -2,6 +2,7 @@
 
 PATH=$PATH:$HOME/dotfiles/bin
 PATH=/usr/local/bin:$PATH
+PATH=~/usr/local/bin:$PATH
 
 alias ls='ls -GF'
 alias la='ls -a'
