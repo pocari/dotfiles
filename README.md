@@ -10,5 +10,5 @@ setup links
 
 Vim NeoBundle setting
 
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    mkdir -p ~/_vim/bundle
+    git clone https://github.com/Shougo/neobundle.vim ~/_vim/bundle/neobundle.vim
