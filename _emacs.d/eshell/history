@@ -6,3 +6,7 @@ svn --version
 ls
 exit
 exit
+ls
+ls
+echo $SHELL
+ls

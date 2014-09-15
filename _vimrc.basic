@@ -18,3 +18,5 @@ source $VIMRUNTIME/macros/matchit.vim " ()対応の拡張rubyのdo...endにも�
 set incsearch "インクリメンタルサーチ
 set ignorecase "大文字小文字無視
 set smartindent "でもちょっと大文字も考慮
+set noswapfile "swapファイルは作らない
+set nobackup   "バックアップファイルも作らない
