@@ -28,14 +28,14 @@
   (eq os-type 'win))
 
 (require 'init-loader)
-(setq init-loader-show-log-after-init nil) ; 起動時のログバッファを表示しない
+(setq init-loader-show-log-after-init t) ; 起動時のログバッファを表示しない
 (init-loader-load "~/.emacs.d/inits")
 
 ;; auto-install
 ;; http://www.emacswiki.org/emacs/auto-install.el
 (require 'auto-install)
 (setq auto-install-directory "~/.emacs.d/auto-install/")
-;(auto-install-update-emacswiki-package-name nil)
+(auto-install-update-emacswiki-package-name t)
 
 ;;行番号表示
 (global-linum-mode t)
