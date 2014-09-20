@@ -1,4 +1,6 @@
 # vim: ft=sh 
+setopt PROMPT_SUBST
+setopt TRANSIENT_RPROMPT
 
 PATH=$PATH:$HOME/dotfiles/bin
 PATH=/usr/local/bin:$PATH
@@ -8,7 +10,6 @@ alias ls='ls -GF'
 alias la='ls -a'
 alias ll='ls -l'
 alias vi='vim'
-
 
 ## Default shell configuration
 #
@@ -25,7 +26,8 @@ case ${UID} in
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
     ;;
 *)
-    PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
+    #PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
+    PROMPT="%{${fg[red]}%}[%~]%%%{${reset_color}%} "
     PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
@@ -63,6 +65,7 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt share_history
 
+source ~/.zsh/my-git-prompt.zsh
 case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
