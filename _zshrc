@@ -2,9 +2,9 @@
 setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
 
-PATH=$PATH:$HOME/dotfiles/bin
 PATH=/usr/local/bin:$PATH
 PATH=~/usr/local/bin:$PATH
+PATH=$HOME/dotfiles/bin:$PATH
 
 alias ls='ls -GF'
 alias la='ls -a'
