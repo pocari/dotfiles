@@ -20,3 +20,5 @@ set ignorecase "大文字小文字無視
 set smartindent "でもちょっと大文字も考慮
 set noswapfile "swapファイルは作らない
 set nobackup   "バックアップファイルも作らない
+set ttymouse=xterm2
+set mouse=a
