@@ -67,6 +67,14 @@ setopt hist_reduce_blanks
 setopt share_history
 
 source ~/.zsh/my-git-prompt.zsh
+
+#zsh-completion
+if [ -d ~/.zsh/zsh-completions/src ] ; then
+  fpath=(~/.zsh/zsh-completions/src $fpath)
+  compinit
+fi
+
+#OS毎の設定をロード
 case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
