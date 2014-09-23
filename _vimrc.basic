@@ -22,3 +22,5 @@ set noswapfile "swapファイルは作らない
 set nobackup   "バックアップファイルも作らない
 set ttymouse=xterm2
 set mouse=a
+
+colorscheme delek 
