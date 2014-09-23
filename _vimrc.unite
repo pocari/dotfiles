@@ -4,3 +4,5 @@ nmap    <Leader>f [unite]
 
 nnoremap [unite]c :<C-u>Unite<Space>bookmark<CR>
 nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
+
+let g:unite_enable_start_insert=1
