@@ -5,6 +5,7 @@ setopt TRANSIENT_RPROMPT
 PATH=/usr/local/bin:$PATH
 PATH=~/usr/local/bin:$PATH
 PATH=$HOME/dotfiles/bin:$PATH
+export PATH
 
 alias ls='ls -GF'
 alias la='ls -a'
