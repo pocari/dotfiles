@@ -45,6 +45,7 @@ NeoBundle 'therubymug/vim-pyte'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'w0ng/vim-hybrid'
 
+NeoBundle 'tpope/vim-endwise'
 
 filetype plugin on
 
