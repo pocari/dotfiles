@@ -75,6 +75,9 @@ if [ -d ~/.zsh/zsh-completions/src ] ; then
   compinit
 fi
 
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+
 #OS毎の設定をロード
 case "${OSTYPE}" in
 # Mac(Unix)
