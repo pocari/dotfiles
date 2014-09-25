@@ -28,22 +28,23 @@ NeoBundle 'altercation/vim-colors-solarized'
 "" mustang カラースキーム
 NeoBundle 'croaker/mustang-vim'
 " wombat カラースキーム
- NeoBundle 'jeffreyiacono/vim-colors-wombat'
+NeoBundle 'jeffreyiacono/vim-colors-wombat'
 " " jellybeans カラースキーム
- NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'nanotech/jellybeans.vim'
 " " lucius カラースキーム
- NeoBundle 'vim-scripts/Lucius'
+NeoBundle 'vim-scripts/Lucius'
 " " zenburn カラースキーム
- NeoBundle 'vim-scripts/Zenburn'
+NeoBundle 'vim-scripts/Zenburn'
 " " mrkn256 カラースキーム
- NeoBundle 'mrkn/mrkn256.vim'
+NeoBundle 'mrkn/mrkn256.vim'
 " " railscasts カラースキーム
- NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'jpo/vim-railscasts-theme'
 " " pyte カラースキーム
- NeoBundle 'therubymug/vim-pyte'
+NeoBundle 'therubymug/vim-pyte'
 " " molokai カラースキーム
- NeoBundle 'tomasr/molokai'
- NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'w0ng/vim-hybrid'
+
 
 filetype plugin on
 
