@@ -16,3 +16,6 @@ source ~/dotfiles/_vimrc.indent
 " NeoComplete
 source ~/dotfiles/_vimrc.complete
 
+" QuickRun
+source ~/dotfiles/_vimrc.quickrun
+
