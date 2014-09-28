@@ -19,3 +19,9 @@ source ~/dotfiles/_vimrc.complete
 " QuickRun
 source ~/dotfiles/_vimrc.quickrun
 
+" os毎の設定
+if has("win32")
+
+elseif has('mac')
+  source ~/dotfiles/_vimrc.osx
+endif
