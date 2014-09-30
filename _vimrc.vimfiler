@@ -1,4 +1,8 @@
-"" [:e .]縺ｮ繧医≧縺ｫ豌苓ｻｽ縺ｫ襍ｷ蜍輔〒縺阪ｋ繧医≧縺ｫ縺吶ｋ
+"" [:e .]でvimfilerを開くようにする
 let g:vimfiler_as_default_explorer = 1
 
+"" exploer風に開く
 nnoremap <silent> <Leader>z :<C-u>VimFilerBufferDir -split -simple -winwidth=45 -toggle -no-quit<CR>
+
+"" uniteでディレクトリを開いた時vimfilerで開く
+autocmd FileType vimfiler call unite#custom_default_action('directory', 'cd')
