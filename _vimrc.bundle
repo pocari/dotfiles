@@ -26,6 +26,8 @@ NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'Shougo/neocomplete'
 
+NeoBundle 'Shougo/vimshell'
+
 "solarized カラースキーム
 NeoBundle 'altercation/vim-colors-solarized'
 "" mustang カラースキーム
@@ -49,6 +51,8 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'tpope/vim-endwise'
+
+NeoBundle 'itchyny/calendar.vim'
 
 filetype plugin on
 
