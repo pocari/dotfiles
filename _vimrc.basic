@@ -27,6 +27,14 @@ set hidden  "バッファを編集中でも切り替えられるように
 set confirm "終了時に未保存バッファがあると確認する
 set clipboard+=unnamed "ヤンクした内容がシステムのクリップボードにも入るようにする
 set nrformats=  " Ctr-a, xは常に10進数
+set noundofile  "undoファイルを作らない
+
+" insertモードを抜けるとIMEオフ
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap :set iminsert=0
+
 " Ctrl-L で検索ハイライトを消す
 nmap <C-l> <C-l>:nohlsearch<CR>
 
