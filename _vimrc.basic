@@ -28,6 +28,10 @@ set hidden  "バッファを編集中でも切り替えられるように
 set confirm "終了時に未保存バッファがあると確認する
 set clipboard+=unnamed "ヤンクした内容がシステムのクリップボードにも入るようにする
 
+" Ctrl-L で検索ハイライトを消す
+nmap <C-l> <C-l>:nohlsearch<CR>
+
+" 一時ファイルを作成して開く
 command! Tempfile :edit `=tempname()`
 
 colorscheme delek 
