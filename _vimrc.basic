@@ -12,6 +12,7 @@ filetype plugin indent on
 set autoindent "改行時に前の行のインデントを継続する
 set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set wildmenu " コマンドライン補完するときに強化されたものを使う(参照 :help wildmenu)
+set wildmode=longest,full
 set formatoptions+=mM " テキスト挿入中の自動折り返しを日本語に対応させる
 set modeline " モードラインを有効にする
 source $VIMRUNTIME/macros/matchit.vim " ()対応の拡張rubyのdo...endにも対応
@@ -28,8 +29,7 @@ set confirm "終了時に未保存バッファがあると確認する
 set clipboard+=unnamed "ヤンクした内容がシステムのクリップボードにも入るようにする
 set nrformats=  " Ctr-a, xは常に10進数
 set noundofile  "undoファイルを作らない
-set wildmode=longest,full
-set wildmenu
+
 
 " insertモードを抜けるとIMEオフ
 set noimdisable
