@@ -28,6 +28,8 @@ set confirm "終了時に未保存バッファがあると確認する
 set clipboard+=unnamed "ヤンクした内容がシステムのクリップボードにも入るようにする
 set nrformats=  " Ctr-a, xは常に10進数
 set noundofile  "undoファイルを作らない
+set wildmode=longest,full
+set wildmenu
 
 " insertモードを抜けるとIMEオフ
 set noimdisable
