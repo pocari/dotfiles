@@ -19,7 +19,9 @@ source ~/dotfiles/_vimrc.complete
 " QuickRun
 source ~/dotfiles/_vimrc.quickrun
 
-" os毎の設定
+"lightline
+source ~/dotfiles/_vimrc.lightline
+
 if has("win32")
 
 elseif has('mac')

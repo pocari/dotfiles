@@ -54,6 +54,10 @@ NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'itchyny/calendar.vim'
 
+NeoBundle 'itchyny/lightline.vim'
+
+NeoBundle 'tpope/vim-fugitive'
+
 filetype plugin on
 
 NeoBundleCheck
