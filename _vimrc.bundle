@@ -50,6 +50,7 @@ NeoBundle 'therubymug/vim-pyte'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'w0ng/vim-hybrid'
 
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'itchyny/calendar.vim'
