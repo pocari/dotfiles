@@ -10,6 +10,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " add lugins
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+
 
 if !has("win32")
   NeoBundle 'Shougo/vimproc', {
@@ -60,6 +62,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'airblade/vim-gitgutter'
+
+NeoBundle 'tpope/vim-surround'
 
 filetype plugin on
 
