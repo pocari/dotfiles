@@ -30,29 +30,6 @@ NeoBundle 'Shougo/neocomplete'
 
 NeoBundle 'Shougo/vimshell'
 
-"solarized カラースキーム
-NeoBundle 'altercation/vim-colors-solarized'
-"" mustang カラースキーム
-NeoBundle 'croaker/mustang-vim'
-" wombat カラースキーム
-NeoBundle 'jeffreyiacono/vim-colors-wombat'
-" " jellybeans カラースキーム
-NeoBundle 'nanotech/jellybeans.vim'
-" " lucius カラースキーム
-NeoBundle 'vim-scripts/Lucius'
-" " zenburn カラースキーム
-NeoBundle 'vim-scripts/Zenburn'
-" " mrkn256 カラースキーム
-NeoBundle 'mrkn/mrkn256.vim'
-" " railscasts カラースキーム
-NeoBundle 'jpo/vim-railscasts-theme'
-" " pyte カラースキーム
-NeoBundle 'therubymug/vim-pyte'
-" " molokai カラースキーム
-NeoBundle 'tomasr/molokai'
-NeoBundle 'w0ng/vim-hybrid'
-
-NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'itchyny/calendar.vim'
@@ -64,6 +41,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'tpope/vim-surround'
+
+NeoBundle 'mattn/benchvimrc-vim.git'
 
 filetype plugin on
 
