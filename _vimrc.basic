@@ -40,6 +40,9 @@ inoremap :set iminsert=0
 " Ctrl-L で検索ハイライトを消す
 nmap <C-l> <C-l>:nohlsearch<CR>
 
+"tagsジャンプの時に複数あるときは一覧表示
+nnoremap <C-]> g<C-]>
+
 " 一時ファイルを作成して開く
 command! Tempfile :edit `=tempname()`
 
