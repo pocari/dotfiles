@@ -1,6 +1,6 @@
 export PATH=/usr/local/bin:$PATH
-export CC=gcc-4.2
-alias gcc="$CC"
+#export CC=gcc-4.2
+#alias gcc="$CC"
 alias javac='javac -J-Dfile.encoding=utf-8'
 alias java='java -Dfile.encoding=utf-8'
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
