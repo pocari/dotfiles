@@ -44,6 +44,8 @@ NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'mattn/benchvimrc-vim.git'
 
+NeoBundle 'kchmck/vim-coffee-script'
+
 filetype plugin on
 
 NeoBundleCheck
