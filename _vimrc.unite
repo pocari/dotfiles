@@ -11,4 +11,4 @@ let g:unite_enable_start_insert=1
 " file_mrcの対象を現在のプロジェクトのファイルのみにする
 call unite#custom#source(
       \ 'file_mru', 'matchers',
-      \ ['matcher_project_files', 'matcher_fuzzy'])
+      \ ['matcher_project_files', 'matcher_default'])
