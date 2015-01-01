@@ -23,3 +23,4 @@ if has("autocmd")
   autocmd FileType sh   setlocal sw=2 ts=2 sts=2 et
   autocmd FileType vim  setlocal sw=2 sts=2 ts=2 et
 endif
+

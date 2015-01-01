@@ -6,3 +6,7 @@ if [ -d ${HOME}/.rbenv  ] ; then
   export PATH
   eval "$(rbenv init -)"
 fi
+
+#python
+export WORKON_HOME=~/.virtualenvs
+. /usr/local/bin/virtualenvwrapper.sh
