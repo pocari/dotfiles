@@ -55,6 +55,9 @@ autocmd FileType python setlocal completeopt-=preview
 "neocompleteと連携させる
 autocmd FileType python setlocal omnifunc=jedi#completions
 
+"escは遠い 要Karabiner
+imap <c-j> <esc><jis_eissuu>
+
 let g:jedi#auto_vim_configuration = 0
 
 if !exists('g:neocomplete#force_omni_input_patterns')
