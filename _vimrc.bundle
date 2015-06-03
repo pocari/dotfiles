@@ -52,6 +52,8 @@ NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'Yggdroot/indentLine'
 
+NeoBundle 'kana/vim-fakeclip'
+
 filetype plugin on
 
 call neobundle#end()
