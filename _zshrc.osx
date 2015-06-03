@@ -1,4 +1,7 @@
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+
 #export CC=gcc-4.2
 #alias gcc="$CC"
 alias javac='javac -J-Dfile.encoding=utf-8'

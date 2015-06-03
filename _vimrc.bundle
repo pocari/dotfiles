@@ -54,6 +54,8 @@ NeoBundle 'Yggdroot/indentLine'
 
 NeoBundle 'kana/vim-fakeclip'
 
+NeoBundle 'tomasr/molokai'
+
 filetype plugin on
 
 call neobundle#end()

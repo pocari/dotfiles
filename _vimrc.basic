@@ -56,7 +56,7 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd FileType python setlocal omnifunc=jedi#completions
 
 "escは遠い 要Karabiner
-imap <c-j> <Esc>
+imap <C-j> <Esc>
 
 let g:jedi#auto_vim_configuration = 0
 
