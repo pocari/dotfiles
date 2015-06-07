@@ -9,4 +9,8 @@ export GOBIN=$GOROOT/bin
 export GOPATH=$HOME/_go
 export PATH=$PATH:$GOBIN:$GOPATH/bin
 
+#docker setting
+#/etc/init/docker.conf
+#DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
+export DOCKER_HOST=tcp://localhost:4243
 
