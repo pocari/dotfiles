@@ -2,4 +2,11 @@
 
 alias ls='ls --color=tty'
 
+export GOROOT=$HOME/go
+export GOOS=linux
+export GOARCH=amd64
+export GOBIN=$GOROOT/bin
+export GOPATH=$HOME/_go
+export PATH=$PATH:$GOBIN:$GOPATH/bin
+
 
