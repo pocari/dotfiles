@@ -67,7 +67,9 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt share_history
 
+#git setting
 source ~/.zsh/my-git-prompt.zsh
+alias git-graph='git log --graph --all --branches --oneline --decorate=full'
 
 #zsh-completion
 if [ -d ~/.zsh/zsh-completions/src ] ; then
