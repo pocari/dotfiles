@@ -13,6 +13,11 @@ alias tmux='tmuxx'
 #see http://qiita.com/takc923/items/45386905f70fde9af0e7
 alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 
+#boot2docker setting
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
 eval "$(rbenv init -)"
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
