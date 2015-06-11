@@ -58,6 +58,8 @@ NeoBundle 'tomasr/molokai'
 
 NeoBundle 'joonty/vdebug'
 
+NeoBundle 'tacroe/unite-mark'
+
 filetype plugin on
 
 call neobundle#end()
