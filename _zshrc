@@ -70,6 +70,7 @@ setopt share_history
 #git setting
 source ~/.zsh/my-git-prompt.zsh
 alias git-graph='git log --graph --all --branches --oneline --decorate=full'
+alias gs='git status'
 
 #zsh-completion
 if [ -d ~/.zsh/zsh-completions/src ] ; then
