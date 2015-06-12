@@ -70,6 +70,7 @@ setopt share_history
 #git setting
 source ~/.zsh/my-git-prompt.zsh
 alias git-graph='git log --graph --all --branches --oneline --decorate=full'
+alias gs='git status'
 
 #zsh-completion
 if [ -d ~/.zsh/zsh-completions/src ] ; then
@@ -96,6 +97,9 @@ functionn peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+#cd は親ディレクトリからカレントディレクトリを選択しないので表示させないようにする (例: cd ../<TAB>):
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 #OS毎の設定をロード
 case "${OSTYPE}" in
