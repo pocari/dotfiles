@@ -7,9 +7,6 @@ set expandtab
 " バックスペースでインデントや改行を削除できるようにする
 set backspace=indent,eol,start
 
-"タブの画面上での幅
-set tabstop=2 shiftwidth=2 softtabstop=0
-
 " インデントの設定をファイルタイプ別に行う
 "   (shiftwidth=スマートインデントの幅)
 "   (tabstop=タブの画面上での幅)
