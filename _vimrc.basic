@@ -138,7 +138,10 @@ map <silent> [Tag]p :tabprevious<CR>
 
 "不可視文字列の設定
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-"改行文字とタブ文字の色設定（NonTextが改行、SpecialKeyがタブ）
-hi NonText guibg=NONE guifg=DarkGreen
-hi SpecialKey guibg=NONE guifg=Gray40
+set listchars=trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars+=tab:\|\ 
+
+highlight SpecialKey ctermfg=59
+
+" insert mode->normal mode
+inoremap <silent> jj <ESC>

@@ -55,6 +55,8 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kana/vim-fakeclip'
 
 NeoBundle 'tomasr/molokai'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'joonty/vdebug'
 
