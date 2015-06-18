@@ -145,3 +145,6 @@ highlight SpecialKey ctermfg=59
 
 " insert mode->normal mode
 inoremap <silent> jj <ESC>
+
+" 常にステータスラインを表示
+set laststatus=2
