@@ -62,6 +62,8 @@ NeoBundle 'joonty/vdebug'
 
 NeoBundle 'tacroe/unite-mark'
 
+NeoBundle 'yonchu/accelerated-smooth-scroll'
+
 filetype plugin on
 
 call neobundle#end()

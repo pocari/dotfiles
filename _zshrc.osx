@@ -2,6 +2,37 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 
+#golang config
+export GOPATH=~/.go
+export PATH=$PATH:$GOPATH/bin
+if (( ${+commands[peco]} )); then
+  peco-go-to-dir () {
+    local line
+    local selected="$(
+      {
+        (
+          autoload -Uz chpwd_recent_filehandler
+          chpwd_recent_filehandler && for line in $reply; do
+            if [[ -d "$line" ]]; then
+              echo "$line"
+            fi
+          done
+        )
+        ghq list --full-path
+        for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done | sort -u
+      } | peco --query "$LBUFFER"
+    )"
+    if [ -n "$selected" ]; then
+      BUFFER="cd ${(q)selected}"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N peco-go-to-dir
+  bindkey '^[g' peco-go-to-dir
+fi
+
+
 #docker config
 # brew cask virtualbox
 # brew install docker boot2docker
