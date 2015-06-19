@@ -148,3 +148,17 @@ inoremap <silent> jj <ESC>
 
 " 常にステータスラインを表示
 set laststatus=2
+
+" grep設定
+" ag ->  grep の順に優先して使用
+if executable('ag')
+    set grepprg=ag\ --nogroup\ -iS
+    set grepformat=%f:%l:%m
+else
+    set grepprg=grep\ -Hnd\ skip\ -r
+    set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m
+endif
+
+"QuickFixでのショートカット
+nnoremap <F8> :cnext<CR>
+nnoremap <F9> :cprevious<CR>
