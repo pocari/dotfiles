@@ -64,6 +64,8 @@ NeoBundle 'tacroe/unite-mark'
 
 NeoBundle 'yonchu/accelerated-smooth-scroll'
 
+NeoBundle 'BufOnly.vim' " :BufOnlyでカレントバッファ以外全部閉じる
+
 filetype plugin on
 
 call neobundle#end()
