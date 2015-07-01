@@ -66,6 +66,10 @@ NeoBundle 'yonchu/accelerated-smooth-scroll'
 
 NeoBundle 'BufOnly.vim' " :BufOnlyでカレントバッファ以外全部閉じる
 
+NeoBundle 'violetyk/cake.vim'
+
+NeoBundle 'ujihisa/unite-colorscheme'
+
 filetype plugin on
 
 call neobundle#end()
