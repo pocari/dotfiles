@@ -1,7 +1,3 @@
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
-
 #golang config
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
@@ -53,9 +49,5 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 #see http://qiita.com/takc923/items/45386905f70fde9af0e7
 alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 
-eval "$(rbenv init -)"
-export PYENV_ROOT="${HOME}/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-  export PATH=${PYENV_ROOT}/bin:$PATH
-  eval "$(pyenv init -)"
-fi
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH

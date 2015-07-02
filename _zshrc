@@ -1,8 +1,11 @@
 # vim: ft=sh 
+
+#pathの重複をさせない
+typeset -U path PATH
+
 setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
 
-PATH=/usr/local/bin:$PATH
 PATH=~/usr/local/bin:$PATH
 PATH=$HOME/dotfiles/bin:$PATH
 export PATH
