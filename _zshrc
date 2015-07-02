@@ -52,6 +52,12 @@ kterm*|xterm*)
     ;;
 esac
 
+#補完設定
+#zsh-completion
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
 ## 補完時に大小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=1
@@ -71,12 +77,6 @@ setopt share_history
 source ~/.zsh/my-git-prompt.zsh
 alias git-graph='git log --graph --all --branches --oneline --decorate=full'
 alias gs='git status'
-
-#zsh-completion
-if [ -d ~/.zsh/zsh-completions/src ] ; then
-  fpath=(~/.zsh/zsh-completions/src $fpath)
-  compinit
-fi
 
 autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
