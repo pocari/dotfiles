@@ -9,3 +9,6 @@ autocmd FileType vimfiler call unite#custom_default_action('directory', 'cd')
 
 "" 自動でカレントディレクトリを変更する
 let g:vimfiler_enable_auto_cd = 1
+
+"" バッファ一覧に
+autocmd FileType vimfiler setlocal nobuflisted
