@@ -44,11 +44,7 @@ NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'tpope/vim-surround'
 
-NeoBundle 'mattn/benchvimrc-vim.git'
-
 NeoBundle 'kchmck/vim-coffee-script'
-
-NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'Yggdroot/indentLine'
 
