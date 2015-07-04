@@ -79,6 +79,10 @@ NeoBundleLazy 'nosami/Omnisharp', {
 \   }
 \ }
 
+NeoBundleLazy 'tpope/vim-dispatch'
+
+NeoBundle 'haya14busa/vim-migemo'
+
 filetype plugin on
 
 call neobundle#end()
