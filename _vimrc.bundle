@@ -70,6 +70,15 @@ NeoBundle 'violetyk/cake.vim'
 
 NeoBundle 'ujihisa/unite-colorscheme'
 
+NeoBundleLazy 'nosami/Omnisharp', {
+\   'autoload': {'filetypes': ['cs']},
+\   'build': {
+\     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+\     'mac': 'xbuild server/OmniSharp.sln',
+\     'unix': 'xbuild server/OmniSharp.sln',
+\   }
+\ }
+
 filetype plugin on
 
 call neobundle#end()

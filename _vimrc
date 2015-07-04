@@ -27,3 +27,5 @@ if has("win32")
 elseif has('mac')
   source ~/dotfiles/_vimrc.osx
 endif
+
+source ~/dotfiles/_vimrc.omnisharp_neocomplete
