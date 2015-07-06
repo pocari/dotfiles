@@ -1,3 +1,6 @@
+"OmniSharp ctrlpnfig
+let g:OmniSharp_start_without_solution = 1
+
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0

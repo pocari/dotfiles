@@ -28,4 +28,4 @@ elseif has('mac')
   source ~/dotfiles/_vimrc.osx
 endif
 
-source ~/dotfiles/_vimrc.omnisharp_neocomplete
+source ~/dotfiles/_vimrc.omnisharp
