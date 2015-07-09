@@ -70,10 +70,15 @@ compinit -u
 
 ## history
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=16384
-SAVEHIST=16384
+HISTSIZE=30000
+SAVEHIST=30000
+#重複した履歴は記録しない
 setopt hist_ignore_all_dups
+#余分な空白は詰める
 setopt hist_reduce_blanks
+#historyコマンド自体は履歴に入れない
+setopt hist_no_store
+#historyは共有する
 setopt share_history
 
 #git setting
