@@ -55,6 +55,9 @@ kterm*|xterm*)
     ;;
 esac
 
+#C-sを切る
+stty -ixon -ixoff
+
 #補完設定
 #zsh-completion
 if [ -e /usr/local/share/zsh-completions ]; then

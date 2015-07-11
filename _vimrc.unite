@@ -37,3 +37,11 @@ nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " grep検索結果の再呼出
 nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
 
+" ウィンドウを分割して開く
+" C-Sにマップしてるので、端末の場合stty -ixonしてないと効かないので注意
+au FileType unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-V> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-V> unite#do_action('vsplit')
+
