@@ -27,6 +27,7 @@ nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
 nnoremap [unite]` :<C-u>Unite<Space>mark<CR>
 nnoremap [unite]y :<C-u>Unite<Space>history/yank<CR>
+nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
 
 " grep検索
 nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
