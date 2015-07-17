@@ -1,8 +1,0 @@
-command! Migemo call Migemo()
-function! Migemo()
-    if hasmapto('\<CR>','c')
-        cunmap <expr><CR>
-    else
-        cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
-    endif
-endfunction
