@@ -77,8 +77,6 @@ NeoBundleLazy 'nosami/Omnisharp', {
 
 NeoBundle 'tpope/vim-dispatch'
 
-NeoBundle 'haya14busa/vim-migemo'
-
 NeoBundle 'vim-jp/vimdoc-ja'
 
 filetype plugin on
