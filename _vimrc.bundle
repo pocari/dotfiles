@@ -79,6 +79,9 @@ NeoBundle 'tpope/vim-dispatch'
 
 NeoBundle 'vim-jp/vimdoc-ja'
 
+NeoBundle "git://github.com/osyo-manga/unite-quickfix.git"
+
+NeoBundle "thinca/vim-qfreplace"
 filetype plugin on
 
 call neobundle#end()
