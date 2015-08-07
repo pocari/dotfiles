@@ -1,7 +1,7 @@
 # ~/.tmuxinator/base.yml
 
 name: base
-root: ~/dotfiles
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
