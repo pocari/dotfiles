@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# show git repository infomation in current directory
+#
+# [branch_name]_[revision_number(10bytes)]
+#
+
+git log > /dev/null
+in_git_repo=$?
+
+if [ $in_git_repo -eq 0 ] ; then
+  echo `git rev-parse --abbrev-ref @`_`git log -n 1 --format=%H | cut -b -10`
+else
+  exit $in_git_repo
+fi
+
+exit 0
+
+
