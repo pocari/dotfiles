@@ -82,6 +82,9 @@ NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle "git://github.com/osyo-manga/unite-quickfix.git"
 
 NeoBundle "thinca/vim-qfreplace"
+
+NeoBundle 'vim-scripts/gtags.vim'
+
 filetype plugin on
 
 call neobundle#end()
