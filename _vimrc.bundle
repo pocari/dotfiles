@@ -85,6 +85,10 @@ NeoBundle "thinca/vim-qfreplace"
 
 NeoBundle 'vim-scripts/gtags.vim'
 
+if has("mac")
+  NeoBundle 'toyamarinyon/vim-swift'
+endif
+
 filetype plugin on
 
 call neobundle#end()
