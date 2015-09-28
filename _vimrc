@@ -22,6 +22,8 @@ source ~/dotfiles/_vimrc.quickrun
 "lightline
 source ~/dotfiles/_vimrc.lightline
 
+"Gtags
+source ~/dotfiles/_vimrc.gtags
 if has("win32")
 
 elseif has('mac')

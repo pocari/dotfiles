@@ -164,8 +164,8 @@ else
 endif
 
 "QuickFixでのショートカット
-nnoremap <F8> :cnext<CR>
-nnoremap <F9> :cprevious<CR>
+nnoremap <F8> :cprevious<CR>
+nnoremap <F9> :cnext<CR>
 
 "grepした後は自動的にQuickFixを開く
 ":grep hogehoge | cw

@@ -1,0 +1,5 @@
+nnoremap [gtags] <Nop>
+nmap <Leader>g [gtags]
+
+nnoremap [gtags]l :<C-u>Gtags<Space>-f<Space>%<CR>
+nnoremap [gtags][ :<C-u>GtagsCursor<CR>
