@@ -85,6 +85,8 @@ NeoBundle "thinca/vim-qfreplace"
 
 NeoBundle 'vim-scripts/gtags.vim'
 
+NeoBundle 'elzr/vim-json'
+
 if has("mac")
   NeoBundle 'toyamarinyon/vim-swift'
 endif
