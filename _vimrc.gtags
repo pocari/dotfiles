@@ -1,9 +1,10 @@
 nnoremap [gtags] <Nop>
 nmap <Leader>g [gtags]
 
+
 nnoremap [gtags]l :<C-u>Gtags<Space>-f<Space>%<CR>
 nnoremap [gtags]] :<C-u>GtagsCursor<CR>
 nnoremap [gtags]p :cprevious<CR>
 nnoremap [gtags]n :cnext<CR>
-nnoremap [gtags]c :cclose<CR>
+nnoremap [gtags]c :<C-u>cclose<CR>
 
