@@ -1,0 +1,5 @@
+function! HelloWorldTest()
+  echo "Hello, World. cnt is "
+endfunction
+
+:command! MyHelloWorld :call HelloWorldTest()

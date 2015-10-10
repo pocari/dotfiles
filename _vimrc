@@ -24,8 +24,11 @@ source ~/dotfiles/_vimrc.lightline
 
 "Gtags
 source ~/dotfiles/_vimrc.gtags
-if has("win32")
 
+"test
+source ~/dotfiles/_vimrc.test
+
+if has("win32")
 elseif has('mac')
   source ~/dotfiles/_vimrc.osx
 endif
