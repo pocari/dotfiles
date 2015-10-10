@@ -2,7 +2,7 @@
 
 # rbenv
 if [ -d ${HOME}/.rbenv  ] ; then
-  PATH=${HOME}/.rbenv/bin:${PATH}
+  PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
   export PATH
   eval "$(rbenv init -)"
 fi
