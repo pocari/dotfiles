@@ -87,6 +87,8 @@ NeoBundle 'vim-scripts/gtags.vim'
 
 NeoBundle 'elzr/vim-json'
 
+NeoBundle 'kovisoft/slimv'
+
 if has("mac")
   NeoBundle 'toyamarinyon/vim-swift'
 endif
