@@ -28,6 +28,9 @@ source ~/dotfiles/_vimrc.gtags
 "test
 source ~/dotfiles/_vimrc.test
 
+"slimv
+source ~/dotfiles/_vimrc.slimv
+
 if has("win32")
 elseif has('mac')
   source ~/dotfiles/_vimrc.osx

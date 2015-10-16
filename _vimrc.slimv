@@ -1,0 +1,2 @@
+let g:slimv_lisp = 'ros run'
+let g:slimv_impl = 'sbcl'

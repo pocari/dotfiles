@@ -1,0 +1,7 @@
+caskroom/cask
+homebrew/dupes
+homebrew/php
+motemen/ghq
+peco/peco
+sanemat/font
+snmsts/roswell
