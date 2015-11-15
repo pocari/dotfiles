@@ -1,2 +1,4 @@
 let g:slimv_lisp = 'ros run'
 let g:slimv_impl = 'sbcl'
+let g:slimv_repl_split=4
+let g:paredit_mode=0
