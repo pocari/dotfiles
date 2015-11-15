@@ -1,6 +1,5 @@
 autoconf
 automake
-boot2docker
 brew-cask
 cairo
 cmigemo
@@ -37,7 +36,9 @@ mhash
 mono
 mysql
 nkf
+nmap
 openssl
+p7zip
 pango
 pcre
 peco
