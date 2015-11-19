@@ -3,3 +3,5 @@ function! HelloWorldTest()
 endfunction
 
 :command! MyHelloWorld :call HelloWorldTest()
+
+let g:paredit_mode = 0

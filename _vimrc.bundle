@@ -89,6 +89,8 @@ NeoBundle 'elzr/vim-json'
 
 NeoBundle 'kovisoft/slimv'
 
+NeoBundle 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
 if has("mac")
   NeoBundle 'toyamarinyon/vim-swift'
 endif

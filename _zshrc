@@ -141,6 +141,5 @@ esac
 PERL_MB_OPT="--install_base \"/Users/pocari/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/pocari/perl5"; export PERL_MM_OPT;
 
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 source ~/.tmuxinator/tmuxinator.zsh
 
