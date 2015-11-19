@@ -42,4 +42,8 @@ export DOCKER_HOST=tcp://localhost:4243
 
 export EDITOR=/usr/local/bin/vim
 
+#editorにvimを設定しているとzshを子プロセスで起動した時にキーバインドがviモードになってしまうので
+#明示的にemacsモードにする
+bindkey -e
+
 
