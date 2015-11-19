@@ -1,5 +1,10 @@
 # vim: ft=sh 
 
+#EDITORにvi, vimを設定すると子プロセスでzshが起動した時にvimのキーバインドになってしまうので、
+#明示的にemacsモードを指定
+#また、最初にしておかないと、zshrcで各種bindkeyをした後にbindkey -eをしてしまうとリセットされてしまう
+bindkey -e
+
 #pathの重複をさせない
 typeset -U path PATH
 
