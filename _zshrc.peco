@@ -55,3 +55,13 @@ bindkey '^[g' peco-go-to-dir
 function kill-peco () {
     ps aux | peco | awk '{ print $2 }' | xargs kill
 }
+
+case "${OSTYPE}" in
+darwin*)
+    [ -f ~/dotfiles/_zshrc_peco.osx ] && source ~/dotfiles/_zshrc_peco.osx
+    ;;
+linux*)
+    [ -f ~/dotfiles/_zshrc_peco.linux ] && source ~/dotfiles/_zshrc_peco.linux
+    ;;
+esac
+

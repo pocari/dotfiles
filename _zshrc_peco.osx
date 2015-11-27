@@ -1,0 +1,7 @@
+# vim: ft=sh
+
+# pecoの結果をクリップボードに保存
+function pecopy () {
+    peco --query "$LBUFFER" | pbcopy
+}
+
