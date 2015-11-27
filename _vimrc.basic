@@ -192,3 +192,7 @@ cnoremap <C-f> <Right>
 cnoremap <C-n> <Down>
 " コマンドライン履歴を一つ戻る
 cnoremap <C-p> <Up>
+
+set ttyfast " u got a fast terminal
+set ttyscroll=3
+set lazyredraw " to avoid scrolling problems

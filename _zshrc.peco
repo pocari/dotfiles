@@ -1,0 +1,50 @@
+# vim: ft=sh
+
+#---------------------------------------------------------------------------------
+# agで見つかった行をpecoで選択してvimで開く
+function agvim () {
+    vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+#---------------------------------------------------------------------------------
+# コマンド履歴をpecoで検索して表示
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+#---------------------------------------------------------------------------------
+# cd履歴をpecoで検索して表示
+function peco-go-to-dir () {
+  local line
+  local selected="$(
+    {
+      (
+        autoload -Uz chpwd_recent_filehandler
+        chpwd_recent_filehandler && for line in $reply; do
+          if [[ -d "$line" ]]; then
+            echo "$line"
+          fi
+        done
+      )
+      ghq list --full-path
+      for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done | sort -u
+    } | peco --query "$LBUFFER"
+  )"
+  if [ -n "$selected" ]; then
+    BUFFER="cd ${(q)selected}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-go-to-dir
+bindkey '^[g' peco-go-to-dir
