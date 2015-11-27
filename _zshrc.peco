@@ -54,5 +54,4 @@ bindkey '^[g' peco-go-to-dir
 # pecoで選んだプロセスをキルする
 function kill-peco () {
     ps aux | peco | awk '{ print $2 }' | xargs kill
-    zle clear-screen
 }
