@@ -1,0 +1,6 @@
+{
+        "KeyMap": {
+                "C-y": "peco.ToggleSelectionAndSelectNext"
+        }
+}
+
