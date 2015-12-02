@@ -1,3 +1,5 @@
+" vim: fenc=utf-8
+"
 let mapleader=','
 noremap \  ,
 set nocompatible
@@ -141,11 +143,12 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 "不可視文字列の設定
-set list
-set listchars=trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-set listchars+=tab:\|\ 
-
-highlight SpecialKey ctermfg=59
+if !has("win32")
+   set list
+   set listchars=trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+   set listchars+=tab:\|\ 
+  highlight SpecialKey ctermfg=59
+endif
 
 " insert mode->normal mode
 inoremap <silent> jj <ESC>

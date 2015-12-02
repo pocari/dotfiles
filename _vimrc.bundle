@@ -60,20 +60,22 @@ NeoBundle 'tacroe/unite-mark'
 
 NeoBundle 'yonchu/accelerated-smooth-scroll'
 
-NeoBundle 'BufOnly.vim' " :BufOnlyでカレントバッファ以外全部閉じる
+NeoBundle 'BufOnly.vim'
 
 NeoBundle 'violetyk/cake.vim'
 
 NeoBundle 'ujihisa/unite-colorscheme'
 
-NeoBundleLazy 'nosami/Omnisharp', {
-\   'autoload': {'filetypes': ['cs']},
-\   'build': {
-\     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-\     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln',
-\   }
-\ }
+if !has("win32")
+  NeoBundleLazy 'nosami/Omnisharp', {
+   \   'autoload': {'filetypes': ['cs']},
+   \   'build': {
+   \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+   \     'mac': 'xbuild server/OmniSharp.sln',
+   \     'unix': 'xbuild server/OmniSharp.sln',
+   \   }
+   \ }
+endif
 
 NeoBundle 'tpope/vim-dispatch'
 
