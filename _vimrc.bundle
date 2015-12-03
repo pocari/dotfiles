@@ -53,17 +53,6 @@ NeoBundle 'yonchu/accelerated-smooth-scroll'
 
 NeoBundle 'BufOnly.vim'
 
-if !has("win32")
-  NeoBundleLazy 'nosami/Omnisharp', {
-   \   'autoload': {'filetypes': ['cs']},
-   \   'build': {
-   \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-   \     'mac': 'xbuild server/OmniSharp.sln',
-   \     'unix': 'xbuild server/OmniSharp.sln',
-   \   }
-   \ }
-endif
-
 NeoBundle 'tpope/vim-dispatch'
 
 NeoBundle 'vim-jp/vimdoc-ja'
@@ -74,11 +63,20 @@ NeoBundle 'vim-scripts/gtags.vim'
 
 NeoBundle 'elzr/vim-json'
 
-NeoBundle 'kovisoft/slimv'
-
 NeoBundle 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 if has("mac")
+  NeoBundleLazy 'nosami/Omnisharp', {
+  \   'autoload': {'filetypes': ['cs']},
+  \   'build': {
+  \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+  \     'mac': 'xbuild server/OmniSharp.sln',
+  \     'unix': 'xbuild server/OmniSharp.sln',
+  \   }
+  \ }
+
+  NeoBundle 'kovisoft/slimv'
+
   NeoBundle 'toyamarinyon/vim-swift'
 endif
 
