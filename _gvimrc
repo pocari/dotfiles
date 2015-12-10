@@ -1,3 +1,3 @@
-:colorscheme molokai
+:colorscheme dracula
 :set guifont=Ricty:h14
 :set transparency=7
