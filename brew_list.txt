@@ -13,12 +13,14 @@ docker-machine
 fontconfig
 fontforge
 freetype
+gawk
 gdbm
 gettext
 ghq
 git
 glib
 global
+gnu-sed
 gobject-introspection
 harfbuzz
 icu4c
