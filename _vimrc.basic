@@ -49,7 +49,9 @@ nnoremap <C-]> g<C-]>
 " 一時ファイルを作成して開く
 command! Tempfile :edit `=tempname()`
 
-colorscheme delek 
+colorscheme delek
+" 検索結果のハイライトの色を返る
+:hi Search cterm=NONE ctermfg=black ctermbg=yellow
 
 "python
 " docstringは表示しない
