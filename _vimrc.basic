@@ -49,10 +49,6 @@ nnoremap <C-]> g<C-]>
 " 一時ファイルを作成して開く
 command! Tempfile :edit `=tempname()`
 
-colorscheme delek
-" 検索結果のハイライトの色を返る
-:hi Search cterm=NONE ctermfg=black ctermbg=yellow
-
 "python
 " docstringは表示しない
 autocmd FileType python setlocal completeopt-=preview
@@ -201,3 +197,9 @@ cnoremap <C-p> <Up>
 set ttyfast " u got a fast terminal
 set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
+
+colorscheme delek
+" 検索結果のハイライトの色を返る
+:hi Search cterm=NONE ctermfg=black ctermbg=yellow
+:hi IncSearch cterm=NONE ctermfg=black ctermbg=cyan
+
