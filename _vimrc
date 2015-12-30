@@ -1,6 +1,9 @@
 " Neo Bundle
 source ~/dotfiles/_vimrc.bundle
 
+" ui setting
+source ~/dotfiles/_vimrc.ui
+
 "basic settings
 source ~/dotfiles/_vimrc.basic
 

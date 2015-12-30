@@ -67,16 +67,6 @@ endif
 
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
-if has('gui_running')
-  "termilalで線遅くなるのでgvim の時だけ設定
-  " カレント行ハイライト
-  set cursorline
-  " アンダーラインを引く(color terminal)
-  "highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
-  " アンダーラインを引く(gui)
-  highlight CursorLine gui=underline guifg=NONE guibg=NONE
-endif
-
 " Turn off paste mode when leaving insert
 autocmd InsertLeave * set nopaste
 
@@ -198,7 +188,6 @@ set ttyfast " u got a fast terminal
 set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
 
-colorscheme delek
 " 検索結果のハイライトの色を返る
 :hi Search cterm=NONE ctermfg=black ctermbg=yellow
 :hi IncSearch cterm=NONE ctermfg=black ctermbg=cyan
