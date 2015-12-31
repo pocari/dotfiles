@@ -40,6 +40,9 @@ set iminsert=0 imsearch=0
 set noimcmdline
 inoremap :set iminsert=0
 
+"対応する括弧でチカチカさせない
+let loaded_matchparen=1
+
 " Ctrl-L で検索ハイライトを消す
 nmap <C-l> <C-l>:nohlsearch<CR>
 
