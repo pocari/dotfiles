@@ -68,6 +68,7 @@ stty -ixon -ixoff
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
+fpath=($fpath ~/.zsh/completion)
 
 ## 補完時に大小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -138,4 +139,9 @@ if (( ${+commands[peco]} )); then
 fi
 
 source ~/.tmuxinator/tmuxinator.zsh
+
+
+function manvi() {
+  /usr/bin/man $* -P "col -b | vim -Rc 'setl ft=man ts=8 nomod nolist nonu' -c 'nmap q :q<cr>' -"
+}
 
