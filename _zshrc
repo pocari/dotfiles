@@ -145,3 +145,7 @@ function manvi() {
   /usr/bin/man $* -P "col -b | vim -Rc 'setl ft=man ts=8 nomod nolist nonu' -c 'nmap q :q<cr>' -"
 }
 
+#nodeの設定
+if (( ${+commands[node]} )); then
+  export PATH=$PATH:./node_modules/.bin
+fi
