@@ -1,0 +1,94 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+  [plugins.build]
+  windows = 'tools\\update-dll-mingw'
+  cygwin  = 'make -f make_cygwin.mak'
+  mac     = 'make -f make_mac.mak'
+  linux   = 'make'
+  unix    = 'gmake'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'Shougo/neocomplete'
+
+[[plugins]]
+repo = 'Shougo/vimshell'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'kana/vim-fakeclip'
+
+[[plugins]]
+repo = 'joonty/vdebug'
+
+[[plugins]]
+repo = 'tacroe/unite-mark'
+
+[[plugins]]
+repo = 'yonchu/accelerated-smooth-scroll'
+
+[[plugins]]
+repo = 'BufOnly.vim'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = "thinca/vim-qfreplace"
+
+[[plugins]]
+repo = 'vim-scripts/gtags.vim'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+
+[[plugins]]
+repo = 'zenorocha/dracula-theme'
+rtp = 'vim/'
+
+[[plugins]]
+repo = 'kovisoft/slimv'
+if   = '''! has('mac')'''
+
+[[plugins]]
+repo = 'toyamarinyon/vim-swift'
+if   = '''! has('mac')'''
+
