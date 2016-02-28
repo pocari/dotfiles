@@ -1,4 +1,4 @@
-" vim: fenc=utf-8
+" vim: fenc=utf-8 ft=vim:
 
 if has('gui_running')
   "termilalで線遅くなるのでgvim の時だけ設定

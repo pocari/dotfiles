@@ -18,6 +18,10 @@ repo = 'Shougo/vimproc.vim'
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
 repo = 'Shougo/neocomplete'
 
 [[plugins]]
@@ -61,6 +65,7 @@ repo = 'tpope/vim-dispatch'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
+on_ft = 'help'
 
 [[plugins]]
 repo = "thinca/vim-qfreplace"
@@ -70,6 +75,7 @@ repo = 'vim-scripts/gtags.vim'
 
 [[plugins]]
 repo = 'elzr/vim-json'
+on_ft = 'json'
 
 [[plugins]]
 repo = 'zenorocha/dracula-theme'
