@@ -1,4 +1,16 @@
 [[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'tacroe/unite-mark'
+on_source = 'unite.vim'
+
+[[plugins]]
 repo = 'nosami/Omnisharp'
 on_ft = ['cs']
 
@@ -6,3 +18,4 @@ on_ft = ['cs']
   windows = 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"'
   mac     = 'xbuild server/OmniSharp.sln'
   unix    =  'xbuild server/OmniSharp.sln'
+

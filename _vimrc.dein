@@ -1,3 +1,8 @@
+" plugin 初期化用のコマンドを登録するaugroup
+augroup MyDeinAutoCmd
+  autocmd!
+augroup END
+
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体

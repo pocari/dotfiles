@@ -1,45 +1,53 @@
-"入力モードで開始
-let g:unite_enable_start_insert=1
+if dein#tap('unite.vim')
+  "The prefix key.
+  nnoremap    [unite]   <Nop>
+  nmap    <Leader>f [unite]
 
-" file_mrcの対象を現在のプロジェクトのファイルのみにする
-" (matcher_project_files)
-" 先頭に^が来た時だけ正規表現でマッチさせる。それ以外はglob検索
-" (matcher_context)
-call unite#custom#source(
-      \ 'file_mru', 'matchers',
-      \ ['matcher_project_files', 'matcher_context'])
+  nnoremap [unite]f :<C-u>Unite<Space>bookmark<CR>
+  nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
+  nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
+  nnoremap [unite]` :<C-u>Unite<Space>mark<CR>
+  nnoremap [unite]y :<C-u>Unite<Space>history/yank<CR>
+  nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
 
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt=''
+  " grep検索
+  nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+  " grep検索結果の再呼出
+  nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
+
+  " ウィンドウを分割して開く
+  " C-Sにマップしてるので、端末の場合stty -ixonしてないと効かないので注意
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+  " ウィンドウを縦に分割して開く
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
+
+  " 初期化時設定
+  function! s:unite_on_source() abort
+    "入力モードで開始
+    let g:unite_enable_start_insert=1
+
+    " file_mrcの対象を現在のプロジェクトのファイルのみにする
+    " (matcher_project_files)
+    " 先頭に^が来た時だけ正規表現でマッチさせる。それ以外はglob検索
+    " (matcher_context)
+    call unite#custom#source(
+          \ 'file_mru', 'matchers',
+          \ ['matcher_project_files', 'matcher_context'])
+
+    " unite grep に ag(The Silver Searcher) を使う
+    if executable('ag')
+      let g:unite_source_grep_command='ag'
+      let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
+      let g:unite_source_grep_recursive_opt=''
+    endif
+
+    let g:unite_source_history_yank_enable=1  "history/yankの有効化
+  endfunction
+
+  " g:dein#name にはプラグイン名が入る
+  execute 'autocmd MyDeinAutoCmd User' 'dein#source#' . g:dein#name
+        \ 'call s:unite_on_source()'
 endif
-
-let g:unite_source_history_yank_enable=1  "history/yankの有効化
-
-"The prefix key.
-nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
-
-nnoremap [unite]f :<C-u>Unite<Space>bookmark<CR>
-nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
-nnoremap [unite]` :<C-u>Unite<Space>mark<CR>
-nnoremap [unite]y :<C-u>Unite<Space>history/yank<CR>
-nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
-
-" grep検索
-nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-
-" grep検索結果の再呼出
-nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
-
-" ウィンドウを分割して開く
-" C-Sにマップしてるので、端末の場合stty -ixonしてないと効かないので注意
-au FileType unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
-au FileType unite inoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
-

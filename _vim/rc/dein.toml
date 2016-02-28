@@ -5,12 +5,6 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
   [plugins.build]
@@ -55,9 +49,6 @@ repo = 'kana/vim-fakeclip'
 
 [[plugins]]
 repo = 'joonty/vdebug'
-
-[[plugins]]
-repo = 'tacroe/unite-mark'
 
 [[plugins]]
 repo = 'yonchu/accelerated-smooth-scroll'
