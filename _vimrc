@@ -1,5 +1,5 @@
-" Neo Bundle
-source ~/dotfiles/_vimrc.bundle
+" dein
+source ~/dotfiles/_vimrc.dein
 
 " ui setting
 source ~/dotfiles/_vimrc.ui
