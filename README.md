@@ -15,13 +15,6 @@
   run_setup.bat
   ```
 
-- Vim NeoBundle setting
-
-  ```
-  mkdir %USERPROFILE%\.vim\bundle
-  git clone https://github.com/Shougo/neobundle.vim %USERPROFILE%\.vim\bundle\neobundle.vim
-  ```
-  
 ## macos, linux
 - clone from github
   
@@ -35,11 +28,3 @@
   ```
   sh setup.sh
   ```
-  
-- Vim NeoBundle setting
-
-  ```
-  mkdir -p ~/.vim/bundle
-  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-  ```
-  
