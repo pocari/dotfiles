@@ -1,0 +1,8 @@
+[[plugins]]
+repo = 'nosami/Omnisharp'
+on_ft = ['cs']
+
+  [plugins.build]
+  windows = 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"'
+  mac     = 'xbuild server/OmniSharp.sln'
+  unix    =  'xbuild server/OmniSharp.sln'
