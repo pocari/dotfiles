@@ -18,6 +18,9 @@ repo = 'Shougo/vimproc.vim'
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
