@@ -38,6 +38,9 @@ set cmdheight=1 "コマンド行は1行
 set noimdisable
 set iminsert=0 imsearch=0
 set noimcmdline
+set noequalalways " ウインドウ分割時に均等に分割しない
+set winheight=8 " ウインドウ分割時の最低のheight設定
+set winwidth=8 " ウインドウ分割時の最低のwidth設定
 inoremap :set iminsert=0
 
 "対応する括弧でチカチカさせない
