@@ -57,8 +57,8 @@ repo = 'kana/vim-fakeclip'
 [[plugins]]
 repo = 'joonty/vdebug'
 
-[[plugins]]
-repo = 'yonchu/accelerated-smooth-scroll'
+# [[plugins]]
+# repo = 'yonchu/accelerated-smooth-scroll'
 
 [[plugins]]
 repo = 'BufOnly.vim'
