@@ -24,6 +24,7 @@ gobject-introspection
 harfbuzz
 icu4c
 jpeg
+jq
 libevent
 libffi
 libpng
@@ -33,12 +34,14 @@ libyaml
 lua
 luajit
 mcrypt
+mercurial
 mhash
 mono
 mysql
 nkf
 nmap
 node
+oniguruma
 openssl
 p7zip
 pango
@@ -50,11 +53,13 @@ php56-xdebug
 pixman
 pkg-config
 putty
+python
 rbenv
 readline
 ricty
 roswell
 ruby-build
+sqlite
 the_silver_searcher
 tig
 tmux

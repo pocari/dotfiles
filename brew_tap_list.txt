@@ -1,5 +1,6 @@
 caskroom/cask
 caskroom/versions
+homebrew/core
 homebrew/dupes
 homebrew/php
 motemen/ghq
