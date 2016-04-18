@@ -21,6 +21,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias vi='vim'
 alias be='bundle exec'
+alias mktoday='mktodaydir && cd `date "+%Y%m%d"`'
 
 ## Default shell configuration
 #

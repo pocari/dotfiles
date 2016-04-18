@@ -1,0 +1,9 @@
+#!/bin/sh
+# vim: set ft=sh:
+
+DIR=`date "+%Y%m%d"`
+if [ ! -d $DIR ] ;
+then
+  mkdir -p $DIR
+fi
+
