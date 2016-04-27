@@ -3,6 +3,10 @@ if has('nvim')
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#enable_ignore_case = 1
   let g:deoplete#enable_smart_case = 1
+  if !exists('g:deoplete#keyword_patterns')
+    let g:deoplete#keyword_patterns = {}
+  endif
+  let g:deoplete#keyword_patterns._ = '\h\w*'
 else
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#enable_ignore_case = 1
@@ -12,7 +16,7 @@ else
   endif
   let g:neocomplete#keyword_patterns._ = '\h\w*'
 
-  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 endif
 
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
