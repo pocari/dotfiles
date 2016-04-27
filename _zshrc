@@ -149,7 +149,6 @@ fi
 
 source ~/.tmuxinator/tmuxinator.zsh
 
-
 function manvi() {
   /usr/bin/man $* -P "col -b | vim -Rc 'setl ft=man ts=8 nomod nolist nonu' -c 'nmap q :q<cr>' -"
 }
@@ -158,3 +157,7 @@ function manvi() {
 if (( ${+commands[node]} )); then
   export PATH=$PATH:./node_modules/.bin
 fi
+
+#nviの設定ファイル用
+export XDG_CONFIG_HOME=$HOME/.config
+

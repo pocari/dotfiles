@@ -25,7 +25,6 @@ set smartindent "でもちょっと大文字も考慮
 set noswapfile "swapファイルは作らない
 set nobackup   "バックアップファイルも作らない
 set noundofile  "undoファイルを作らない
-set ttymouse=xterm2
 set mouse=a
 set nowrap "折り返さない
 set hidden  "バッファを編集中でも切り替えられるように
@@ -42,6 +41,7 @@ set noequalalways " ウインドウ分割時に均等に分割しない
 set winheight=8 " ウインドウ分割時の最低のheight設定
 set winwidth=8 " ウインドウ分割時の最低のwidth設定
 inoremap :set iminsert=0
+set completeopt=menuone "保管時にプレビューウィンドウを表示しない(デフォルトでmenuoneの他にpreviewがついていた)
 
 "対応する括弧でチカチカさせない
 let loaded_matchparen=1
@@ -59,13 +59,13 @@ command! Tempfile :edit `=tempname()`
 " docstringは表示しない
 autocmd FileType python setlocal completeopt-=preview
 
-"neocompleteと連携させる
-autocmd FileType python setlocal omnifunc=jedi#completions
-
 "escは遠い 要Karabiner
 imap <C-j> <Esc>
 
 let g:jedi#auto_vim_configuration = 0
+
+"neocompleteと連携させる
+autocmd FileType python setlocal omnifunc=jedi#completions
 
 if !exists('g:neocomplete#force_omni_input_patterns')
         let g:neocomplete#force_omni_input_patterns = {}
@@ -190,8 +190,12 @@ cnoremap <C-n> <Down>
 " コマンドライン履歴を一つ戻る
 cnoremap <C-p> <Up>
 
+if !has('nvim')
+  set ttymouse=xterm2
+  set ttyscroll=3
+endif
+
 set ttyfast " u got a fast terminal
-set ttyscroll=3
 set lazyredraw " to avoid scrolling problems
 
 " 検索結果のハイライトの色を返る

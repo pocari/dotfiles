@@ -39,6 +39,13 @@ on_ft = 'toml'
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
+if = 'has("lua")'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = 'has("nvim")'
+on_i = 1
 
 [[plugins]]
 repo = 'Shougo/vimshell'
