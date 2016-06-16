@@ -6,6 +6,8 @@
 	default = simple
 [diff]
         algorithm = histogram
+	tool = vimdiff
+	compactionHeuristic = true
 
 [mergetool "p4merge"]
         path = /opt/homebrew-cask/Caskroom/p4merge/2014.3-1007540/p4merge.app/Contents/MacOS/p4merge
@@ -13,3 +15,10 @@
 	trustExitCode = false
 [alias]
         graph = log --graph --all --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
+[difftool]
+	prompt = false
+
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
