@@ -44,7 +44,7 @@ function peco-go-to-dir () {
     BUFFER="cd ${(q)selected}"
     zle accept-line
   fi
-  zle clear-screen
+  #zle clear-screen
 }
 zle -N peco-go-to-dir
 bindkey '^[g' peco-go-to-dir
@@ -81,3 +81,14 @@ function peco-select-gitadd() {
 zle -N peco-select-gitadd
 bindkey "^g^a" peco-select-gitadd
 
+#---------------------------------------------------------------------------------
+# pecoでブランチを選択してチェックアウト
+function peco-git-checkout() {
+  local selected_branch="$(git branch | peco --prompt "git branches> " | sed -e "s/\* //g" | awk "{print \$1}")"
+  if [ -n "$selected_branch" ]; then
+    git checkout $selected_branch
+  fi
+  zle accept-line
+}
+zle -N peco-git-checkout
+bindkey "^g^b" peco-git-checkout
