@@ -101,8 +101,7 @@ repo = 'elzr/vim-json'
 on_ft = 'json'
 
 [[plugins]]
-repo = 'zenorocha/dracula-theme'
-rtp = 'vim/'
+repo = 'dracula/vim'
 
 [[plugins]]
 repo = 'kovisoft/slimv'
