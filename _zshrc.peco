@@ -3,7 +3,7 @@
 #---------------------------------------------------------------------------------
 # agで見つかったpecoで選択してその行をvimで開く
 function agvim () {
-    \vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " " $1}')
+    \vim $(ag $@ | peco --prompt "open vim>" --query "$LBUFFER" | awk -F : '{print "+" $2 " " $1}')
 }
 
 #---------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ function peco-select-history() {
     else
         tac="tail -r"
     fi
-    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
+    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --prompt "last command>" --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }
@@ -38,7 +38,7 @@ function peco-go-to-dir () {
       )
       ghq list --full-path
       for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done | sort -u
-    } | peco --query "$LBUFFER"
+    } | peco --prompt "cd history>" --query "$LBUFFER"
   )"
   if [ -n "$selected" ]; then
     BUFFER="cd ${(q)selected}"
@@ -53,7 +53,7 @@ bindkey '^[g' peco-go-to-dir
 #---------------------------------------------------------------------------------
 # pecoで選んだプロセスをキルする
 function kill-peco () {
-    ps aux | peco | awk '{ print $2 }' | xargs kill -9
+    ps aux | peco --prompt "KILL >" | awk '{ print $2 }' | xargs kill -9
 }
 
 case "${OSTYPE}" in
@@ -69,7 +69,7 @@ esac
 # pecoで選んだものをgit add
 function peco-select-gitadd() {
     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
-                                  peco --query "$LBUFFER" | \
+                                  peco --prompt "git add>" --query "$LBUFFER" | \
                                   awk -v path=$(git rev-parse --show-toplevel)/ -F ' ' '{print path $NF}')"
     if [ -n "$SELECTED_FILE_TO_ADD" ]; then
       BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ')"
@@ -84,7 +84,7 @@ bindkey "^g^a" peco-select-gitadd
 #---------------------------------------------------------------------------------
 # pecoでブランチを選択してチェックアウト
 function peco-git-checkout() {
-  local selected_branch="$(git branch | peco --prompt "git branches> " | sed -e "s/\* //g" | awk "{print \$1}")"
+  local selected_branch="$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(refname:short) - %(objectname:short) - %(contents:subject) - %(authorname) - (%(committerdate:relative))' | peco --prompt "git branches>" | sed -e "s/\* //g" | awk "{print \$1}")"
   if [ -n "$selected_branch" ]; then
     git checkout $selected_branch
   fi
@@ -92,3 +92,21 @@ function peco-git-checkout() {
 }
 zle -N peco-git-checkout
 bindkey "^g^b" peco-git-checkout
+
+#---------------------------------------------------------------------------------
+# pecoでgit statusの結果を挿入
+function peco_select_from_git_status(){
+    git status --porcelain | \
+    peco --prompt "git status>" | \
+    awk -F ' ' '{print $NF}' | \
+    tr '\n' ' '
+}
+
+function peco_insert_selected_git_files(){
+    LBUFFER+=$(peco_select_from_git_status)
+    CURSOR=$#LBUFFER
+    zle reset-prompt
+}
+
+zle -N peco_insert_selected_git_files
+bindkey "^g^s" peco_insert_selected_git_files
