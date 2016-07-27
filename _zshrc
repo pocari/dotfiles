@@ -163,3 +163,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#---------------------------------------------------------------------------------------------------
+#  # profileするときは下のコメントを外す
+#  zmodload zsh/zprof && zprof
+#  if (which zprof > /dev/null 2>&1) ;then
+#      zprof
+#  fi
+#  # profile用ここまで

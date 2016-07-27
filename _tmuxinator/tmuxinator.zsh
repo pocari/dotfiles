@@ -19,7 +19,8 @@ _tmuxinator() {
   return
 }
 
-_tmuxinator
+# 結構遅いしあんまり補完使わないので一旦コメント
+#_tmuxinator
 
 # Local Variables:
 # mode: Shell-Script

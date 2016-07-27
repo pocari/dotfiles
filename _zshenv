@@ -1,5 +1,13 @@
 # vim: ft=sh 
 
+#  # profileするときは下のコメントを外す
+#  zmodload zsh/zprof && zprof
+#  
+#  if (which zprof > /dev/null 2>&1) ; then
+#    zprof
+#  fi
+#  # profile用ここまで
+
 # rbenv
 if [ -d ${HOME}/.rbenv  ] ; then
   PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
