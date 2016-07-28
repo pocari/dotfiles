@@ -13,3 +13,7 @@ on_source = 'unite.vim'
 #   endif
 #   let g:dein#plugin.build = cmd
 # '''
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = 'javascript'
