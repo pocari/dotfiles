@@ -4,6 +4,7 @@ homebrew/core
 homebrew/dupes
 homebrew/php
 motemen/ghq
+neovim/neovim
 peco/peco
 sanemat/font
 snmsts/roswell
