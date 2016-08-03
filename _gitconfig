@@ -1,7 +1,7 @@
 [include]
         path = .gitconfig.local
 [core]
-	editor = vi
+	editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [push]
 	default = simple
 [diff]
