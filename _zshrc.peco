@@ -110,3 +110,19 @@ function peco_insert_selected_git_files(){
 
 zle -N peco_insert_selected_git_files
 bindkey "^g^s" peco_insert_selected_git_files
+
+#---------------------------------------------------------------------------------
+# pecoでショートカットコマンドの結果を挿入
+function peco_select_shortcut(){
+    LBUFFER+=$( \
+      cat ~/dotfiles/pecommand.txt | \
+      peco --prompt "commands>" | \
+      sed -e 's/#.*$//' \
+    )
+    CURSOR=$#LBUFFER
+    zle reset-prompt
+}
+
+zle -N peco_select_shortcut
+bindkey '^[s' peco_select_shortcut
+

@@ -1,0 +1,1 @@
+\ls -F | grep '/$' | xargs -Iarg du -sh arg   # カレントディレクトリのフォルダ単位でdu -shする
