@@ -124,5 +124,5 @@ function peco_select_shortcut(){
 }
 
 zle -N peco_select_shortcut
-bindkey '^[s' peco_select_shortcut
+bindkey '^s' peco_select_shortcut
 
