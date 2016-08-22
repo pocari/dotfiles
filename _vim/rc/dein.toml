@@ -111,3 +111,10 @@ if   = '''! has('mac')'''
 repo = 'toyamarinyon/vim-swift'
 if   = '''! has('mac')'''
 
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'stephpy/vim-yaml'
+on_ft = 'yaml'
