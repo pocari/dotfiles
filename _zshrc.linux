@@ -7,7 +7,7 @@ alias vim='/usr/local/bin/vim'
 alias vi='vim'
 
 #golang config
-export GOPATH=~/.go
+export GOPATH=~/dev/go
 export PATH=$PATH:$GOPATH/bin
 
 

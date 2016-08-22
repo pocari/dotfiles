@@ -1,8 +1,11 @@
 # vim: ft=sh
 
 #golang config
-export GOPATH=~/.go
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=~/dev/go
+# export PATH=$PATH:$GOPATH/bin
+
+#gvm config(rbenvのglang版)
+[[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 
 #####################################
 # 今はdocker-machineになってるので
