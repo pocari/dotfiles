@@ -138,3 +138,6 @@ on_ft = 'yaml'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 
+[[plugins]]
+repo = 'kien/ctrlp.vim'
+
