@@ -3,10 +3,8 @@ if has('nvim')
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#enable_ignore_case = 1
   let g:deoplete#enable_smart_case = 1
-  if !exists('g:deoplete#keyword_patterns')
-    let g:deoplete#keyword_patterns = {}
-  endif
-  let g:deoplete#keyword_patterns._ = '\h\w*'
+  let g:deoplete#keyword_patterns = {}
+  let g:deoplete#keyword_patterns._ = '\\?[a-zA-Z_]\w*'
 else
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#enable_ignore_case = 1

@@ -42,4 +42,4 @@ elseif has('mac')
   source ~/dotfiles/_vimrc.osx
 endif
 
-source ~/dotfiles/_vimrc.omnisharp
+" source ~/dotfiles/_vimrc.omnisharp
