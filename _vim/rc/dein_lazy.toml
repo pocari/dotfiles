@@ -17,3 +17,11 @@ on_source = 'unite.vim'
 [[plugins]]
 repo = 'othree/yajs.vim'
 on_ft = 'javascript'
+
+[[plugins]]
+repo = 'joonty/vdebug'
+on_ft = 'php'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['ruby', 'go']

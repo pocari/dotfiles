@@ -90,9 +90,6 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'kana/vim-fakeclip'
 
-[[plugins]]
-repo = 'joonty/vdebug'
-
 # [[plugins]]
 # repo = 'yonchu/accelerated-smooth-scroll'
 
@@ -134,9 +131,6 @@ on_ft = 'go'
 [[plugins]]
 repo = 'stephpy/vim-yaml'
 on_ft = 'yaml'
-
-[[plugins]]
-repo = 'scrooloose/syntastic'
 
 [[plugins]]
 repo = 'kien/ctrlp.vim'
