@@ -135,6 +135,3 @@ on_ft = 'yaml'
 [[plugins]]
 repo = 'kien/ctrlp.vim'
 
-[[plugins]]
-repo = 'FelikZ/ctrlp-py-matcher'
-

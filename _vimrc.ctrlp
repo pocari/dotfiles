@@ -1,7 +1,6 @@
 " vim: fenc=utf-8 ft=vim:
-
-" 絞り込み高速化
-let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
+"
+" let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 " ファイル一覧作成高速化
 " https://github.com/mattn/files
