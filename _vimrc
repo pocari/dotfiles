@@ -34,6 +34,9 @@ source ~/dotfiles/_vimrc.test
 "slimv
 source ~/dotfiles/_vimrc.slimv
 
+"ctrp"
+source ~/dotfiles/_vimrc.ctrlp
+
 if has("win32")
 elseif has('mac')
   source ~/dotfiles/_vimrc.osx
