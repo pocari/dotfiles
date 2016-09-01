@@ -27,10 +27,10 @@ export PATH=$PATH:$GOPATH/bin
 #alias gcc="$CC"
 alias javac='javac -J-Dfile.encoding=utf-8'
 alias java='java -Dfile.encoding=utf-8'
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-#alias vi='nvim'
-#alias vim='nvim'
+#alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vi='nvim'
+alias vim='nvim'
 
 #see http://qiita.com/takc923/items/45386905f70fde9af0e7
 #alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
