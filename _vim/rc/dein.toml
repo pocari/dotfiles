@@ -135,3 +135,13 @@ on_ft = 'yaml'
 [[plugins]]
 repo = 'kien/ctrlp.vim'
 
+[[plugins]]
+# # cpsm/install.shのcmakeへの環境変数に
+# https://github.com/pocari/cpsm/commit/67ff63031e5b7413147464aee48463e831b67287
+# の変更を行うとうまくbuildできる。なんかいい方法ある？？
+# とりあえずforkして対応
+repo = 'pocari/cpsm'
+rev = 'fix-python-path'
+hook_post_update = '''
+  let g:dein#plugin.build = 'sh -c "PY3=ON ./install.sh"'
+'''
