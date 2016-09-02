@@ -1,13 +1,14 @@
-snippet for-rev
-abbr for i := len(${1}) - 1; i >= 0; i-- { ${2} }
+snippet fornormal
+abbr for ${1} := 0; ${2} < len(${3}); ${4}-- { ${5} }
 options word
-	for i := len(${1}) - 1; i >= 0; i-- {
-		${2}
+	for ${1:i} := 0; ${2:i} < len(${3}); ${4:i}++ {
+		${5}
 	}
 
-snippet for-normal
-abbr for i := 0; i < len(${1}); i-- { ${2} }
+snippet forreverse
+abbr for ${1} := len(${2}) - 1; ${3} >= 0; ${4}-- { ${5} }
 options word
-	for i := 0; i < len(${1}); i++ {
-		${2}
+	for ${1:i} := len(${2}) - 1; ${3:i} >= 0; ${4:i}-- {
+		${5}
 	}
+
