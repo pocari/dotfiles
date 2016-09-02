@@ -1,0 +1,13 @@
+snippet for-rev
+abbr for i := len(${1}) - 1; i >= 0; i-- { ${2} }
+options word
+	for i := len(${1}) - 1; i >= 0; i-- {
+		${2}
+	}
+
+snippet for-normal
+abbr for i := 0; i < len(${1}); i-- { ${2} }
+options word
+	for i := 0; i < len(${1}); i++ {
+		${2}
+	}
