@@ -145,3 +145,7 @@ rev = 'fix-python-path'
 hook_post_update = '''
   let g:dein#plugin.build = 'sh -c "PY3=ON ./install.sh"'
 '''
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
