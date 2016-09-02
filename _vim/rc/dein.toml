@@ -39,7 +39,7 @@ on_ft = 'toml'
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
-if = 'has("lua")'
+if = 'has("lua") && !has("nvim")'
 on_i = 1
 
 [[plugins]]
