@@ -1,0 +1,3 @@
+" erbファイルのときの以下の警告は問題ないことが多いので無視する
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless use of a variable in void context'}
