@@ -97,11 +97,11 @@ repo = 'dracula/vim'
 
 [[plugins]]
 repo = 'kovisoft/slimv'
-if   = '''! has('mac')'''
+if   = '''has('mac')'''
 
 [[plugins]]
 repo = 'toyamarinyon/vim-swift'
-if   = '''! has('mac')'''
+if   = '''has('mac')'''
 
 [[plugins]]
 repo = 'fatih/vim-go'
