@@ -43,9 +43,6 @@ if = 'has("lua") && !has("nvim")'
 on_i = 1
 
 [[plugins]]
-repo = 'Shougo/vimshell'
-
-[[plugins]]
 repo = 'tpope/vim-endwise'
 
 [[plugins]]
@@ -82,8 +79,8 @@ repo = 'tpope/vim-dispatch'
 repo = 'vim-jp/vimdoc-ja'
 on_ft = 'help'
 
-[[plugins]]
-repo = "thinca/vim-qfreplace"
+# [[plugins]]
+# repo = "thinca/vim-qfreplace"
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
@@ -92,8 +89,8 @@ repo = 'vim-scripts/gtags.vim'
 repo = 'elzr/vim-json'
 on_ft = 'json'
 
-[[plugins]]
-repo = 'dracula/vim'
+# j[[plugins]]
+# jrepo = 'dracula/vim'
 
 [[plugins]]
 repo = 'kovisoft/slimv'
