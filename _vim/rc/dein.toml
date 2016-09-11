@@ -89,8 +89,8 @@ repo = 'vim-scripts/gtags.vim'
 repo = 'elzr/vim-json'
 on_ft = 'json'
 
-# j[[plugins]]
-# jrepo = 'dracula/vim'
+[[plugins]]
+repo = 'dracula/vim'
 
 [[plugins]]
 repo = 'kovisoft/slimv'
