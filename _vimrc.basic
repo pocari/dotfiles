@@ -2,7 +2,6 @@
 "
 let mapleader=','
 noremap \  ,
-set nocompatible
 
 syntax on
 :set number
