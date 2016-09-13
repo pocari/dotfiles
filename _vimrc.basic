@@ -44,7 +44,9 @@ inoremap :set iminsert=0
 set completeopt=menuone "保管時にプレビューウィンドウを表示しない(デフォルトでmenuoneの他にpreviewがついていた)
 
 "対応する括弧でチカチカさせない
-let loaded_matchparen=1
+" let loaded_matchparen=1
+"チカチカさせるけど控えめにする
+hi MatchParen term=standout ctermbg=NONE ctermfg=white cterm=BOLD gui=BOLD
 
 " Ctrl-L で検索ハイライトを消す
 nmap <C-l> <C-l>:nohlsearch<CR>
