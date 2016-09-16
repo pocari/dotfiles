@@ -9,3 +9,12 @@ let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 " http://mattn.kaoriya.net/software/vim/20150605164551.htm
 let g:ctrlp_user_command = 'files -a %s'
 
+" 無視するファイル設定
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
