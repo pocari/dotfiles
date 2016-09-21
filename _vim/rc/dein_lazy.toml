@@ -1,7 +1,3 @@
-[[plugins]]
-repo = 'tacroe/unite-mark'
-on_source = 'unite.vim'
-
 # [[plugins]]
 # repo = 'nosami/Omnisharp'
 # on_ft = ['cs']
@@ -67,3 +63,8 @@ depends = ['neosnippet-snippets']
 [[plugins]]
 repo = 'slim-template/vim-slim'
 on_ft = 'slim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_ft = 'ruby'
+
