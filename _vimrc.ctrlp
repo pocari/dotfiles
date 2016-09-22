@@ -8,7 +8,8 @@ let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 let g:ctrlp_user_command = 'files -a %s'
 
 " 無視するファイル設定
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" これ設定すると :e とかでファイル名補完の処理にも影響するので一旦コメント
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
