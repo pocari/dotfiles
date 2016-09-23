@@ -7,6 +7,7 @@
   ```
   cd %USERPROFILE%
   git clone  git@github.com:pocari/dotfiles.git
+  git submodule update -i
   ```
   
 - setup links(vim setting only)
@@ -21,6 +22,7 @@
   ```
   cd ~/
   git clone git@github.com:pocari/dotfiles.git
+  git submodule update -i
   ```
   
 - setup links
