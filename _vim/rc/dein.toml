@@ -126,9 +126,7 @@ repo = 'kien/ctrlp.vim'
 # brew install --HEAD cmakeするとうまいこといった
 # https://github.com/nixprime/cpsm/issues/27#issuecomment-246595722
 repo = 'nixprime/cpsm'
-hook_post_update = '''
-  let g:dein#plugin.build = 'sh -c "PY3=ON ./install.sh"'
-'''
+build = 'env PY3=ON ./install.sh'
 
 [[plugins]]
 repo = 'simeji/winresizer'
