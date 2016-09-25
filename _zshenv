@@ -9,12 +9,15 @@
 #  # profile用ここまで
 
 # rbenv
-if [ -d ${HOME}/.rbenv  ] ; then
+if [ -d ${HOME}/.rbenv ] ; then
   PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
   export PATH
   eval "$(rbenv init -)"
 fi
 
 # nodenv
-PATH=${HOME}/.nodenv/bin:$PATH
-eval "$(nodenv init -)"
+if [ -d ${HOME}/.nodenv ] ; then
+  PATH=${HOME}/.nodenv/bin:$PATH
+  eval "$(nodenv init -)"
+fi
+
