@@ -134,3 +134,5 @@ repo = 'simeji/winresizer'
 [[plugins]]
 repo = 'vim-jp/vital.vim'
 
+[[plugins]]
+repo = 'vim-scripts/delek.vim'
