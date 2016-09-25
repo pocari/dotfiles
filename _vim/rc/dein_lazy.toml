@@ -46,6 +46,9 @@ hook_post_update = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
 repo = 'Shougo/neosnippet'
 hook_source = '''
   imap <C-k> <Plug>(neosnippet_expand_or_jump)

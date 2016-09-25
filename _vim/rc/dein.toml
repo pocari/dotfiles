@@ -132,8 +132,5 @@ build = 'env PY3=ON ./install.sh'
 repo = 'simeji/winresizer'
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'vim-jp/vital.vim'
 
