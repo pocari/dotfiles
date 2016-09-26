@@ -1,0 +1,13 @@
+#!/bin/sh
+
+CURRENT_DIR=${SCRIPT_DIR:-$(cd $(dirname $0) && pwd)}
+
+$CURRENT_DIR/scripts/block_master_push.sh
+ST=$?
+
+if [ $ST -ne 0 ]; then
+  exit $ST
+fi
+
+exit 0
+
