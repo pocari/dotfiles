@@ -71,3 +71,14 @@ on_ft = 'slim'
 repo = 'osyo-manga/vim-monster'
 on_ft = 'ruby'
 
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = 'markdown'
+depends = ['previm', 'open-browser.vim']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
