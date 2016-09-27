@@ -71,6 +71,9 @@ on_ft = 'slim'
 repo = 'osyo-manga/vim-monster'
 on_ft = 'ruby'
 
+# markdownのプレビュー
+# http://dackdive.hateblo.jp/entry/2014/09/11/213455
+
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = 'markdown'
