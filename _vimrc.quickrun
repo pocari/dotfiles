@@ -11,5 +11,6 @@ let g:quickrun_config = {
 \   }
 \}
 
-noremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+" neovimの場合に:call system('sleep 10') を中断できなくなったので、コメントにする
+" noremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
