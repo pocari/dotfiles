@@ -1,3 +1,4 @@
+asciinema
 atk
 autoconf
 automake
@@ -13,6 +14,7 @@ docker
 docker-compose
 docker-machine
 docker-machine-nfs
+figlet
 fontconfig
 fontforge
 freetype
@@ -81,13 +83,13 @@ reattach-to-user-namespace
 ricty
 roswell
 ruby-build
+sphinx-doc
 sqlite
 the_silver_searcher
 tig
 tmux
 tree
 unixodbc
-vim
 wget
 xz
 zeromq
