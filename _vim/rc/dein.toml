@@ -136,3 +136,8 @@ repo = 'vim-jp/vital.vim'
 
 [[plugins]]
 repo = 'vim-scripts/delek.vim'
+
+[[plugins]]
+if = 'has("nvim")'
+repo = 'Shougo/denite.nvim'
+

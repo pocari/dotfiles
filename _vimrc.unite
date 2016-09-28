@@ -3,8 +3,14 @@ nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 
 nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
 nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
+
+if has('nvim')
+  call denite#custom#source('file_rec', 'matcher', ['matcher_cpsm', 'matcher_fuzzy'])
+  nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
+else
+  nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
+endif
 
 " grep検索
 nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
