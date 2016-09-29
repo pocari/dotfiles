@@ -4,7 +4,7 @@ let mapleader=','
 noremap \  ,
 
 syntax on
-:set number
+" :set number
 
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
