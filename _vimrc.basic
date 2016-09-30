@@ -185,8 +185,9 @@ if !has('nvim')
   set ttymouse=xterm2
   set ttyscroll=3
   set ttyfast " u got a fast terminal
-  set lazyredraw " to avoid scrolling problems
 endif
+
+set lazyredraw " to avoid scrolling problems
 
 " 検索結果のハイライトの色を変える
 :hi Search cterm=NONE ctermfg=black ctermbg=yellow
