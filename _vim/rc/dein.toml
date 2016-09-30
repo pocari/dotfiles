@@ -34,10 +34,6 @@ repo = 'thinca/vim-quickrun'
 repo = 'osyo-manga/shabadou.vim'
 
 [[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]]
 repo = 'Shougo/neocomplete'
 if = 'has("lua") && !has("nvim")'
 on_i = 1
@@ -75,19 +71,11 @@ repo = 'BufOnly.vim'
 [[plugins]]
 repo = 'tpope/vim-dispatch'
 
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
-
 # [[plugins]]
 # repo = "thinca/vim-qfreplace"
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
 
 [[plugins]]
 repo = 'dracula/vim'
@@ -103,10 +91,6 @@ if   = '''has('mac')'''
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
-
-[[plugins]]
-repo = 'stephpy/vim-yaml'
-on_ft = 'yaml'
 
 [[plugins]]
 repo = 'kien/ctrlp.vim'
