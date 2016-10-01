@@ -57,10 +57,6 @@ nnoremap <C-]> g<C-]>
 " 一時ファイルを作成して開く
 command! Tempfile :edit `=tempname()`
 
-"python
-" docstringは表示しない
-autocmd FileType python setlocal completeopt-=preview
-
 "escは遠い 要Karabiner
 imap <C-j> <Esc>
 
