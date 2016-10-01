@@ -185,6 +185,8 @@ if !has('nvim')
   set ttymouse=xterm2
   set ttyscroll=3
   set ttyfast " u got a fast terminal
+else
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
 
 set lazyredraw " to avoid scrolling problems
