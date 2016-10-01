@@ -10,4 +10,11 @@ if has('gui_running')
   highlight CursorLine gui=underline guifg=NONE guibg=NONE
 endif
 
-colorscheme delek
+
+if has('nvim')
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+  set termguicolors
+  colorscheme dracula
+else
+  colorscheme delek
+endif
