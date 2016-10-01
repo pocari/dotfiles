@@ -18,3 +18,28 @@ if has('nvim')
 else
   colorscheme delek
 endif
+
+" コメントのハイライト切り替え
+nnoremap <silent> <F7> :call ToggleStrongComments()<CR>
+function! ToggleStrongComments()
+    " Make a variable in the current buffer to keep track of whether the
+    " comments are bold or not.
+    if !exists("g:comments_strong")
+        let g:comments_strong = 0
+        let g:my_comment_ctermfg = synIDattr(hlID('comment'), "fg", "cterm")
+        let g:my_comment_guifg = synIDattr(hlID('comment'), "fg", "gui")
+    endif
+
+    " If comments aren't already bold, make it so.
+    if g:comments_strong == 0
+        let g:comments_strong = 1
+        hi comment guifg=#ff5f00 ctermfg=202
+        return 0
+    elseif g:comments_strong == 1
+        " Same, except the other way around.
+        let g:comments_strong = 0
+        let cmd = 'hi comment guifg=' . g:my_comment_guifg . ' ctermfg=' . g:my_comment_ctermfg
+        exec cmd
+    endif
+endfunction
+
