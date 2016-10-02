@@ -81,7 +81,8 @@ repo = 'vim-scripts/gtags.vim'
 repo = 'dracula/vim'
 
 [[plugins]]
-repo = 'kovisoft/slimv'
+repo = 'pocari/slimv'
+rev  = 'fix-tmux-version'
 if   = '''has('mac')'''
 
 [[plugins]]
