@@ -1,3 +1,6 @@
+" TODO UniteとDeniteの設定が入り混じってるので整理する
+
+
 "The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
