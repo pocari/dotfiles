@@ -68,6 +68,22 @@ if executable('ag')
   endif
 endif
 
+if executable('rg')
+  if has('nvim')
+    " Ripgrep command on grep source
+    call denite#custom#var('grep', 'command', ['rg'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'final_opts', [])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+  else
+    let g:unite_source_grep_command='rg'
+    let g:unite_source_grep_default_opts='--vimgrep --no-heading'
+    let g:unite_source_grep_recursive_opt=''
+    let g:unite_source_grep_separator='--'
+  endif
+endif
+
 " 画像ファイルを無視する
 let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
 call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
