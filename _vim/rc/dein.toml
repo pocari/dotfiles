@@ -20,12 +20,7 @@ hook_post_update = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_path = '.*'
-
-[[plugins]]
 repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -84,14 +79,6 @@ repo = 'dracula/vim'
 repo = 'pocari/slimv'
 rev  = 'fix-tmux-version'
 if   = '''has('mac')'''
-
-[[plugins]]
-repo = 'toyamarinyon/vim-swift'
-if   = '''has('mac')'''
-
-[[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
 
 [[plugins]]
 repo = 'kien/ctrlp.vim'

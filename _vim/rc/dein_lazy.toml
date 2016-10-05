@@ -105,3 +105,16 @@ on_ft = 'yaml'
 repo = 'elzr/vim-json'
 on_ft = 'json'
 
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'toyamarinyon/vim-swift'
+if   = '''has('mac')'''
+on_ft = 'swift'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
