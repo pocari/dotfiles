@@ -9,6 +9,8 @@ nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
 
 if has('nvim')
+  " denite bufferの現在行の色
+  hi CursorLine ctermfg=magenta
   "let g:neomru#directory_mru_limit = 10000
   "let g:neomru#file_mru_limit = 20000
   call denite#custom#source('file_mru', 'matchers', ['matcher_cpsm', 'matcher_fuzzy'])
