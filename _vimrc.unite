@@ -127,7 +127,11 @@ endfunction
 " https://github.com/Shougo/denite.nvim/commit/cf9a400ce3b1918b4b6570fb97416c5c016976a9
 if has('nvim')
   call denite#custom#map('_', "\<C-g>", 'quit')
+
   call denite#custom#map('_', "\<C-n>", 'move_to_next_line')
+  call denite#custom#map('_', "\<Down>", 'move_to_next_line')
+
   call denite#custom#map('_', "\<C-p>", 'move_to_prev_line')
+  call denite#custom#map('_', "\<Up>", 'move_to_prev_line')
 endif
 
