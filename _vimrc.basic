@@ -42,6 +42,7 @@ set winwidth=8 " ウインドウ分割時の最低のwidth設定
 inoremap :set iminsert=0
 set completeopt=menuone "保管時にプレビューウィンドウを表示しない(デフォルトでmenuoneの他にpreviewがついていた)
 set nofoldenable " デフォルトはfoldingされてない状態で開く
+set re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマシになる。正規表現エンジンを変えるらしい
 
 "対応する括弧でチカチカさせない
 " let loaded_matchparen=1
