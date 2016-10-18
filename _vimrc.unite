@@ -5,7 +5,6 @@
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 
-nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
 
 if has('nvim')
@@ -21,8 +20,10 @@ if has('nvim')
     call denite#custom#var('file_rec', 'command', ['files', '-a'])
   endif
   nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
+  nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
 else
   nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
+  nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
 endif
 
 " grep検索
