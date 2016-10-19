@@ -21,9 +21,15 @@ if has('nvim')
   endif
   nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
+
+  " deniteだと速いので素直に全部持ってくる
+  nnoremap [unite]p :<C-u>Denite<Space>file_rec<CR>
 else
   nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
+  " 今のプロジェクトのファイル一覧
+  " ctrlpよりこっちのがいい？迷う
+  nnoremap [unite]p :<C-u>call <SID>unite_file_project('-start-insert')<CR>
 endif
 
 " grep検索
@@ -32,9 +38,6 @@ nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " grep検索結果の再呼出
 nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
 
-" 今のプロジェクトのファイル一覧
-" ctrlpよりこっちのがいい？迷う
-nnoremap [unite]p :<C-u>call <SID>unite_file_project('-start-insert')<CR>
 
 " ウィンドウを分割して開く
 " C-Sにマップしてるので、端末の場合stty -ixonしてないと効かないので注意
