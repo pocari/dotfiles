@@ -5,8 +5,6 @@
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
 
-nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
-
 if has('nvim')
   " denite bufferの現在行の色
   hi CursorLine ctermfg=magenta
@@ -21,12 +19,14 @@ if has('nvim')
   endif
   nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
+  nnoremap [unite]a :<C-u>Denite<Space>buffer file_mru unite:file<CR>
 
   " deniteだと速いので素直に全部持ってくる
   nnoremap [unite]p :<C-u>Denite<Space>file_rec<CR>
 else
   nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
+  nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
   " 今のプロジェクトのファイル一覧
   " ctrlpよりこっちのがいい？迷う
   nnoremap [unite]p :<C-u>call <SID>unite_file_project('-start-insert')<CR>
