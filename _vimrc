@@ -34,8 +34,8 @@ source ~/dotfiles/_vimrc.test
 "slimv
 source ~/dotfiles/_vimrc.slimv
 
-"ctrp"
-source ~/dotfiles/_vimrc.ctrlp
+" "ctrp"
+" source ~/dotfiles/_vimrc.ctrlp
 
 "syntastic"
 source ~/dotfiles/_vimrc.syntastic
