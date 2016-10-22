@@ -18,6 +18,7 @@ figlet
 fontconfig
 fontforge
 freetype
+fswatch
 gawk
 gdb
 gdbm
@@ -81,6 +82,7 @@ rbenv
 readline
 reattach-to-user-namespace
 ricty
+ripgrep
 roswell
 ruby-build
 sphinx-doc
@@ -89,7 +91,9 @@ the_silver_searcher
 tig
 tmux
 tree
+unison
 unixodbc
+utf8proc
 wget
 xz
 zeromq

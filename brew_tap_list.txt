@@ -1,7 +1,4 @@
-==> Auto-updated Homebrew!
-Updated 1 tap (homebrew/core).
-No changes to formulae.
-
+burntsushi/ripgrep
 caskroom/cask
 caskroom/versions
 homebrew/core
