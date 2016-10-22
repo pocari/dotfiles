@@ -7,7 +7,7 @@ source ~/dotfiles/_vimrc.ui
 "basic settings
 source ~/dotfiles/_vimrc.basic
 
-" Unite
+" Unite/Denite
 source ~/dotfiles/_vimrc.unite
 
 " VimFiler
