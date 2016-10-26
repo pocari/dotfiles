@@ -20,6 +20,7 @@ if has('nvim')
   nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
   nnoremap [unite]a :<C-u>Denite<Space>buffer file_mru unite:file<CR>
+  nnoremap [unite]y :<C-u>Denite<Space>neoyank<CR>
 
   " deniteだと速いので素直に全部持ってくる
   nnoremap [unite]p :<C-u>Denite<Space>file_rec<CR>
