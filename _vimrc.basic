@@ -49,6 +49,10 @@ set re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマ�
 "チカチカさせるけど控えめにする
 hi MatchParen term=standout ctermbg=NONE ctermfg=white cterm=BOLD gui=BOLD
 
+"注意
+"ESC使わないようにするための特訓
+nmap <silent> <esc> :echo 'ESC使うな'<CR>
+
 " Ctrl-L で検索ハイライトを消す
 nmap <C-l> <C-l>:nohlsearch<CR>
 
