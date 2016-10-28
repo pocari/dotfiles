@@ -114,7 +114,3 @@ repo = 'toyamarinyon/vim-swift'
 if   = '''has('mac')'''
 on_ft = 'swift'
 
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-on_path = '.*'
-

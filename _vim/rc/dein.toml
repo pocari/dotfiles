@@ -128,3 +128,5 @@ repo = 'justinmk/vim-dirvish'
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
 
+[[plugins]]
+repo = 'Shougo/neomru.vim'
