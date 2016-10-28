@@ -22,8 +22,12 @@ if has('nvim')
   nnoremap [unite]a :<C-u>Denite<Space>buffer file_mru unite:file<CR>
   nnoremap [unite]y :<C-u>Denite<Space>neoyank<CR>
 
-  " deniteだと速いので素直に全部持ってくる
-  nnoremap [unite]p :<C-u>Denite<Space>file_rec<CR>
+  call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+  call denite#custom#var('file_rec/git', 'command',
+        \ ['git', 'ls-files', '-co', '--exclude-standard'])
+  nnoremap <silent> [unite]p :<C-u>Denite
+        \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+
   " -buffer-name=
   nnoremap <silent> [unite]g  :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 
