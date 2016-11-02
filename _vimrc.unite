@@ -50,24 +50,26 @@ endif
 
 
 
-" ウィンドウを分割して開く
-" C-Sにマップしてるので、端末の場合stty -ixonしてないと効かないので注意
-au FileType unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
-au FileType unite inoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
+if !has('nvim')
+  " ウィンドウを分割して開く
+  " C-Sにマップしてるので、端末の場合stty -ixonしてないと効かないので注意
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-S> unite#do_action('split')
+  " ウィンドウを縦に分割して開く
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-V> unite#do_action('right')
 
-"入力モードで開始
-let g:unite_enable_start_insert=1
+  "入力モードで開始
+  let g:unite_enable_start_insert=1
 
-" file_mrcの対象を現在のプロジェクトのファイルのみにする
-" (matcher_project_files)
-" 先頭に^が来た時だけ正規表現でマッチさせる。それ以外はglob検索
-" (matcher_context)
-call unite#custom#source(
-      \ 'file_mru', 'matchers',
-      \ ['matcher_project_files', 'matcher_context'])
+  " file_mrcの対象を現在のプロジェクトのファイルのみにする
+  " (matcher_project_files)
+  " 先頭に^が来た時だけ正規表現でマッチさせる。それ以外はglob検索
+  " (matcher_context)
+  call unite#custom#source(
+        \ 'file_mru', 'matchers',
+        \ ['matcher_project_files', 'matcher_context'])
+endif
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -101,42 +103,43 @@ if executable('rg')
   endif
 endif
 
-" 画像ファイルを無視する
-let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
-call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
-call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
+if !has('nvim')
+  " 画像ファイルを無視する
+  let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
+  call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
+  call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
 
-function! GetProjectDir() abort " {{{
+  function! GetProjectDir() abort " {{{
     if exists('b:vimfiler.current_dir')
-        let l:buffer_dir = b:vimfiler.current_dir
+      let l:buffer_dir = b:vimfiler.current_dir
     else
-        let l:buffer_dir = expand('%:p:h')
+      let l:buffer_dir = expand('%:p:h')
     endif
 
     let l:project_dir = vital#of('vital').import('Prelude').path2project_directory(l:buffer_dir, 1)
     if empty(l:project_dir) && exists('g:project_dir_pattern')
-        let l:project_dir = matchstr(l:buffer_dir, g:project_dir_pattern)
+      let l:project_dir = matchstr(l:buffer_dir, g:project_dir_pattern)
     endif
 
     if empty(l:project_dir)
-        return l:buffer_dir
+      return l:buffer_dir
     else
-        return l:project_dir
+      return l:project_dir
     endif
-endfunction " }}}
+  endfunction " }}}
 
-function! s:unite_file_project(...)
+  function! s:unite_file_project(...)
     let l:opts = (a:0 ? join(a:000, ' ') : '')
     let l:project_dir = GetProjectDir()
 
     if isdirectory(l:project_dir.'/.git')
-        execute 'lcd '.l:project_dir
-        execute 'Unite '.opts.' file_rec/git:--cached:--others:--exclude-standard'
+      execute 'lcd '.l:project_dir
+      execute 'Unite '.opts.' file_rec/git:--cached:--others:--exclude-standard'
     else
-        execute 'Unite '.opts.' file_rec/async:'.l:project_dir
+      execute 'Unite '.opts.' file_rec/async:'.l:project_dir
     endif
-endfunction
-
+  endfunction
+endif
 
 " Deniteのデフォルトマッピングが変わってしまったので元に戻す
 " https://github.com/Shougo/denite.nvim/commit/cf9a400ce3b1918b4b6570fb97416c5c016976a9

@@ -1,3 +1,6 @@
+" disable default plugins
+source ~/dotfiles/_vimrc.disable_default
+
 " dein
 source ~/dotfiles/_vimrc.dein
 
