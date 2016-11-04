@@ -114,6 +114,11 @@ repo = 'vim-scripts/delek.vim'
 if = 'has("nvim")'
 repo = 'Shougo/denite.nvim'
 
+# [[plugins]]
+# if = 'has("nvim")'
+# repo = 'pocari/denite.nvim'
+# rev = 'fix-add-regexp-escape'
+
 [[plugins]]
 # nvim で矩形ペーストが動かない件の対策直ったら不要
 if = 'has("nvim")'
