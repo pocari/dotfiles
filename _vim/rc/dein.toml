@@ -117,7 +117,7 @@ repo = 'Shougo/denite.nvim'
 # [[plugins]]
 # if = 'has("nvim")'
 # repo = 'pocari/denite.nvim'
-# rev = 'fix-add-regexp-escape'
+# rev = 'feature-toggle-preview'
 
 [[plugins]]
 # nvim で矩形ペーストが動かない件の対策直ったら不要

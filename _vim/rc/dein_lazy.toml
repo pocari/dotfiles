@@ -123,4 +123,10 @@ repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 depends = ['vim-js-indent']
 
+# インストール後初回一回だけ、insertモードにしてdeoplete読み込んでから :UpdateRemotePlugins する必要がある？？
+[[plugins]]
+repo = 'mhartington/deoplete-typescript'
+if = 'has("nvim")'
+on_i = 1
+on_ft = 'typescript'
 
