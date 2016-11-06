@@ -5,7 +5,7 @@ if has('nvim')
   let g:deoplete#enable_smart_case = 1
   let g:deoplete#keyword_patterns = {}
   let g:deoplete#keyword_patterns._ = '\\?[a-zA-Z_]\w*'
-
+  let g:deoplete#auto_complete_delay = 50
   let g:monster#completion#rcodetools#backend = "async_rct_complete"
   let g:deoplete#sources#omni#input_patterns = {
         \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
