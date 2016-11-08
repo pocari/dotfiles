@@ -30,3 +30,10 @@
   ```
   sh setup.sh
   ```
+
+- update submodules
+
+  ```
+  git submodule foreach git pull origin master
+  ```
+
