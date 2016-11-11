@@ -47,9 +47,9 @@ set completeopt=menuone "保管時にプレビューウィンドウを表示し�
 set nofoldenable " デフォルトはfoldingされてない状態で開く
 set re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマシになる。正規表現エンジンを変えるらしい
 
-if has('nvim')
-  set inccommand=nosplit  " %s/aa/bb でincrementalに置換する
-endif
+" if has('nvim')
+"   set inccommand=nosplit  " %s/aa/bb でincrementalに置換する
+" endif
 " let g:loaded_gzip              = 1
 
 "対応する括弧でチカチカさせない
