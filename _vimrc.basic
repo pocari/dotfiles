@@ -58,7 +58,8 @@ set re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマ�
 hi MatchParen term=standout ctermbg=NONE ctermfg=white cterm=BOLD gui=BOLD
 
 " Ctrl-L で検索ハイライトを消す
-nmap <C-l> <C-l>:nohlsearch<CR>
+" multiple_cursorプラグインを入れている場合にnohだけだと選択範囲がクリアされないのでclearmatchesも追加
+nmap <C-l> <C-l>:nohlsearch<CR>:call clearmatches()<CR>
 
 "tagsジャンプの時に複数あるときは一覧表示
 nnoremap <C-]> g<C-]>
