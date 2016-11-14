@@ -1,6 +1,5 @@
 " TODO UniteとDeniteの設定が入り混じってるので整理する
 
-
 "The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    <Leader>f [unite]
@@ -21,6 +20,7 @@ if has('nvim')
   nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
   nnoremap [unite]a :<C-u>Denite<Space>buffer file_mru unite:file<CR>
   nnoremap [unite]y :<C-u>Denite<Space>neoyank<CR>
+  nnoremap [unite]l :<C-u>Denite<Space>line<CR>
 
   call denite#custom#alias('source', 'file_rec/git', 'file_rec')
   call denite#custom#var('file_rec/git', 'command',
@@ -47,8 +47,6 @@ else
   " grep検索結果の再呼出
   nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
 endif
-
-
 
 if !has('nvim')
   " ウィンドウを分割して開く
