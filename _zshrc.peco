@@ -95,25 +95,25 @@ bindkey "^g^b" peco-git-checkout
 
 #---------------------------------------------------------------------------------
 # pecoでgit statusの結果を挿入
-function peco_select_from_git_status(){
+function peco-select-from-git-status(){
     git status --porcelain | \
     peco --prompt "git status>" | \
     awk -F ' ' '{print $NF}' | \
     tr '\n' ' '
 }
 
-function peco_insert_selected_git_files(){
-    LBUFFER+=$(peco_select_from_git_status)
+function peco-insert-selected-git-files(){
+    LBUFFER+=$(peco-select-from-git-status)
     CURSOR=$#LBUFFER
     zle reset-prompt
 }
 
-zle -N peco_insert_selected_git_files
-bindkey "^g^s" peco_insert_selected_git_files
+zle -N peco-insert-selected-git-files
+bindkey "^g^s" peco-insert-selected-git-files
 
 #---------------------------------------------------------------------------------
 # pecoでショートカットコマンドの結果を挿入
-function peco_select_shortcut(){
+function peco-select-shortcut(){
     LBUFFER+=$( \
       cat ~/dotfiles/pecommand.txt | \
       peco --prompt "commands>" | \
@@ -123,6 +123,6 @@ function peco_select_shortcut(){
     zle reset-prompt
 }
 
-zle -N peco_select_shortcut
-bindkey '^s' peco_select_shortcut
+zle -N peco-select-shortcut
+bindkey '^s' peco-select-shortcut
 
