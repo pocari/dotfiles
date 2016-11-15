@@ -81,8 +81,8 @@ repo = 'pocari/slimv'
 rev  = 'fix-tmux-version'
 if   = '''has('mac')'''
 
-[[plugins]]
-repo = 'kien/ctrlp.vim'
+# [[plugins]]
+# repo = 'kien/ctrlp.vim'
 
 # [[plugins]]
 # # # cpsm/install.shのcmakeへの環境変数に
