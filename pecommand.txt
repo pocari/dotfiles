@@ -1,3 +1,4 @@
 \ls -F | grep '/$' | xargs -Iarg du -sh arg   # カレントディレクトリのフォルダ単位でdu -shする
 git log master..HEAD # masterから派生した今のブランチに対してcommitしたログのみ出力する
-
+tig master..HEAD     # masterから派生した今のブランチに対してcommitしたログのみ出力する
+git branch -d $(git branch --merged | grep -v master | grep -v '*') #マージ済みのローカルブランチを削除ただしmasterは除く
