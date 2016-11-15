@@ -25,14 +25,16 @@ if has('nvim')
   call denite#custom#alias('source', 'file_rec/git', 'file_rec')
   call denite#custom#var('file_rec/git', 'command',
         \ ['git', 'ls-files', '-co', '--exclude-standard'])
-  nnoremap <silent> [unite]p :<C-u>Denite
+  nnoremap <silent> [unite]f :<C-u>Denite
         \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
   " -buffer-name=
   nnoremap <silent> [unite]g  :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 
   " grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
-  nnoremap <silent> [unite]r  :<C-u>Denite -resume=true -buffer-name=search-buffer-denite -select=+1<CR>
+  nnoremap <silent> [unite]r  :<C-u>Denite -resume=true -buffer-name=search-buffer-denite<CR>
+  nnoremap <silent> [unite]n :<C-u>Denite -resume=true -buffer-name=search-buffer-denite -select=+1 -immediately=true<CR>
+  nnoremap <silent> [unite]p :<C-u>Denite -resume=true -buffer-name=search-buffer-denite -select=-1 -immediately=true<CR>
 else
   nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
