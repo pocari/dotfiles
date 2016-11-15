@@ -1,1 +1,3 @@
 \ls -F | grep '/$' | xargs -Iarg du -sh arg   # カレントディレクトリのフォルダ単位でdu -shする
+git log master..HEAD # masterから派生した今のブランチに対してcommitしたログのみ出力する
+
