@@ -16,7 +16,12 @@ if has('nvim')
   if executable('files') && has('nvim')
     " https://github.com/mattn/files
     call denite#custom#var('file_rec', 'command', ['files', '-a'])
+
+    " https://github.com/mattn/files
+    " 2016/11/16現在はそこからforkした自分のリポジトリ
+    call denite#custom#var('directory_rec', 'command', ['files', '-a', '-d'])
   endif
+
   nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
   nnoremap [unite]d :<C-u>Denite<Space>directory_rec<CR>
