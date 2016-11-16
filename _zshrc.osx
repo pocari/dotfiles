@@ -4,7 +4,7 @@
 [[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 
 #golang config
-export GOPATH=~/dev/go
+export GOPATH=~/dev/repos
 export PATH=$PATH:$GOPATH/bin
 
 #####################################
