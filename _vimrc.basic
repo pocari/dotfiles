@@ -229,3 +229,16 @@ if has('persistent_undo')
   set undodir=~/.cache/persistent_undo
   set undofile
 endif
+
+
+" Neovimでの文字化け対策。これで行けるかどうか様子見
+" 合わせて.tmux.confに set -s escape-time0 も追加
+"NeoVim handles ESC keys as alt+key set this to solve the problem
+if has('nvim')
+  set timeout
+  set timeoutlen=750
+  set ttimeoutlen=250
+
+  set ttimeout
+  set ttimeoutlen=0
+endif
