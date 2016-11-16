@@ -11,12 +11,12 @@ if has('nvim')
   "let g:neomru#file_mru_limit = 20000
   call denite#custom#source('file_mru', 'matchers', ['matcher_cpsm', 'matcher_project_files'])
   call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
-  call denite#custom#source('directory_rec', 'matchers', ['matcher_cpsm', 'matcher_project_files'])
+  call denite#custom#source('directory_rec', 'matchers', ['matcher_cpsm'])
 
   if executable('files') && has('nvim')
     " https://github.com/mattn/files
-    call denite#custom#var('file_rec', 'command', ['files', '-a', '-A'])
-    call denite#custom#var('directory_rec', 'command', ['files', '-a', '-A', '-d'])
+    call denite#custom#var('file_rec', 'command', ['files', '-a'])
+    call denite#custom#var('directory_rec', 'command', ['files', '-a', '-d'])
   endif
 
   nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
