@@ -46,7 +46,7 @@ inoremap :set iminsert=0
 set completeopt=menuone "保管時にプレビューウィンドウを表示しない(デフォルトでmenuoneの他にpreviewがついていた)
 set nofoldenable " デフォルトはfoldingされてない状態で開く
 set re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマシになる。正規表現エンジンを変えるらしい
-
+set noshowmode " echodoc plugin用
 " if has('nvim')
 "   set inccommand=nosplit  " %s/aa/bb でincrementalに置換する
 " endif
