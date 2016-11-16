@@ -36,9 +36,9 @@ if has('nvim')
   nnoremap <silent> [unite]g  :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 
   " grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
-  nnoremap <silent> [unite]r  :<C-u>Denite -resume=true -buffer-name=search-buffer-denite<CR>
-  nnoremap <silent> [unite]n :<C-u>Denite -resume=true -buffer-name=search-buffer-denite -select=+1 -immediately=true<CR>
-  nnoremap <silent> [unite]p :<C-u>Denite -resume=true -buffer-name=search-buffer-denite -select=-1 -immediately=true<CR>
+  nnoremap <silent> [unite]r  :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+  nnoremap <silent> [unite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
+  nnoremap <silent> [unite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
 else
   nnoremap [unite]m :<C-u>Unite<Space>file_mru<CR>
   nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
