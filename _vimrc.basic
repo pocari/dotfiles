@@ -236,11 +236,8 @@ endif
 "
 " 元ネタ
 " https://github.com/neovim/neovim/issues/2051
+" その後@_tsub_さんに教えてもらった設定
 if has('nvim')
   set timeout
-  set timeoutlen=750
-  set ttimeoutlen=250
-
-  set ttimeout
-  set ttimeoutlen=0
+  set timeoutlen=300
 endif
