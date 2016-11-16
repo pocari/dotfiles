@@ -233,7 +233,9 @@ endif
 
 " Neovimでの文字化け対策。これで行けるかどうか様子見
 " 合わせて.tmux.confに set -s escape-time0 も追加
-"NeoVim handles ESC keys as alt+key set this to solve the problem
+"
+" 元ネタ
+" https://github.com/neovim/neovim/issues/2051
 if has('nvim')
   set timeout
   set timeoutlen=750
