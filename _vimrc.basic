@@ -224,7 +224,11 @@ endfunction
 
 " vimを終了してもundo情報保持
 if has('persistent_undo')
-  call mkdir(expand('~/.cache/persistent_undo/'), 'p')
+  let s:persistent_undo_dir = expand('~/.cache/persistent_undo/')
+  if !isdirectory(s:persistent_undo_dir)
+    call mkdir(s:persistent_undo_dir, 'p')
+  endif
+
   set undodir=~/.cache/persistent_undo
   set undofile
 endif
