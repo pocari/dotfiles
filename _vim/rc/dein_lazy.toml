@@ -148,3 +148,13 @@ hook_add = '''
 let g:echodoc_enable_at_startup = 1
 '''
 
+[[plugins]]
+repo = 'pocari/slimv'
+rev  = 'fix-tmux-version'
+if   = '''has('mac')'''
+on_ft = ['lisp', 'scheme']
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_i = 1
+

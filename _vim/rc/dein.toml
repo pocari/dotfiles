@@ -34,9 +34,6 @@ if = 'has("lua") && !has("nvim")'
 on_i = 1
 
 [[plugins]]
-repo = 'tpope/vim-endwise'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
@@ -74,12 +71,8 @@ repo = 'tpope/vim-dispatch'
 repo = 'vim-scripts/gtags.vim'
 
 [[plugins]]
+if = '!has("nvim")'
 repo = 'dracula/vim'
-
-[[plugins]]
-repo = 'pocari/slimv'
-rev  = 'fix-tmux-version'
-if   = '''has('mac')'''
 
 # [[plugins]]
 # repo = 'kien/ctrlp.vim'
@@ -127,8 +120,8 @@ hook_add = '''
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 '''
-[[plugins]]
-repo = 'justinmk/vim-dirvish'
+# [[plugins]]
+# repo = 'justinmk/vim-dirvish'
 
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
@@ -138,3 +131,4 @@ repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
+
