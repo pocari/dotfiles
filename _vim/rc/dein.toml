@@ -132,3 +132,6 @@ repo = 'Shougo/neomru.vim'
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
 
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+

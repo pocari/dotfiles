@@ -38,6 +38,9 @@ source ~/dotfiles/_vimrc.test
 "slimv
 source ~/dotfiles/_vimrc.slimv
 
+"easymotion
+source ~/dotfiles/_vimrc.easymotion
+
 " "ctrp"
 " source ~/dotfiles/_vimrc.ctrlp
 
