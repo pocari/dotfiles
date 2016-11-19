@@ -4,5 +4,5 @@ let g:EasyMotion_do_mapping = 0
 nnoremap    [easymotion]   <Nop>
 nmap    <Leader>d [easymotion]
 
-nmap [easymotion]s <Plug>(easymotion-overwin-f2)
+nmap [easymotion]f <Plug>(easymotion-overwin-f2)
 
