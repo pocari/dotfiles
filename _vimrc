@@ -12,7 +12,11 @@ source ~/dotfiles/_vimrc.ui
 source ~/dotfiles/_vimrc.basic
 
 " Unite/Denite
-source ~/dotfiles/_vimrc.unite
+if has('nvim')
+  source ~/dotfiles/_vimrc.denite
+else
+  source ~/dotfiles/_vimrc.unite
+endif
 
 " VimFiler
 source ~/dotfiles/_vimrc.vimfiler
