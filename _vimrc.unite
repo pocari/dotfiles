@@ -9,7 +9,7 @@ nnoremap [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap [unite]a :<C-u>Unite<Space>buffer file_mru file<CR>
 " 今のプロジェクトのファイル一覧
 " ctrlpよりこっちのがいい？迷う
-nnoremap [unite]p :<C-u>call <SID>unite_file_project('-start-insert')<CR>
+nnoremap [unite]f :<C-u>call <SID>unite_file_project('-start-insert')<CR>
 
 " grep検索
 nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
