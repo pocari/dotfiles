@@ -28,7 +28,7 @@ call denite#custom#var('file_rec/git', 'command',
 nnoremap <silent> [unite]f :<C-u>Denite
       \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
-" -buffer-name=
+" grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
 nnoremap <silent> [unite]g  :<C-u>Denite grep -buffer-name=search-buffer-denite -no-empty<CR>
 
 " grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
