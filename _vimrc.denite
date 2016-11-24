@@ -56,3 +56,4 @@ call denite#custom#map('insert', "<Down>", 'move_to_next_line')
 call denite#custom#map('insert', "<C-p>", 'move_to_prev_line')
 call denite#custom#map('insert', "<Up>", 'move_to_prev_line')
 
+call denite#custom#map('insert', "<C-y>", 'do_action:yank')
