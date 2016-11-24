@@ -2,3 +2,4 @@
 git log master..HEAD # masterから派生した今のブランチに対してcommitしたログのみ出力する
 tig master..HEAD     # masterから派生した今のブランチに対してcommitしたログのみ出力する
 git branch -d $(git branch --merged | grep -v master | grep -v '*') #マージ済みのローカルブランチを削除ただしmasterは除く
+docker rmi $(docker images -f dangling=true -q) # 不要なイメージを消す
