@@ -137,7 +137,7 @@ map <silent> [Tag]p :tabprevious<CR>
 "不可視文字列の設定
 if !has("win32")
    set list
-   set listchars=trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+   set listchars=trail:-,extends:»,precedes:«,nbsp:%
    set listchars+=tab:\|\ 
   highlight SpecialKey ctermfg=59
 endif
