@@ -124,12 +124,6 @@ map P <Plug>(miniyank-autoPut)
 # repo = 'justinmk/vim-dirvish'
 
 [[plugins]]
-repo = 'Shougo/neoyank.vim'
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
 repo = 'terryma/vim-multiple-cursors'
 
 [[plugins]]
