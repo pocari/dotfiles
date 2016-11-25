@@ -10,8 +10,6 @@ composer
 cscope
 ctags
 czmq
-docker
-docker-compose
 docker-machine
 docker-machine-nfs
 figlet
@@ -35,6 +33,7 @@ harfbuzz
 hicolor-icon-theme
 hub
 icu4c
+jemalloc
 jpeg
 jq
 libcroco
@@ -68,6 +67,7 @@ openssl
 p7zip
 pango
 pcre
+pcre2
 peco
 php56
 php56-mcrypt
@@ -85,6 +85,7 @@ ricty
 ripgrep
 roswell
 ruby-build
+socat
 sphinx-doc
 sqlite
 the_silver_searcher
