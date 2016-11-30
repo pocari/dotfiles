@@ -1,7 +1,3 @@
-"The prefix key.
-nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
-
 " denite bufferの現在行の色
 " hi CursorLine ctermfg=magenta
 "let g:neomru#directory_mru_limit = 10000
@@ -18,26 +14,9 @@ endif
 
 call denite#custom#option('default', 'cursor_wrap', v:true)
 
-nnoremap [unite]m :<C-u>Denite<Space>file_mru<CR>
-nnoremap [unite]b :<C-u>Denite<Space>buffer<CR>
-nnoremap [unite]d :<C-u>Denite<Space>directory_rec<CR>
-nnoremap [unite]a :<C-u>Denite<Space>file_rec file_mru buffer<CR>
-nnoremap [unite]y :<C-u>Denite<Space>neoyank<CR>
-nnoremap [unite]l :<C-u>Denite<Space>line<CR>
-
 call denite#custom#alias('source', 'file_rec/git', 'file_rec')
 call denite#custom#var('file_rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
-nnoremap <silent> [unite]f :<C-u>Denite
-      \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
-
-" grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
-nnoremap <silent> [unite]g :<C-u>Denite grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
-
-" grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
-nnoremap <silent> [unite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
-nnoremap <silent> [unite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
-nnoremap <silent> [unite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
 
 if executable('rg')
   " Ripgrep command on grep source
