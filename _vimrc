@@ -13,16 +13,14 @@ source ~/dotfiles/_vimrc.basic
 
 " Unite/Denite
 if has('nvim')
-  source ~/dotfiles/_vimrc.denite
+"  source ~/dotfiles/_vimrc.denite
+  source ~/dotfiles/_vimrc.denite.keymap
 else
   source ~/dotfiles/_vimrc.unite
 endif
 
 " VimFiler
 source ~/dotfiles/_vimrc.vimfiler
-
-" indent
-source ~/dotfiles/_vimrc.indent
 
 " NeoComplete/Deoplete
 source ~/dotfiles/_vimrc.complete

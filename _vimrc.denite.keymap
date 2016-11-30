@@ -1,0 +1,22 @@
+"The prefix key.
+nnoremap    [denite]   <Nop>
+nmap    <Leader>f [denite]
+
+nnoremap [denite]m :<C-u>Denite<Space>file_mru<CR>
+nnoremap [denite]b :<C-u>Denite<Space>buffer<CR>
+nnoremap [denite]d :<C-u>Denite<Space>directory_rec<CR>
+nnoremap [denite]a :<C-u>Denite<Space>file_rec file_mru buffer<CR>
+nnoremap [denite]y :<C-u>Denite<Space>neoyank<CR>
+nnoremap [denite]l :<C-u>Denite<Space>line<CR>
+
+nnoremap <silent> [denite]f :<C-u>Denite
+      \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+
+" grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
+nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
+
+" grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
+nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
+nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
+
