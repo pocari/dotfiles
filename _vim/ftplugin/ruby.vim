@@ -13,3 +13,4 @@
 " endfunction
 " 
 " autocmd BufReadPost *_spec.rb call RSpecQuickrun()
+setlocal re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマシになる。正規表現エンジンを変えるらしい
