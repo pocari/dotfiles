@@ -109,6 +109,7 @@ hook_add = '''
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 '''
+
 # [[plugins]]
 # repo = 'justinmk/vim-dirvish'
 
