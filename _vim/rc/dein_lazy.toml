@@ -163,7 +163,9 @@ on_source = 'denite.nvim'
 # [[plugins]]
 # if = 'has("nvim")'
 # repo = 'pocari/denite.nvim'
-# rev = 'add-cyclic-moving'
+# rev = 'fix-source-completion'
+# on_cmd = 'Denite'
+# hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 [[plugins]]
 if = 'has("nvim")'
