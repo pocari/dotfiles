@@ -171,6 +171,13 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
+# [[plugins]]
+# if = 'has("nvim")'
+# repo = 'lambdalisue/denite.nvim'
+# on_cmd = 'Denite'
+# rev = 'neovim-prompt'
+# hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
+
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_if = 1

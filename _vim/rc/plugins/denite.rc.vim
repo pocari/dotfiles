@@ -29,14 +29,22 @@ endif
 
 " Deniteのデフォルトマッピングが変わってしまったので元に戻す
 " https://github.com/Shougo/denite.nvim/commit/cf9a400ce3b1918b4b6570fb97416c5c016976a9
-call denite#custom#map('insert', "<C-g>", 'quit')
-call denite#custom#map('normal', "<C-g>", 'quit')
+call denite#custom#map('insert', "<C-g>", '<denite:quit>')
+call denite#custom#map('normal', "<C-g>", '<denite:quit>')
 
-call denite#custom#map('insert', "<C-n>", 'move_to_next_line')
-call denite#custom#map('insert', "<Down>", 'move_to_next_line')
+call denite#custom#map('insert', "<C-n>",  '<denite:move_to_next_line>')
+call denite#custom#map('insert', "<Down>", '<denite:move_to_next_line>')
 
-call denite#custom#map('insert', "<C-p>", 'move_to_prev_line')
-call denite#custom#map('insert', "<Up>", 'move_to_prev_line')
+call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
+call denite#custom#map('insert', "<Up>",  '<denite:move_to_previous_line>')
 
-call denite#custom#map('insert', "<C-y>", 'do_action:yank')
-call denite#custom#map('normal', "y", 'do_action:yank')
+call denite#custom#map('insert', "<C-y>", '<denite:do_action:yank>')
+call denite#custom#map('normal', "y",     '<denite:do_action:yank>')
+
+" neovim-prompt emacs like binding
+call denite#custom#map('insert', "<C-a>",     '<prompt:move_caret_to_head>')
+call denite#custom#map('insert', "<C-e>",     '<prompt:move_caret_to_tail>')
+call denite#custom#map('insert', "<C-b>",     '<prompt:move_caret_to_left>')
+call denite#custom#map('insert', "<C-f>",     '<prompt:move_caret_to_right>')
+call denite#custom#map('insert', "<C-k>",     '<prompt:delete_text_after_caret>')
+
