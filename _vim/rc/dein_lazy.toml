@@ -190,3 +190,11 @@ repo = 'Shougo/vimfiler'
 on_cmd = 'VimFilerBufferDir'
 depends = ['unite.vim']
 
+[[plugins]]
+repo = 'junegunn/vim-emoji'
+
+[[plugins]]
+repo = 'pocari/vim-denite-emoji'
+on_source = ['denite.nvim']
+depends = ['vim-emoji']
+
