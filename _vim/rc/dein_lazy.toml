@@ -60,7 +60,6 @@ hook_post_source = '''
   let g:neosnippet#snippets_directory='~/.vim//snippets/'
 '''
 on_i  = 1
-on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
 [[plugins]]
