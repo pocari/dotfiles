@@ -1,6 +1,9 @@
 {
-        "KeyMap": {
-                "C-y": "peco.ToggleSelectionAndSelectNext"
-        }
+  "KeyMap": {
+    "C-y": "peco.ToggleSelectionAndSelectNext"
+  },
+  "Style": {
+    "Selected": ["underline", "bold", "magenta"]
+  }
 }
 
