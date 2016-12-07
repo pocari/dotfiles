@@ -71,7 +71,9 @@ command! Tempfile :edit `=tempname()`
 imap <C-j> <Esc>
 
 " Turn off paste mode when leaving insert
-autocmd InsertLeave * set nopaste
+if has('vim_starting')
+  autocmd InsertLeave * set nopaste
+endif
 
 " Open junk file."\{\{\{
 command! -nargs=0 JunkFile call s:open_junk_file()
@@ -89,30 +91,33 @@ endfunction"\}\}\}
 
 "tab setting
 " Anywhere SID.
-function! s:SID_PREFIX()
-  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
-endfunction
+if has('vim_starting')
+  function! s:SID_PREFIX()
+    return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+  endfunction
+  
+  " Set tabline.
+  function! s:my_tabline()  "{{{
+    let s = ''
+    for i in range(1, tabpagenr('$'))
+      let bufnrs = tabpagebuflist(i)
+      let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+      let no = i  " display 0-origin tabpagenr.
+      let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+      let title = fnamemodify(bufname(bufnr), ':t')
+      let title = '[' . title . ']'
+      let s .= '%'.i.'T'
+      let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+      let s .= no . ':' . title
+      let s .= mod
+      let s .= '%#TabLineFill# '
+    endfor
+    let s .= '%#TabLineFill#%T%=%#TabLine#'
+    return s
+  endfunction "}}}
+  let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+endif
 
-" Set tabline.
-function! s:my_tabline()  "{{{
-  let s = ''
-  for i in range(1, tabpagenr('$'))
-    let bufnrs = tabpagebuflist(i)
-    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-    let no = i  " display 0-origin tabpagenr.
-    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
-    let title = fnamemodify(bufname(bufnr), ':t')
-    let title = '[' . title . ']'
-    let s .= '%'.i.'T'
-    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
-    let s .= no . ':' . title
-    let s .= mod
-    let s .= '%#TabLineFill# '
-  endfor
-  let s .= '%#TabLineFill#%T%=%#TabLine#'
-  return s
-endfunction "}}}
-let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 set showtabline=2 " 常にタブラインを表示
 
 " The prefix key.
@@ -134,11 +139,13 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 "不可視文字列の設定
-if !has("win32")
-   set list
-   set listchars=trail:-,extends:»,precedes:«,nbsp:%
-   set listchars+=tab:\|\ 
-  highlight SpecialKey ctermfg=59
+if has('vim_starting')
+  if !has("win32")
+     set list
+     set listchars=trail:-,extends:»,precedes:«,nbsp:%
+     set listchars+=tab:\|\ 
+    highlight SpecialKey ctermfg=59
+  endif
 endif
 
 " insert mode->normal mode
@@ -164,7 +171,9 @@ nnoremap <F9> :cnext<CR>
 "grepした後は自動的にQuickFixを開く
 ":grep hogehoge | cw
 "のような
-autocmd QuickFixCmdPost *grep* cwindow
+if has('vim_starting')
+  autocmd QuickFixCmdPost *grep* cwindow
+endif
 
 "diffの色設定
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
