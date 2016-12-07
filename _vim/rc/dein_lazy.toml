@@ -3,10 +3,6 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
-repo = 'joonty/vdebug'
-on_ft = 'php'
-
-[[plugins]]
 repo = 'scrooloose/syntastic'
 on_ft = ['ruby', 'go']
 
@@ -50,9 +46,9 @@ hook_post_source = '''
 on_i  = 1
 depends = ['neosnippet-snippets']
 
-[[plugins]]
-repo = 'slim-template/vim-slim'
-on_ft = 'slim'
+# [[plugins]]
+# repo = 'slim-template/vim-slim'
+# on_ft = 'slim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-monster'
@@ -71,9 +67,9 @@ repo = 'kannokanno/previm'
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-[[plugins]]
-repo = 'mattn/benchvimrc-vim'
-on_cmd = ['BenchVimrc']
+# [[plugins]]
+# repo = 'mattn/benchvimrc-vim'
+# on_cmd = ['BenchVimrc']
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -95,10 +91,10 @@ on_ft = 'json'
 repo = 'fatih/vim-go'
 on_ft = 'go'
 
-[[plugins]]
-repo = 'toyamarinyon/vim-swift'
-if   = '''has('mac')'''
-on_ft = 'swift'
+# [[plugins]]
+# repo = 'toyamarinyon/vim-swift'
+# if   = '''has('mac')'''
+# on_ft = 'swift'
 
 [[plugins]]
 repo = 'jason0x43/vim-js-indent'

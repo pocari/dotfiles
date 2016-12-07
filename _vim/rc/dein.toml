@@ -37,21 +37,14 @@ repo = 'kchmck/vim-coffee-script'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'
+# [[plugins]]
+# repo = 'thinca/vim-quickrun'
+# 
+# [[plugins]]
+# repo = 'osyo-manga/shabadou.vim'
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
-
-[[plugins]]
-# brew install --HEAD cmakeするとうまいこといった
-# https://github.com/nixprime/cpsm/issues/27#issuecomment-246595722
-if = 'has("nvim")'
-repo = 'nixprime/cpsm'
-build = 'env PY3=ON ./install.sh'
 
 [[plugins]]
 repo = 'simeji/winresizer'
@@ -76,6 +69,13 @@ hook_add = '''
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 '''
+
+[[plugins]]
+# brew install --HEAD cmakeするとうまいこといった
+# https://github.com/nixprime/cpsm/issues/27#issuecomment-246595722
+if = 'has("nvim")'
+repo = 'nixprime/cpsm'
+build = 'env PY3=ON ./install.sh'
 
 ####################################################################
 # vim only
