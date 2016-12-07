@@ -13,6 +13,7 @@ let g:lightline = {
         \     ['fugitive', 'gitgutter', 'filename'],
         \   ],
         \   'right': [
+        \     ['denite_info'],
         \     ['lineinfo', 'syntastic'],
         \     ['percent'],
         \     ['charcode', 'fileformat', 'fileencoding', 'filetype'],
@@ -30,6 +31,7 @@ let g:lightline = {
         \   'syntastic': 'SyntasticStatuslineFlag',
         \   'charcode': 'MyCharCode',
         \   'gitgutter': 'MyGitGutter',
+        \   'denite_info': 'MyDeniteInfo',
         \ },
         \ 'separator': {'left': '|', 'right': '|'},
         \ 'subseparator': {'left': '|', 'right': '|'}
@@ -44,13 +46,17 @@ function! MyReadonly()
 endfunction
 
 function! MyFilename()
-  let nr = bufnr('')
-  return '(' . nr . ') ' . ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
+  if IsDeniteWindow()
+    return denite#get_status_sources()
+  else
+    let nr = bufnr('')
+    return '(' . nr . ') ' . ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+          \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+          \  &ft == 'unite' ? unite#get_status_string() :
+          \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') :
+          \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+          \ ('' != MyModified() ? ' ' . MyModified() : '')
+  endif
 endfunction
 
 function! MyFugitive()
@@ -76,8 +82,24 @@ function! MyFileencoding()
   return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
+function! IsDeniteWindow()
+  return exists('g:loaded_denite') && &filetype == 'denite'
+endfunction
+
+function! MyDeniteInfo()
+  if IsDeniteWindow()
+    return denite#get_status_path() . "  " . denite#get_status_linenr()
+  else
+    return ''
+  endif
+endfunction
+
 function! MyMode()
-  return winwidth('.') > 60 ? lightline#mode() : ''
+  if IsDeniteWindow()
+    return denite#get_status_mode()
+  else
+    return winwidth('.') > 60 ? lightline#mode() : ''
+  endif
 endfunction
 
 function! MyGitGutter()

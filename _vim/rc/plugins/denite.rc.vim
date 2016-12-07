@@ -13,6 +13,10 @@ if executable('files')
 endif
 
 call denite#custom#option('default', 'cursor_wrap', v:true)
+if exists('g:loaded_lightline')
+  " lightline.vim側で描画するのでdeniteでstatuslineを描画しないようにする
+  call denite#custom#option('default', 'statusline', v:false)
+endif
 
 call denite#custom#alias('source', 'file_rec/git', 'file_rec')
 call denite#custom#var('file_rec/git', 'command',
