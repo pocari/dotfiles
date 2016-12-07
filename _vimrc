@@ -25,8 +25,8 @@ source ~/dotfiles/_vimrc.vimfiler
 " NeoComplete/Deoplete
 source ~/dotfiles/_vimrc.complete
 
-" QuickRun
-source ~/dotfiles/_vimrc.quickrun
+" " QuickRun
+" source ~/dotfiles/_vimrc.quickrun
 
 "lightline
 source ~/dotfiles/_vimrc.lightline
@@ -34,11 +34,11 @@ source ~/dotfiles/_vimrc.lightline
 "Gtags
 source ~/dotfiles/_vimrc.gtags
 
-"test
-source ~/dotfiles/_vimrc.test
+" "test
+" source ~/dotfiles/_vimrc.test
 
-"slimv
-source ~/dotfiles/_vimrc.slimv
+" "slimv
+" source ~/dotfiles/_vimrc.slimv
 
 "easymotion
 source ~/dotfiles/_vimrc.easymotion
