@@ -14,8 +14,6 @@ filetype plugin indent on
 " Use English interface.
 language message C
 
-set autoindent "改行時に前の行のインデントを継続する
-set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set wildmenu " コマンドライン補完するときに強化されたものを使う(参照 :help wildmenu)
 set wildmode=longest,full
 set formatoptions+=mM " テキスト挿入中の自動折り返しを日本語に対応させる
@@ -23,7 +21,6 @@ set modeline " モードラインを有効にする
 source $VIMRUNTIME/macros/matchit.vim " ()対応の拡張rubyのdo...endにも対応
 set incsearch "インクリメンタルサーチ
 set ignorecase "大文字小文字無視
-set smartindent "でもちょっと大文字も考慮
 set noswapfile "swapファイルは作らない
 set nobackup   "バックアップファイルも作らない
 set noundofile  "undoファイルを作らない
@@ -74,20 +71,6 @@ imap <C-j> <Esc>
 augroup MyInit
   autocmd InsertLeave * set nopaste
 augroup END
-
-" Open junk file."\{\{\{
-command! -nargs=0 JunkFile call s:open_junk_file()
-function! s:open_junk_file()
-  let l:junk_dir = $HOME . '/.vim_junk'. strftime('/%Y/%m')
-  if !isdirectory(l:junk_dir)
-    call mkdir(l:junk_dir, 'p')
-  endif
-
-  let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
-  if l:filename != ''
-    execute 'edit ' . l:filename
-  endif
-endfunction"\}\}\}
 
 "tab setting
 " Anywhere SID.
@@ -145,7 +128,7 @@ if has('vim_starting')
      set list
      set listchars=trail:-,extends:»,precedes:«,nbsp:%
      set listchars+=tab:\|\ 
-    highlight SpecialKey ctermfg=59
+     highlight SpecialKey ctermfg=59
   endif
 endif
 
