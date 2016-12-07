@@ -152,7 +152,7 @@ on_source = 'denite.nvim'
 [[plugins]]
 if = 'has("nvim")'
 repo = 'Shougo/denite.nvim'
-on_cmd = 'Denite'
+on_cmd = ['Denite', 'DeniteBufferDir', 'DeniteCursorWord']
 hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 # [[plugins]]
