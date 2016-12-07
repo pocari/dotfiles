@@ -15,13 +15,18 @@ endif
 
 call dein#begin(s:dein_dir)
 
-"call dein#add('pocari/denite.nvim', { 'rev': 'fix-fuzzy-finder-escape'})
-call dein#add('lambdalisue/denite.nvim', { 'rev': 'neovim-prompt' })
+call dein#add('Shougo/denite.nvim')
+call dein#add('itchyny/lightline.vim')
 
 call dein#end()
 call dein#save_state()
 
 if dein#check_install()
   call dein#install()
+endif
+
+if exists('g:loaded_lightline')
+  " lightline.vim側で描画するのでdeniteでstatuslineを描画しないようにする
+  call denite#custom#option('default', 'statusline', v:false)
 endif
 
