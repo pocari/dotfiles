@@ -1,3 +1,6 @@
+####################################################################
+# vim / neovim
+
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -15,21 +18,6 @@ hook_post_update = '''
   endif
   let g:dein#plugin.build = cmd
 '''
-
-[[plugins]]
-if = 'has("lua") && !has("nvim")'
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'
-
-[[plugins]]
-repo = 'Shougo/neocomplete'
-if = 'has("lua") && !has("nvim")'
-on_i = 1
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -50,23 +38,63 @@ repo = 'kchmck/vim-coffee-script'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-if = '!has("nvim")'
-repo = 'kana/vim-fakeclip'
-
-# [[plugins]]
-# repo = 'yonchu/accelerated-smooth-scroll'
+repo = 'thinca/vim-quickrun'
 
 [[plugins]]
-repo = 'BufOnly.vim'
-
-[[plugins]]
-repo = 'tpope/vim-dispatch'
-
-# [[plugins]]
-# repo = "thinca/vim-qfreplace"
+repo = 'osyo-manga/shabadou.vim'
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
+
+[[plugins]]
+# brew install --HEAD cmakeするとうまいこといった
+# https://github.com/nixprime/cpsm/issues/27#issuecomment-246595722
+if = 'has("nvim")'
+repo = 'nixprime/cpsm'
+build = 'env PY3=ON ./install.sh'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'vim-scripts/delek.vim'
+
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+
+[[plugins]]
+repo = 'pocari/neovim-rplugin-ruby-sample'
+
+####################################################################
+# neovim only
+
+[[plugins]]
+# nvim で矩形ペーストが動かない件の対策直ったら不要
+if = 'has("nvim")'
+repo = 'bfredl/nvim-miniyank'
+hook_add = '''
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+'''
+
+####################################################################
+# vim only
+[[plugins]]
+if = 'has("lua") && !has("nvim")'
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete'
+if = 'has("lua") && !has("nvim")'
+on_i = 1
+
+[[plugins]]
+if = '!has("nvim")'
+repo = 'kana/vim-fakeclip'
+
+[[plugins]]
+if = '!has("nvim")'
+repo = 'tpope/vim-dispatch'
 
 [[plugins]]
 if = '!has("nvim")'
@@ -87,37 +115,11 @@ repo = 'dracula/vim'
 # '''
 
 [[plugins]]
-# brew install --HEAD cmakeするとうまいこといった
-# https://github.com/nixprime/cpsm/issues/27#issuecomment-246595722
-repo = 'nixprime/cpsm'
-build = 'env PY3=ON ./install.sh'
-
-[[plugins]]
-repo = 'simeji/winresizer'
-
-[[plugins]]
+if = '!has("nvim")'
 repo = 'vim-jp/vital.vim'
-
-[[plugins]]
-repo = 'vim-scripts/delek.vim'
-
-[[plugins]]
-# nvim で矩形ペーストが動かない件の対策直ったら不要
-if = 'has("nvim")'
-repo = 'bfredl/nvim-miniyank'
-hook_add = '''
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-'''
 
 # [[plugins]]
 # repo = 'justinmk/vim-dirvish'
-
-[[plugins]]
-repo = 'terryma/vim-multiple-cursors'
-
-[[plugins]]
-repo = 'pocari/neovim-rplugin-ruby-sample'
 
 # [[plugins]]
 # repo = 'Shougo/neomru.vim'
