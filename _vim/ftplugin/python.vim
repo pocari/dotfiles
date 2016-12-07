@@ -1,11 +1,12 @@
 let g:jedi#auto_vim_configuration = 0
 
 "python
-" docstringは表示しない
-autocmd FileType python setlocal completeopt-=preview
-
-"neocompleteと連携させる
-autocmd FileType python setlocal omnifunc=jedi#completions
+augroup MyInit
+  " docstringは表示しない
+  autocmd FileType python setlocal completeopt-=preview
+  "neocompleteと連携させる
+  autocmd FileType python setlocal omnifunc=jedi#completions
+augroup END
 
 if !has('nvim')
   if !exists('g:neocomplete#force_omni_input_patterns')

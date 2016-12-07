@@ -1,3 +1,8 @@
+augroup MyInit
+  autocmd!
+augroup END
+
+
 "let g:python3_host_prog = '/usr/local/bin/python3'
 " disable default plugins
 source ~/dotfiles/_vimrc.disable_default

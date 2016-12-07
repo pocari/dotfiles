@@ -7,5 +7,7 @@ nnoremap <silent> <Leader>z :<C-u>VimFilerBufferDir -split -simple -winwidth=45 
 "" 自動でカレントディレクトリを変更する
 let g:vimfiler_enable_auto_cd = 1
 
-"" バッファ一覧に
-autocmd FileType vimfiler setlocal nobuflisted
+augroup MyInit
+  " バッファ一覧に表示しない
+  autocmd FileType vimfiler setlocal nobuflisted
+augroup END

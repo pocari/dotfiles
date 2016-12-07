@@ -71,9 +71,9 @@ command! Tempfile :edit `=tempname()`
 imap <C-j> <Esc>
 
 " Turn off paste mode when leaving insert
-if has('vim_starting')
+augroup MyInit
   autocmd InsertLeave * set nopaste
-endif
+augroup END
 
 " Open junk file."\{\{\{
 command! -nargs=0 JunkFile call s:open_junk_file()
@@ -171,9 +171,9 @@ nnoremap <F9> :cnext<CR>
 "grepした後は自動的にQuickFixを開く
 ":grep hogehoge | cw
 "のような
-if has('vim_starting')
+augroup MyInit
   autocmd QuickFixCmdPost *grep* cwindow
-endif
+augroup END
 
 "diffの色設定
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
