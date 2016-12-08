@@ -10,11 +10,15 @@ if has('gui_running')
   highlight CursorLine gui=underline guifg=NONE guibg=NONE
 endif
 
-
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 "  set termguicolors
 "  colorscheme dracula
 endif
+
+augroup MyInit
+  autocmd ColorScheme * highlight Visual cterm=reverse ctermbg=0 gui=reverse guifg=Grey guibg=fg
+  autocmd ColorScheme * highlight Normal ctermbg=none
+augroup END
 
 colorscheme delek
