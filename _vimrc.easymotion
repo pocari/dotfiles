@@ -10,8 +10,6 @@ if has('nvim')
   " windowまたぎの移動の場合にneovimではこれを入れておかないと
   " No matching autocommands
   " がエコーされてしまう。他にいい方法ない？
-  augroup MyInit
-    autocmd WinLeave * silent
-  augroup END
+  autocmd MyInit WinLeave * silent
 endif
 

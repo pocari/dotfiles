@@ -3,6 +3,4 @@ if exists('b:did_ftplugin_markdown')
 endif
 let b:did_ftplugin_markdown = 1
 
-augroup MyInit
-  autocmd FileType markdown setlocal omnifunc=
-augroup END
+autocmd MyInit FileType markdown setlocal omnifunc=
