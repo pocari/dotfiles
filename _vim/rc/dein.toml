@@ -58,8 +58,8 @@ repo = 'simeji/winresizer'
 # [[plugins]]
 # repo = 'sjl/badwolf'
 # 
-# [[plugins]]
-# repo = 'dracula/vim'
+[[plugins]]
+repo = 'dracula/vim'
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
