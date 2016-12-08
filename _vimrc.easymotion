@@ -1,8 +1,8 @@
 let g:EasyMotion_do_mapping = 0
 
 "The prefix key.
-nnoremap    [easymotion]   <Nop>
-nmap    <Leader>d [easymotion]
+nnoremap [easymotion] <Nop>
+nmap <Leader>d [easymotion]
 
 nmap [easymotion]f <Plug>(easymotion-overwin-f2)
 
