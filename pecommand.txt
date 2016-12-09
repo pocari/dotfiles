@@ -3,3 +3,4 @@ git log master..HEAD # masterから派生した今のブランチに対してcom
 tig master..HEAD     # masterから派生した今のブランチに対してcommitしたログのみ出力する
 git branch -d $(git branch --merged | grep -v master | grep -v '*') #マージ済みのローカルブランチを削除ただしmasterは除く
 docker rmi $(docker images -f dangling=true -q) # 不要なイメージを消す
+for i in $(seq 1 10); do time zsh -i -c exit; done # zshの起動時間計る
