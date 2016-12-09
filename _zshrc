@@ -178,9 +178,8 @@ fi
 # 標準WORDCHARSから'/'を除いた値をいれておいて単語の構成文字とみなさないようにする
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #---------------------------------------------------------------------------------------------------
-#  # profileするときは下のコメントを外す
-#  zmodload zsh/zprof && zprof
-#  if (which zprof > /dev/null 2>&1) ;then
-#      zprof
-#  fi
-#  # profile用ここまで
+# # profileするときは下のコメントを外す
+# if (which zprof > /dev/null 2>&1) ;then
+#     zprof
+# fi
+# # profile用ここまで
