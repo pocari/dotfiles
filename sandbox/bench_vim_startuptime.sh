@@ -12,7 +12,6 @@ do
         -c quit
 done
 
-echo "dein.vim"
 for file in dein-vim-*.log
 do
     awk 'END {print $1}' "$file"
