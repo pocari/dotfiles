@@ -127,11 +127,11 @@ repo = 'Shougo/echodoc.vim'
 on_event = 'CompleteDone'
 hook_source = 'call echodoc#enable()'
 
-[[plugins]]
-repo = 'pocari/slimv'
-rev  = 'fix-tmux-version'
-if   = '''has('mac')'''
-on_ft = ['lisp', 'scheme']
+# [[plugins]]
+# repo = 'pocari/slimv'
+# rev  = 'fix-tmux-version'
+# if   = '''has('mac')'''
+# on_ft = ['lisp', 'scheme']
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
