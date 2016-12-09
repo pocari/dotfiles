@@ -28,8 +28,16 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-" もし、未インストールものものがあったらインストール
-if dein#check_install()
-  call dein#install()
-endif
+"  " もし、未インストールものものがあったらインストール
+"  if dein#check_install()
+"    call dein#install()
+"  endif
+let s:script_name = expand('<sfile>:p')
+function! DeinCheckAndInstall() abort
+  if dein#check_install()
+    call dein#install()
+  else
+    echohl WarningMsg | echom "[" . s:script_name . "] All plugins are installed.(But update check is not done yet)" | echohl None
+  endif
+endfunction
 
