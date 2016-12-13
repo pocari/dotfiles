@@ -134,3 +134,5 @@ repo = 'vim-jp/vital.vim'
 # repo = 'Shougo/neoyank.vim'
 # on_source = ['unite.vim', 'denite.nvim']
 
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
