@@ -238,3 +238,20 @@ endif
 " リロード用コマンド
 command! Reloadrc :source ~/.vimrc
 
+if has('neovim')
+  " 水辺分割で,exit時に自動でcloseするターミナル起動
+  function! TermHelper() abort
+    split | enew | call termopen($SHELL, {'on_exit': 's:OnExit'}) | startinsert
+  endfun
+
+  function! s:OnExit(job_id, code, event) dict
+    if a:code == 0
+      " Process Exitが表示されたその後cr打つとバッファが無くなるので
+      " それと同じようにする
+      call feedkeys("\<CR>")
+    endif
+  endfun
+
+  " 横ウィンドウ分割してターミナル表示
+  command! Hterm :call TermHelper()
+endif
