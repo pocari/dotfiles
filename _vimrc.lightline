@@ -5,7 +5,7 @@ let g:gitgutter_sign_removed = 'x'
 
 " lightline.vim
 let g:lightline = {
-        \ 'colorscheme': 'default',
+        \ 'colorscheme': 'powerline',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [
