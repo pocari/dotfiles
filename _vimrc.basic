@@ -238,7 +238,7 @@ endif
 " リロード用コマンド
 command! Reloadrc :source ~/.vimrc
 
-if has('neovim')
+if has('nvim')
   " 水辺分割で,exit時に自動でcloseするターミナル起動
   function! TermHelper() abort
     split | enew | call termopen($SHELL, {'on_exit': 's:OnExit'}) | startinsert
