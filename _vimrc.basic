@@ -137,13 +137,16 @@ inoremap <silent> jj <ESC>
 set laststatus=2
 
 " grep設定
-" ag ->  grep の順に優先して使用
-if executable('ag')
-    set grepprg=ag\ --nogroup\ -iS
-    set grepformat=%f:%l:%m
+" rg -> ag ->  grep の順に優先して使用
+if executable('rg')
+  set grepprg=rg\ --no-heading\ --vimgrep
+  set grepformat=%f:%l:%c:%m
+elseif executable('ag')
+  set grepprg=ag\ --nogroup\ -iS
+  set grepformat=%f:%l:%m
 else
-    set grepprg=grep\ -Hnd\ skip\ -r
-    set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m
+  set grepprg=grep\ -Hnd\ skip\ -r
+  set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m
 endif
 
 "QuickFixでのショートカット
