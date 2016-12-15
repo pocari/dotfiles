@@ -206,6 +206,13 @@ depends = ['vim-emoji']
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-on_cmd = ['Gread', 'Gdiff', 'Gstatus']
+on_cmd = ['Gstatus', 'Gread', 'Gdiff']
 augroup = 'fugitive'
+# on_cmdでsourceしたタイミングでautocmdまでは定義されるので、
+# 「次に」開くファイルについては、BufEnter時などにGreadが定義されるが、
+# on_cmdしたタイミングで開いているバッファには適用されなかったのでpost後に無理やり呼ぶ
+# (正確にはVimEnter時に呼ばれる処理は実行されていたがその処理ではdetectが呼ばれていなかった。)
+hook_post_source = '''
+call fugitive#detect(expand('%:p'))
+'''
 
