@@ -3,13 +3,10 @@
 let mapleader=','
 noremap \  ,
 
-syntax enable
 " :set number
 
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
-
-filetype plugin indent on
 
 " Use English interface.
 language message C
@@ -259,4 +256,9 @@ if has('nvim')
 
   " 横ウィンドウ分割してターミナル表示
   command! Hterm :call TermHelper()
+endif
+
+if has('vim_starting')
+  syntax enable
+  filetype plugin indent on
 endif
