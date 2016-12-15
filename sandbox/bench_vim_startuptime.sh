@@ -1,5 +1,6 @@
 #!/bin/bash
 
+test -d ./startuptime_bench && rm -rf ./startuptime_bench
 mkdir -p ./startuptime_bench
 cd ./startuptime_bench
 
