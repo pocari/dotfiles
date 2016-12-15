@@ -204,3 +204,8 @@ repo = 'pocari/vim-denite-emoji'
 on_source = ['denite.nvim']
 depends = ['vim-emoji']
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_cmd = ['Gread', 'Gdiff', 'Gstatus']
+augroup = 'fugitive'
+
