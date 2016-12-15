@@ -3,6 +3,9 @@
 # ログインシェル起動時にzshrcより前に読み込まれる
 # zshでシェルスクリプト書くこと無いので、そこで読み込まれなくて良いものはここに書く。
 
+autoload -U compinit
+compinit -C
+
 # rbenv
 if [ -d ${HOME}/.rbenv ] ; then
   PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}

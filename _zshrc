@@ -77,9 +77,6 @@ fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=1
 
-autoload -U compinit
-compinit -C
-
 ## history
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=30000
