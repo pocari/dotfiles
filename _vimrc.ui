@@ -19,6 +19,7 @@ endif
 augroup MyInit
   autocmd ColorScheme * highlight Visual cterm=reverse ctermbg=0 gui=reverse guifg=Grey guibg=fg
   autocmd ColorScheme * highlight Normal ctermbg=none
+  autocmd ColorScheme * highlight Search ctermfg=Black ctermbg=Yellow  guibg=Yellow
 augroup END
 
 colorscheme delek
