@@ -29,9 +29,6 @@ repo = 'airblade/vim-gitgutter'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'kchmck/vim-coffee-script'
-
-[[plugins]]
 repo = 'Yggdroot/indentLine'
 
 # [[plugins]]

@@ -216,3 +216,7 @@ hook_post_source = '''
 call fugitive#detect(expand('%:p'))
 '''
 
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
