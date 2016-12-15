@@ -1,6 +1,6 @@
 # vim: ft=ruby
 
-Pry.config.editor = "vim"
+Pry.config.editor = "nvim"
 
 if defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'
