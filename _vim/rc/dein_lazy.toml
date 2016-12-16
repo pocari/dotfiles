@@ -220,3 +220,6 @@ call fugitive#detect(expand('%:p'))
 repo = 'kchmck/vim-coffee-script'
 on_ft = 'coffee'
 
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+on_ft = ['Dockerfile', 'docker-compose']
