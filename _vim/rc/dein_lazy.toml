@@ -233,3 +233,7 @@ on_map = '[gtags]'
 repo = 'vim-scripts/BufOnly.vim'
 on_cmd = ['Bufonly']
 
+[[plugins]]
+repo = 'pocari/vim-denite-directory-old'
+on_source = ['denite.nvim']
+
