@@ -7,4 +7,4 @@ for i in $(seq 1 10); do time zsh -i -c exit; done # zshの起動時間計る
 socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" # dockerからGUIを受ける口をmac側で開く
 vi -c 'call DeinCheckAndInstall()' # deinで未インストールプラグインを一括ダウンロード
 rm ~/.zcompdump && compinit -i # zshの補完リセット
-git log --since=$(date -v-1d +"%Y/%m/%d") --until=$(date +"%Y/%m/%d") --oneline # 昨日のcommit一覧
+git log --since=$(date -v-1d +"%Y/%m/%d") --until="$(date -v-1d +"%Y/%m/%d") 23:59:59" --pretty=format:"%h %an %ad %s" --date=format:"%Y/%m/%d %H:%M:%S" # 昨日のcommit一覧を表示
