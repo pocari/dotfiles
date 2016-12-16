@@ -1,13 +1,13 @@
-"" [:e .]‚Åvimfiler‚ğŠJ‚­‚æ‚¤‚É‚·‚é
+" [:e .]ã§vimfilerã‚’é–‹ãã‚ˆã†ã«ã™ã‚‹
 let g:vimfiler_as_default_explorer = 1
 
-"" exploer•—‚ÉŠJ‚­
+" exploreré¢¨ã«é–‹ã
 nnoremap <silent> <Leader>z :<C-u>VimFilerBufferDir -split -simple -winwidth=45 -toggle -no-quit<CR>
 
-"" ©“®‚ÅƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğ•ÏX‚·‚é
+" è‡ªå‹•ã§ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’å¤‰æ›´ã™ã‚‹
 let g:vimfiler_enable_auto_cd = 1
 
 augroup MyInit
-  " ƒoƒbƒtƒ@ˆê——‚É•\¦‚µ‚È‚¢
+  " ãƒãƒƒãƒ•ã‚¡ä¸€è¦§ã«è¡¨ç¤ºã—ãªã„
   autocmd FileType vimfiler setlocal nobuflisted
 augroup END
