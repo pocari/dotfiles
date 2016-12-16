@@ -1,10 +1,10 @@
-\ls -F | grep '/$' | xargs -Iarg du -sh arg   # カレントディレクトリのフォルダ単位でdu -shする
+\ls -F | grep '/$' | xargs -Iarg du -sh arg   # カレントディレクトリのフォルダ単位でdu -shする dir size folder
 git log master..HEAD # masterから派生した今のブランチに対してcommitしたログのみ出力する
 tig master..HEAD     # masterから派生した今のブランチに対してcommitしたログのみ出力する
-git branch -d $(git branch --merged | grep -v master | grep -v '*') #マージ済みのローカルブランチを削除ただしmasterは除く
-docker rmi $(docker images -f dangling=true -q) # 不要なイメージを消す
-for i in $(seq 1 10); do time zsh -i -c exit; done # zshの起動時間計る
+git branch -d $(git branch --merged | grep -v master | grep -v '*') #マージ済みのローカルブランチを削除ただしmasterは除く delete branch merge
+docker rmi $(docker images -f dangling=true -q) # 不要なイメージを消す image delete remove
+for i in $(seq 1 10); do time zsh -i -c exit; done # zshの起動時間計る zsh bench
 socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" # dockerからGUIを受ける口をmac側で開く
-vi -c 'call DeinCheckAndInstall()' # deinで未インストールプラグインを一括ダウンロード
-rm ~/.zcompdump && compinit -i # zshの補完リセット
-git log --since=$(date -v-1d +"%Y/%m/%d") --until="$(date -v-1d +"%Y/%m/%d") 23:59:59" --pretty=format:"%h %an %ad %s" --date=format:"%Y/%m/%d %H:%M:%S" # 昨日のcommit一覧を表示
+vi -c 'call DeinCheckAndInstall()' # deinで未インストールプラグインを一括ダウンロード dein plugin install check
+rm ~/.zcompdump && compinit -i # zshの補完リセット zsh reset
+git log --pretty=format:"%h %an %ad %s" --date=format:"%Y-%m-%d %H:%M:%S" | grep $(date -v-1d +"%Y-%m-%d") # 昨日のcommit一覧を表示(-v-1d)の部分を変えると任意の日付 commit check
