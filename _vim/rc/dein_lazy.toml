@@ -229,3 +229,7 @@ on_ft = ['Dockerfile', 'docker-compose']
 repo = 'vim-scripts/gtags.vim'
 on_map = '[gtags]'
 
+[[plugins]]
+repo = 'vim-scripts/BufOnly.vim'
+on_cmd = ['Bufonly']
+
