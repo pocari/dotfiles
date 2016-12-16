@@ -38,9 +38,6 @@ repo = 'Yggdroot/indentLine'
 # repo = 'osyo-manga/shabadou.vim'
 
 [[plugins]]
-repo = 'vim-scripts/gtags.vim'
-
-[[plugins]]
 repo = 'simeji/winresizer'
 
 # [[plugins]]

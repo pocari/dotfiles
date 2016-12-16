@@ -223,3 +223,9 @@ on_ft = 'coffee'
 [[plugins]]
 repo = 'ekalinin/Dockerfile.vim'
 on_ft = ['Dockerfile', 'docker-compose']
+
+
+[[plugins]]
+repo = 'vim-scripts/gtags.vim'
+on_map = '[gtags]'
+
