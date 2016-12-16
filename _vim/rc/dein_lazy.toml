@@ -206,7 +206,7 @@ depends = ['vim-emoji']
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-on_cmd = ['Gstatus', 'Gread', 'Gdiff']
+on_cmd = ['Gstatus', 'Gread', 'Gdiff', 'Gblame']
 augroup = 'fugitive'
 # on_cmdでsourceしたタイミングでautocmdまでは定義されるので、
 # 「次に」開くファイルについては、BufEnter時などにGreadが定義されるが、
