@@ -4,7 +4,7 @@ nmap <Leader>f [denite]
 
 nnoremap <silent> [denite]m :<C-u>Denite<Space>file_mru<CR>
 nnoremap <silent> [denite]b :<C-u>Denite<Space>buffer<CR>
-nnoremap <silent> [denite]d :<C-u>Denite<Space>directory_rec<CR>
+nnoremap <silent> [denite]d :<C-u>Denite<Space>directory_old<CR>
 nnoremap <silent> [denite]a :<C-u>Denite<Space>file_rec file_mru buffer<CR>
 nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
 nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
