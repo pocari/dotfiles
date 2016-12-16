@@ -239,7 +239,7 @@ endif
 command! Reloadrc :source ~/.vimrc
 
 if has('nvim')
-  " 水辺分割で,exit時に自動でcloseするターミナルバッファ表示
+  " 水平分割で、exit時に自動でcloseするターミナルバッファ表示
   function! TermHelper() abort
     topleft new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
     resize 15
