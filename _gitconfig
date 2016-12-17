@@ -1,7 +1,7 @@
 [include]
         path = .gitconfig.local
 [core]
-	editor = vi -u NONE
+	editor = vi -u NONE -c 'set nocompatible'
 [push]
 	default = simple
 [diff]
