@@ -58,6 +58,9 @@ repo = 'terryma/vim-multiple-cursors'
 [[plugins]]
 repo = 'pocari/neovim-rplugin-ruby-sample'
 
+[[plugins]]
+repo = 'rhysd/vim-color-spring-night'
+
 ####################################################################
 # neovim only
 

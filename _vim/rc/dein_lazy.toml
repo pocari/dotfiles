@@ -160,8 +160,8 @@ on_source = 'denite.nvim'
 # [[plugins]]
 # if = 'has("nvim")'
 # repo = 'pocari/denite.nvim'
-# rev = 'fix-source-completion'
-# on_cmd = 'Denite'
+# rev = 'fix-alias-syntax-name'
+# on_cmd = ['Denite', 'DeniteBufferDir', 'DeniteCursorWord']
 # hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 [[plugins]]
