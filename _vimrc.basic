@@ -239,23 +239,22 @@ endif
 command! Reloadrc :source ~/.vimrc
 
 if has('nvim')
-  " 水平分割で、exit時に自動でcloseするターミナルバッファ表示
-  function! TermHelper() abort
+  " 水平分割でexit時に自動でcloseする行数sizeのターミナルバッファ表示
+  function! TermHelper(...) abort
+    let size = get(a:, 1, 15) "デフォルトは15行のウィンドウ
     topleft new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
-    resize 15
+    execute 'resize ' . size
     startinsert
   endfun
 
   function! s:onTermExit(job_id, code, event) dict
-    if a:code == 0
-      " Process Exitが表示されたその後cr打つとバッファが無くなるので
-      " それと同じようにする
-      call feedkeys("\<CR>")
-    endif
+    " Process Exitが表示されたその後cr打つとバッファが無くなるので
+    " それと同じようにする
+    call feedkeys("\<CR>")
   endfun
 
-  " 横ウィンドウ分割してターミナル表示
-  command! Hterm :call TermHelper()
+  " 水平ウィンドウ分割してターミナル表示 引数はwindowの行数指定
+  command! -nargs=? Hterminal :call TermHelper(<args>)
 endif
 
 if has('vim_starting')
