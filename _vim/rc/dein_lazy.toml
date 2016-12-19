@@ -242,3 +242,7 @@ on_cmd = ['Bufonly']
 repo = 'pocari/vim-denite-directory-old'
 on_source = ['denite.nvim']
 
+[[plugins]]
+repo = 'jvirtanen/vim-octave'
+on_ft = ['octave']
+
