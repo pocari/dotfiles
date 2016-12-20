@@ -12,6 +12,9 @@ if executable('files')
   call denite#custom#var('directory_rec', 'command', ['files', '-a', '-d'])
 endif
 
+" -xだけだと、名称のアルファベット順になるので, --sort=noでファイル上での出現順に変更する
+call denite#custom#var('outline', 'options', ['-x', '--sort=no'])
+
 call denite#custom#option('default', 'cursor_wrap', v:true)
 if exists('g:loaded_lightline')
   " lightline.vim側で描画するのでdeniteでstatuslineを描画しないようにする
