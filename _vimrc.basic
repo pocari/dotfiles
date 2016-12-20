@@ -254,7 +254,7 @@ if has('nvim')
   endfun
 
   " 水平ウィンドウ分割してターミナル表示 引数はwindowの行数指定
-  command! -nargs=? Hterminal :call TermHelper(<args>)
+  command! -count=15 Hterminal :call TermHelper(<count>)
 endif
 
 if has('vim_starting')
