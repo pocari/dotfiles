@@ -15,7 +15,10 @@ set wildmenu " コマンドライン補完するときに強化されたもの�
 set wildmode=longest,full
 set formatoptions+=mM " テキスト挿入中の自動折り返しを日本語に対応させる
 set modeline " モードラインを有効にする
-source $VIMRUNTIME/macros/matchit.vim " ()対応の拡張rubyのdo...endにも対応
+if !has('nvim')
+  " neovimの場合、本体側でロードされる
+  source $VIMRUNTIME/macros/matchit.vim " ()対応の拡張rubyのdo...endにも対応
+endif
 set incsearch "インクリメンタルサーチ
 set ignorecase "大文字小文字無視
 set noswapfile "swapファイルは作らない
