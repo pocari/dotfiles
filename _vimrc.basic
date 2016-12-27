@@ -244,9 +244,16 @@ command! Reloadrc :source ~/.vimrc
 if has('nvim')
   " 水平分割でexit時に自動でcloseする行数sizeのターミナルバッファ表示
   function! TermHelper(...) abort
-    let size = get(a:, 1, 15) "デフォルトは15行のウィンドウ
-    topleft new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
-    execute 'resize ' . size
+    let h_or_v = get(a:, 1, 'h') "デフォルトは水平分割
+    let size = get(a:, 2, 15) "デフォルトは高さ(or幅)15のウィンドウ
+
+    if h_or_v == 'h'
+      topleft new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
+      execute 'resize ' . size
+    else
+      vertical botright new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
+      execute 'vertical resize ' . size
+    endif
     startinsert
   endfun
 
@@ -257,7 +264,9 @@ if has('nvim')
   endfun
 
   " 水平ウィンドウ分割してターミナル表示 引数はwindowの行数指定
-  command! -count=15 Hterminal :call TermHelper(<count>)
+  command! -count=15 Hterminal :call TermHelper('h', <count>)
+  " 垂直ウィンドウ分割してターミナル表示 引数はwindowの行数指定
+  command! -count=80 Vterminal :call TermHelper('v', <count>)
 endif
 
 if has('vim_starting')
