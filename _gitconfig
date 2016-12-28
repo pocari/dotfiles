@@ -1,28 +1,28 @@
 [include]
-        path = .gitconfig.local
+	path = .gitconfig.local
 [core]
 	editor = vi -u NONE -c 'set nocompatible'
 [push]
 	default = simple
 [diff]
-        algorithm = histogram
+	algorithm = histogram
 	tool = vimdiff
 	compactionHeuristic = true
 
 [mergetool "p4merge"]
-        path = /opt/homebrew-cask/Caskroom/p4merge/2014.3-1007540/p4merge.app/Contents/MacOS/p4merge
+	path = /opt/homebrew-cask/Caskroom/p4merge/2014.3-1007540/p4merge.app/Contents/MacOS/p4merge
 	keepTemporaries = false
 	trustExitCode = false
 [alias]
-        graph = log --graph --all --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
-        # browseはhubコマンド
+	graph = log --graph --all --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
+	# browseはhubコマンド
 	see = browse
 [difftool]
 	prompt = false
 
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
 [init]
 	templatedir = ~/.git_template
