@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 \ls -F | grep '/$' | xargs -Iarg du -sh arg   # カレントディレクトリのフォルダ単位でdu -shする dir size folder
 git log master..HEAD # masterから派生した今のブランチに対してcommitしたログのみ出力する
 git branch -d $(git branch --merged | grep -v master | grep -v '*') #マージ済みのローカルブランチを削除ただしmasterは除く delete branch merge
@@ -7,3 +9,4 @@ socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" # dockerからGUI�
 vi -c 'call DeinCheckAndInstall()' # deinで未インストールプラグインを一括ダウンロード dein plugin install check
 rm ~/.zcompdump && compinit -i # zshの補完リセット zsh reset
 git log --pretty=format:"%h %an %ad %s" --date=format:"%Y-%m-%d %H:%M:%S" | grep $(date -v-1d +"%Y-%m-%d") # 昨日のcommit一覧を表示(-v-1d)の部分を変えると任意の日付 commit check
+

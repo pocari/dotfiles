@@ -116,6 +116,7 @@ bindkey "^g^s" peco-insert-selected-git-files
 function peco-select-shortcut(){
     LBUFFER+=$( \
       cat ~/dotfiles/pecommand.txt | \
+      grep -v -e '^\s*#' -e '^$' | \
       peco --prompt "commands>" | \
       sed -e 's/#.*$//' \
     )
