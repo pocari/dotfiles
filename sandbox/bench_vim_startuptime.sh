@@ -4,14 +4,18 @@ test -d ./startuptime_bench && rm -rf ./startuptime_bench
 mkdir -p ./startuptime_bench
 cd ./startuptime_bench
 
-for i in {1..100}
+total=100
+for i in $(seq 1 $total)
 do
     /usr/local/bin/nvim \
 	-u ~/.config/nvim/init.vim \
 	-i NONE \
         --startuptime dein-vim-$$_$i.log \
         -c quit
+
+  printf "\r%*d / %d" ${#total} $i $total
 done
+echo
 
 for file in dein-vim-*.log
 do
