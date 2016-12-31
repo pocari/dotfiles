@@ -58,10 +58,10 @@ function kill-peco () {
 
 case "${OSTYPE}" in
 darwin*)
-    [ -f ~/dotfiles/_zshrc_peco.osx ] && source ~/dotfiles/_zshrc_peco.osx
+    [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.osx ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.osx
     ;;
 linux*)
-    [ -f ~/dotfiles/_zshrc_peco.linux ] && source ~/dotfiles/_zshrc_peco.linux
+    [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.linux ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.linux
     ;;
 esac
 

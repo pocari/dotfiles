@@ -3,7 +3,7 @@
 # TODO vimとneovimを共存させてるので
 # ~/.config/nvim を ~/.vimディレクトリへのsymlinkにする必要がある
 # ~/.config自体は他の処理からも作成されるので、まだ無い場合のみ作成する
-DOT_FILES=(.zshrc .zshenv .zprofile .tmux.conf .gvimrc .vimrc .vim .zsh .tmuxinator .gitconfig .globalrc .peco .git_template .ctags)
+DOT_FILES=(.zshrc .zshenv .zprofile .tmux.conf .gvimrc .vimrc .vim .zsh .tmuxinator .gitconfig .globalrc .peco .git_template .ctags .pryrc)
 
 for file in ${DOT_FILES[@]}
 do

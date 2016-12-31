@@ -5,58 +5,58 @@ augroup END
 "let g:python3_host_prog = '/usr/local/bin/python3'
 " disable default plugins
 if has('vim_starting')
-  source ~/dotfiles/_vimrc.disable_default
+  source ~/dotfiles/_vim/rc/_vimrc.disable_default
 endif
 
 " dein
-source ~/dotfiles/_vimrc.dein
+source ~/dotfiles/_vim/rc/_vimrc.dein
 
 " ui setting
-source ~/dotfiles/_vimrc.ui
+source ~/dotfiles/_vim/rc/_vimrc.ui
 
 "basic settings
-source ~/dotfiles/_vimrc.basic
+source ~/dotfiles/_vim/rc/_vimrc.basic
 
 " Unite/Denite
 if has('nvim')
-"  source ~/dotfiles/_vimrc.denite
-  source ~/dotfiles/_vimrc.denite.keymap
+"  source ~/dotfiles/_vim/rc/_vimrc.denite
+  source ~/dotfiles/_vim/rc/_vimrc.denite.keymap
 else
-  source ~/dotfiles/_vimrc.unite
+  source ~/dotfiles/_vim/rc/_vimrc.unite
 endif
 
 " VimFiler
-source ~/dotfiles/_vimrc.vimfiler
+source ~/dotfiles/_vim/rc/_vimrc.vimfiler
 
 " NeoComplete/Deoplete
-source ~/dotfiles/_vimrc.complete
+source ~/dotfiles/_vim/rc/_vimrc.complete
 
 " " QuickRun
-" source ~/dotfiles/_vimrc.quickrun
+" source ~/dotfiles/_vim/rc/_vimrc.quickrun
 
 "lightline
-source ~/dotfiles/_vimrc.lightline
+source ~/dotfiles/_vim/rc/_vimrc.lightline
 
 "Gtags
-source ~/dotfiles/_vimrc.gtags
+source ~/dotfiles/_vim/rc/_vimrc.gtags
 
 " "test
-" source ~/dotfiles/_vimrc.test
+" source ~/dotfiles/_vim/rc/_vimrc.test
 
 " "slimv
-" source ~/dotfiles/_vimrc.slimv
+" source ~/dotfiles/_vim/rc/_vimrc.slimv
 
 "easymotion
-source ~/dotfiles/_vimrc.easymotion
+source ~/dotfiles/_vim/rc/_vimrc.easymotion
 
 " "ctrp"
-" source ~/dotfiles/_vimrc.ctrlp
+" source ~/dotfiles/_vim/rc/_vimrc.ctrlp
 
 "syntastic"
-source ~/dotfiles/_vimrc.syntastic
+source ~/dotfiles/_vim/rc/_vimrc.syntastic
 if has("win32")
 elseif has('mac')
-  source ~/dotfiles/_vimrc.osx
+  source ~/dotfiles/_vim/rc/_vimrc.osx
 endif
 
-" source ~/dotfiles/_vimrc.omnisharp
+" source ~/dotfiles/_vim/rc/_vimrc.omnisharp
