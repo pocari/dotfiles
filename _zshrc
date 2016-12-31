@@ -130,12 +130,12 @@ case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
     # ここに設定
-    [ -f ~/dotfiles/_zshrc.osx ] && source ~/dotfiles/_zshrc.osx
+    [ -f ~/dotfiles/_zsh/rc/_zshrc.osx ] && source ~/dotfiles/_zsh/rc/_zshrc.osx
     ;;
     # Linux
 linux*)
     # ここに設定
-    [ -f ~/dotfiles/_zshrc.linux ] && source ~/dotfiles/_zshrc.linux
+    [ -f ~/dotfiles/_zsh/rc/_zshrc.linux ] && source ~/dotfiles/_zsh/rc/_zshrc.linux
     ;;
 esac
 
@@ -144,7 +144,7 @@ PERL_MM_OPT="INSTALL_BASE=/Users/pocari/perl5"; export PERL_MM_OPT;
 
 #pecoがインストールされている場合コマンド定義
 if (( ${+commands[peco]} )); then
-  [ -f ~/dotfiles/_zshrc.peco ] && source ~/dotfiles/_zshrc.peco
+  [ -f ~/dotfiles/_zsh/rc/_zshrc.peco ] && source ~/dotfiles/_zsh/rc/_zshrc.peco
 fi
 
 source ~/.tmuxinator/tmuxinator.zsh
