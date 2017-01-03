@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+autoload -Uz vcs_info
+
+# vcs_info実行後 vcs_info_msg_0_に (git)-[master]など(vcs名)-[ブランチ名]の形式で
+# セットされるのでブランチ名のみをsedで抽出
+vcs_info
+name=$(echo $vcs_info_msg_0_ | sed -e 's/^[^[]*\[\([^]]*\)\].*$/\1/')
+echo $1 $name
