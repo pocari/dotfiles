@@ -247,11 +247,15 @@ if has('nvim')
     let h_or_v = get(a:, 1, 'h') "デフォルトは水平分割
     let size = get(a:, 2, 15) "デフォルトは高さ(or幅)15のウィンドウ
 
+    " https://github.com/neovim/neovim/pull/5529
+    " でvimのpartialがneovimに取り込まれて以降は、
+    " on_existに設定するコールバックが関数名でなく、
+    " 関数値そのもの？(function('関数名'))ようなので、古いneovimの場合注意
     if h_or_v == 'h'
-      topleft new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
+      topleft new | call termopen($SHELL, {'on_exit': function('s:onTermExit')})
       execute 'resize ' . size
     else
-      vertical botright new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
+      vertical botright new | call termopen($SHELL, {'on_exit': function('s:onTermExit')})
       execute 'vertical resize ' . size
     endif
     startinsert
