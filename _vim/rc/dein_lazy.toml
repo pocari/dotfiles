@@ -26,6 +26,12 @@ call deoplete#custom#set('neosnippet', 'matchers', ['matcher_head'])
 '''
 
 [[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+if = 'has("nvim")'
+on_ft = 'rust'
+
+
+[[plugins]]
 repo = 'zchee/deoplete-go'
 if = 'has("nvim")'
 on_ft = 'go'

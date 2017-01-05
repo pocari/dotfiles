@@ -21,5 +21,6 @@ fi
 
 # rsvm
 if [ -d ${HOME}/.rsvm ] ; then
+  PATH=${HOME}/.cargo/bin:$PATH
   source ${HOME}/.rsvm/rsvm.sh
 fi
