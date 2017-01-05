@@ -180,3 +180,4 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #     zprof
 # fi
 # # profile用ここまで
+[[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM

@@ -3,8 +3,12 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+
+[[plugins]]
 repo = 'scrooloose/syntastic'
-on_ft = ['ruby', 'go']
+on_ft = ['ruby', 'go', 'rust']
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
