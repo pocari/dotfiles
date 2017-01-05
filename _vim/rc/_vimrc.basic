@@ -251,11 +251,21 @@ if has('nvim')
     " でvimのpartialがneovimに取り込まれて以降は、
     " on_existに設定するコールバックが関数名でなく、
     " 関数値そのもの？(function('関数名'))ようなので、古いneovimの場合注意
+    "
+    " 7.4.1577が当たっているかどうかで切り分ける
     if h_or_v == 'h'
-      topleft new | call termopen($SHELL, {'on_exit': function('s:onTermExit')})
+      if has('patch-7.4.1577')
+        topleft new | call termopen($SHELL, {'on_exit': function('s:onTermExit')})
+      else
+        topleft new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
+      endif
       execute 'resize ' . size
     else
-      vertical botright new | call termopen($SHELL, {'on_exit': function('s:onTermExit')})
+      if has('patch-7.4.1577')
+        vertical botright new | call termopen($SHELL, {'on_exit': function('s:onTermExit')})
+      else
+        vertical botright new | call termopen($SHELL, {'on_exit': 's:onTermExit'})
+      endif
       execute 'vertical resize ' . size
     endif
     startinsert
