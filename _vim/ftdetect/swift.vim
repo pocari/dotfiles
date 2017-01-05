@@ -1,3 +1,3 @@
 if has("mac")
-  au BufNewFile,BufRead *.swift setf swift
+  autocmd BufNewFile,BufRead *.swift setf swift
 endif

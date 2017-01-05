@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.rs setf rust
+autocmd BufNewFile,BufRead *.rs setf rust

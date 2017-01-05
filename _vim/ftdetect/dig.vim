@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.dig set filetype=yaml
+autocmd BufRead,BufNewFile *.dig set filetype=yaml
