@@ -3,6 +3,7 @@
 "let g:neomru#directory_mru_limit = 10000
 "let g:neomru#file_mru_limit = 20000
 call denite#custom#source('file_mru', 'matchers', ['matcher_cpsm', 'matcher_project_files'])
+call denite#custom#source('file_old', 'matchers', ['matcher_cpsm', 'matcher_project_files'])
 call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
 call denite#custom#source('directory_rec', 'matchers', ['matcher_cpsm'])
 
