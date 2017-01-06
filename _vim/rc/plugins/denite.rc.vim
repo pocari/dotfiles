@@ -6,11 +6,17 @@ call denite#custom#source('file_mru', 'matchers', ['matcher_cpsm', 'matcher_proj
 call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
 call denite#custom#source('directory_rec', 'matchers', ['matcher_cpsm'])
 
-if executable('files')
-  " https://github.com/mattn/files
-  call denite#custom#var('file_rec', 'command', ['files', '-a'])
-  call denite#custom#var('directory_rec', 'command', ['files', '-a', '-d'])
-endif
+" file_recはag, directory_recの代わりにdirectory_oldを使うようにしたので一旦コメント
+" if executable('files')
+"   " https://github.com/mattn/files
+"   call denite#custom#var('file_rec', 'command', ['files', '-a'])
+"   call denite#custom#var('directory_rec', 'command', ['files', '-a', '-d'])
+" endif
+
+if executable('ag')
+  " ファイル一覧はagの方が速いらしいのでagにする
+	call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+end
 
 " -xだけだと、名称のアルファベット順になるので, --sort=noでファイル上での出現順に変更する
 call denite#custom#var('outline', 'options', ['-x', '--sort=no'])
@@ -22,8 +28,7 @@ if exists('g:loaded_lightline')
 endif
 
 call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-call denite#custom#var('file_rec/git', 'command',
-      \ ['git', 'ls-files', '-co', '--exclude-standard'])
+call denite#custom#var('file_rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
 
 if executable('rg')
   " Ripgrep command on grep source
