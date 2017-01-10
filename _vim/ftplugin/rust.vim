@@ -6,5 +6,7 @@ let g:syntastic_rust_checkers = ['rustc']
 let g:rustfmt_autosave = 1
 
 let g:deoplete#sources#rust#racer_binary = '/Users/pocari/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path = '/Users/pocari/dev/office/github.com/rust-lang/rust/src'
+
+" rustupでいれたstableの場所
+let g:deoplete#sources#rust#rust_source_path = '/Users/pocari/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
