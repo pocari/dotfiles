@@ -15,7 +15,7 @@ nnoremap <silent> [denite]f :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec
 " grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
 nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
 " grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
-nnoremap <silent> [denite]r :<C-u>Denite grep -resume -buffer-name=search-buffer-denite<CR>
-nnoremap <silent> [denite]n :<C-u>Denite grep -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
-nnoremap <silent> [denite]p :<C-u>Denite grep -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
+nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
+nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
 
