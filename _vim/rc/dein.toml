@@ -102,6 +102,14 @@ repo = 'kana/vim-fakeclip'
 if = '!has("nvim")'
 repo = 'tpope/vim-dispatch'
 
+[[plugins]]
+if = 'has("lua") && !has("nvim")'
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+if = 'has("lua") && !has("nvim")'
+repo = 'Shougo/neoyank.vim'
+
 # [[plugins]]
 # repo = 'kien/ctrlp.vim'
 
@@ -122,12 +130,4 @@ repo = 'vim-jp/vital.vim'
 
 # [[plugins]]
 # repo = 'justinmk/vim-dirvish'
-
-# [[plugins]]
-# repo = 'Shougo/neomru.vim'
-# on_source = ['unite.vim', 'denite.nvim']
-# 
-# [[plugins]]
-# repo = 'Shougo/neoyank.vim'
-# on_source = ['unite.vim', 'denite.nvim']
 
