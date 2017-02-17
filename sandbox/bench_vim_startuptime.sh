@@ -7,7 +7,7 @@ cd ./startuptime_bench
 total=100
 for i in $(seq 1 $total)
 do
-    /usr/local/bin/nvim \
+    ~/usr/local/bin/nvim \
 	-u ~/.config/nvim/init.vim \
 	-i NONE \
         --startuptime dein-vim-$$_$i.log \
