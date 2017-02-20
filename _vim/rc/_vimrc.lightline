@@ -62,7 +62,7 @@ function! MyGitInfo()
         let _ = fugitive#head()
         return strlen(_) ? '|'._ : ''
       else
-        return gitbranch#name() . 'hoge'
+        return gitbranch#name()
       endif
     endif
   catch
