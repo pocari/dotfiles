@@ -1,3 +1,6 @@
 :colorscheme spring-night
 :set guifont=Ricty:h14
 :set transparency=7
+
+:set visualbell t_vb=
+:set noerrorbells
