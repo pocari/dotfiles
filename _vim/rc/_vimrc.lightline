@@ -61,7 +61,7 @@ function! MyGitInfo()
       if exists('*fugitive#head')
         let _ = fugitive#head()
         return strlen(_) ? '|'._ : ''
-      elseif exists('g:gina_loaded')
+      else
         let branch_name = system('git rev-parse --abbrev-ref HEAD 2>/dev/null')
         if !empty(branch_name)
           return substitute(branch_name, '\n$', '', '')
