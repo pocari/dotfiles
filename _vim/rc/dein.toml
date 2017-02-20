@@ -25,8 +25,11 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
+# [[plugins]]
+# repo = 'tpope/vim-fugitive'
+
 [[plugins]]
-repo = 'tpope/vim-fugitive'
+repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'

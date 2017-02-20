@@ -10,7 +10,7 @@ let g:lightline = {
         \ 'active': {
         \   'left': [
         \     ['mode', 'paste'],
-        \     ['fugitive', 'gitgutter', 'filename'],
+        \     ['gitinfo', 'gitgutter', 'filename'],
         \   ],
         \   'right': [
         \     ['denite_info'],
@@ -21,7 +21,7 @@ let g:lightline = {
         \ 'component_function': {
         \   'modified': 'MyModified',
         \   'readonly': 'MyReadonly',
-        \   'fugitive': 'MyFugitive',
+        \   'gitinfo': 'MyGitInfo',
         \   'filename': 'MyFilename',
         \   'fileformat': 'MyFileformat',
         \   'filetype': 'MyFiletype',
@@ -55,11 +55,18 @@ function! MyFilename()
         \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
 
-function! MyFugitive()
+function! MyGitInfo()
   try
-    if &ft !~? 'vimfiler\|gundo\|denite' && exists('*fugitive#head')
-      let _ = fugitive#head()
-      return strlen(_) ? '|'._ : ''
+    if &ft !~? 'vimfiler\|gundo\|denite'
+      if exists('*fugitive#head')
+        let _ = fugitive#head()
+        return strlen(_) ? '|'._ : ''
+      elseif exists('g:gina_loaded')
+        let branch_name = system('git rev-parse --abbrev-ref HEAD 2>/dev/null')
+        if !empty(branch_name)
+          return substitute(branch_name, '\n$', '', '')
+        endif
+      endif
     endif
   catch
   endtry
