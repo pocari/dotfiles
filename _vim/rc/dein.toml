@@ -67,6 +67,9 @@ repo = 'pocari/neovim-rplugin-ruby-sample'
 [[plugins]]
 repo = 'rhysd/vim-color-spring-night'
 
+[[plugins]]
+repo = 'itchyny/vim-gitbranch'
+
 ####################################################################
 # neovim only
 
