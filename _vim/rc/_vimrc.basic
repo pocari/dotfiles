@@ -3,7 +3,7 @@
 let mapleader=','
 noremap \  ,
 
-" :set number
+:set number
 
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
