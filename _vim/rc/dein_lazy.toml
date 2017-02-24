@@ -220,6 +220,11 @@ on_source = ['denite.nvim']
 depends = ['vim-emoji']
 
 [[plugins]]
+repo = 'pocari/vim-denite-gists'
+on_source = ['denite.nvim']
+depends = ['open-browser.vim']
+
+[[plugins]]
 repo = 'kchmck/vim-coffee-script'
 on_ft = 'coffee'
 
