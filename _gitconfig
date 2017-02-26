@@ -26,3 +26,7 @@
 	diff = diff-highlight | less
 [init]
 	templatedir = ~/.git_template
+
+[github]
+	user = pocari
+
