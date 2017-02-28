@@ -49,6 +49,7 @@ call denite#custom#map('insert', "<C-n>",  '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<Down>", '<denite:move_to_next_line>')
 
 call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
+call denite#custom#map('insert', "<C-d>", '<denite:print_messages>')
 call denite#custom#map('insert', "<Up>",  '<denite:move_to_previous_line>')
 
 call denite#custom#map('insert', "<C-y>", '<denite:do_action:yank>')
