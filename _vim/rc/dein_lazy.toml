@@ -222,6 +222,11 @@ depends = ['vim-emoji']
 [[plugins]]
 repo = 'pocari/vim-denite-gists'
 on_source = ['denite.nvim']
+depends = ['vim-denite-kind-open-browser']
+
+[[plugins]]
+repo = 'pocari/vim-denite-kind-open-browser'
+on_source = ['denite.nvim']
 depends = ['open-browser.vim']
 
 [[plugins]]
