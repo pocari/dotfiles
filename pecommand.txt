@@ -9,6 +9,6 @@ socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" # dockerからGUI�
 vi -c 'call DeinCheckAndInstall()' # deinで未インストールプラグインを一括ダウンロード dein plugin install check
 rm ~/.zcompdump && compinit -i # zshの補完リセット zsh reset
 git log --pretty=format:"%h %an %ad %s" --date=format:"%Y-%m-%d %H:%M:%S" | grep $(date -v-1d +"%Y-%m-%d") # 昨日のcommit一覧を表示(-v-1d)の部分を変えると任意の日付 commit check
-ruby -run -e httpd -- . --bind-address=0.0.0.0 --port=1234 .  # カレントディレクトリをDocumentRoot,  port:1234にして簡易webサーバ起動
+ruby -run -e httpd -- --bind-address=0.0.0.0 --port=1234 .  # カレントディレクトリをDocumentRoot,  port:1234にして簡易webサーバ起動
 lsof -i -P | grep 1080 # port 1080をlistenしているprocess（があれば)表示する
 
