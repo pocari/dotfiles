@@ -18,4 +18,5 @@ nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite 
 nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
 nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
 nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
+nnoremap <silent> [denite]h :<C-u>Denite command_history -default-action=edit_and_execute<CR>
 
