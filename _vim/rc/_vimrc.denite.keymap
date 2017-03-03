@@ -4,13 +4,13 @@
 nnoremap [denite] <Nop>
 nmap <Leader>f [denite]
 
-nnoremap <silent> [denite]m :<C-u>Denite<Space>file_old<CR>
-nnoremap <silent> [denite]b :<C-u>Denite<Space>buffer -default-action=switch<CR>
-nnoremap <silent> [denite]d :<C-u>Denite<Space>directory_old<CR>
-nnoremap <silent> [denite]a :<C-u>Denite<Space>file_rec file_old buffer<CR>
-nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
-nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
-nnoremap <silent> [denite]o :<C-u>Denite<Space>outline<CR>
+nnoremap <silent> [denite]m :<C-u>Denite file_old<CR>
+nnoremap <silent> [denite]b :<C-u>Denite buffer -default-action=switch<CR>
+nnoremap <silent> [denite]d :<C-u>Denite directory_old<CR>
+nnoremap <silent> [denite]a :<C-u>Denite file_rec file_old buffer<CR>
+nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
+nnoremap <silent> [denite]l :<C-u>Denite line<CR>
+nnoremap <silent> [denite]o :<C-u>Denite outline<CR>
 nnoremap <silent> [denite]f :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 " grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
 nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
