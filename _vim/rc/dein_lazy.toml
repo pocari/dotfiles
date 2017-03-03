@@ -258,3 +258,10 @@ on_source = ['denite.nvim']
 repo = 'jvirtanen/vim-octave'
 on_ft = ['octave']
 
+[[plugins]]
+if = 'has("nvim")'
+repo = 'lambdalisue/gina.vim'
+rev = 'blame'
+on_cmd = [
+  'Gina'
+]
