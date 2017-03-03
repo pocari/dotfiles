@@ -40,7 +40,7 @@ if executable('rg')
   call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '--smart-case'])
 endif
 
-call denite#custom#var('command_history', 'ignore_command_regexp', ['^q'])
+call denite#custom#var('command_history', 'ignore_command_regexp', ['^q', '^w'])
 
 " Deniteのデフォルトマッピングが変わってしまったので元に戻す
 " https://github.com/Shougo/denite.nvim/commit/cf9a400ce3b1918b4b6570fb97416c5c016976a9
