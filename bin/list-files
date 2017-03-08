@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+if is-git-dir ; then
+  git ls-files -co --exclude-standard
+else
+  ag --follow --nocolor --nogroup -g ''
+fi
+

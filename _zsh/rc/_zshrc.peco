@@ -134,3 +134,20 @@ function peco-select-shortcut(){
 zle -N peco-select-shortcut
 bindkey '^s' peco-select-shortcut
 
+#---------------------------------------------------------------------------------
+# pecoでカレントディレクトリ以下のファイルをリスティング
+function peco-list-files() {
+  local selected_buffer=$(list-files | peco --prompt 'files>')
+  if [ -n "$selected_buffer" ]; then
+    if [ -t 1 ]; then
+      # 画面から叩かれているときはコマンドラインにlessの引数として表示
+      local files=$(echo $selected_buffer | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}')
+      print -z "less ${files}"
+    else
+      # pipeでつながれているときは普通に出力
+      print $selected_buffer
+    fi
+  fi
+}
+
+alias ff='peco-list-files'
