@@ -1,3 +1,5 @@
+" このファイルはDeinによってDeniteロード時に読み込まれるので注意
+
 " denite bufferの現在行の色
 " hi CursorLine ctermfg=magenta
 "let g:neomru#directory_mru_limit = 10000
@@ -63,7 +65,4 @@ call denite#custom#map('insert', "<C-e>",     '<prompt:move_caret_to_tail>')
 call denite#custom#map('insert', "<C-b>",     '<prompt:move_caret_to_left>')
 call denite#custom#map('insert', "<C-f>",     '<prompt:move_caret_to_right>')
 call denite#custom#map('insert', "<C-k>",     '<prompt:delete_text_after_caret>')
-
-" incremental grepのショートカット
-command! Dgrep :Denite grep:::!
 
