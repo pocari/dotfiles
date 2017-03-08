@@ -84,7 +84,14 @@ bindkey "^g^a" peco-select-gitadd
 #---------------------------------------------------------------------------------
 # pecoでブランチを選択してチェックアウト
 function peco-git-checkout() {
-  local selected_branch="$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(refname:short) - %(objectname:short) - %(contents:subject) - %(authorname) - (%(committerdate:relative))' | peco --prompt "git branches>" | sed -e "s/\* //g" | awk "{print \$1}")"
+  local selected_branch="$(
+    git for-each-ref \
+      --sort=-committerdate refs/heads/ \
+      --format='%(HEAD) %(refname:short) - %(objectname:short) - %(contents:subject) - %(authorname) - (%(committerdate:relative))' \
+    | peco --prompt "git branches>" \
+    | sed -e "s/\* //g" \
+    | awk "{print \$1}"
+  )"
   if [ -n "$selected_branch" ]; then
     git checkout $selected_branch
   fi
