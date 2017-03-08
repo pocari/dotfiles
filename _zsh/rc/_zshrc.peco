@@ -37,7 +37,7 @@ function peco-go-to-dir () {
         done
       )
       ghq list --full-path
-      for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done | sort -u
+      for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done 2>/dev/null | sort -u
     } | peco --prompt "cd history>" --query "$LBUFFER"
   )"
   if [ -n "$selected" ]; then
