@@ -7,17 +7,17 @@ cd ./startuptime_bench
 total=100
 for i in $(seq 1 $total)
 do
-    ~/usr/local/bin/nvim \
-	-u ~/.config/nvim/init.vim \
-	-i NONE \
-        --startuptime dein-vim-$$_$i.log \
-        -c quit
+  ~/usr/local/bin/nvim \
+  -u ~/.config/nvim/init.vim \
+  -i NONE \
+  --startuptime vim-startup-$$_$i.log \
+  -c quit
 
   printf "\r%*d / %d" ${#total} $i $total
 done
 echo
 
-for file in dein-vim-*.log
+for file in vim-startup-*.log
 do
     awk 'END {print $1}' "$file"
 done \
