@@ -11,4 +11,4 @@ rm ~/.zcompdump && compinit -i # zshの補完リセット zsh reset
 git log --pretty=format:"%h %an %ad %s" --date=format:"%Y-%m-%d %H:%M:%S" | grep $(date -v-1d +"%Y-%m-%d") # 昨日のcommit一覧を表示(-v-1d)の部分を変えると任意の日付 commit check
 ruby -run -e httpd -- --bind-address=0.0.0.0 --port=1234 .  # カレントディレクトリをDocumentRoot,  port:1234にして簡易webサーバ起動
 lsof -i -P | grep 1080 # port 1080をlistenしているprocess（があれば)表示する
-
+screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty # docker for macのvmに入る。 Ctr-a, dで抜けられる
