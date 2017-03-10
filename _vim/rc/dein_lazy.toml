@@ -30,6 +30,11 @@ repo = 'sebastianmarkow/deoplete-rust'
 if = 'has("nvim")'
 on_ft = 'rust'
 
+[[plugins]]
+repo = 'Shougo/neco-vim'
+if = 'has("nvim")'
+on_ft = 'vim'
+on_i = 1
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
