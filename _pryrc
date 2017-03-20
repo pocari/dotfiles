@@ -17,14 +17,17 @@ if defined?(PryByebug)
 
   # なれるまで補助メッセージ
   $stderr.puts <<-EOS
-## pry-byebug extra commands are defined in ~/.pryrc
-c       ... continue
-s       ... step
-n       ... next
-f       ... finish
-u       ... ひとつ上のスタックフレームに（呼び出し元に戻る方向）
-d       ... 戻っていたスタックフレームを進む（uで戻った後にまた降りていく方向）
-[Enter] ... repeat last command
+## pry memo (pry-byebug extra commands are defined in ~/.pryrc)
+c              ... continue
+s              ... step
+n              ... next
+f              ... finish
+u              ... backward stack frame(back to caller)
+d              ... foward stack frame(inverse of 'u')
+[Enter]        ... repeat last command
+$ Clazz#method ... show method source
+obj.method(:method).source_location
+               ... show place of method definition
   EOS
 end
 
