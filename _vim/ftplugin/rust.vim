@@ -1,5 +1,11 @@
 " rustcでコンパイルチェック
-let g:syntastic_rust_checkers = ['cargo']
+" syntasticの設定
+" let g:syntastic_rust_checkers = ['cargo']
+
+augroup my_neomake_rust_cmds
+  autocmd!
+  autocmd BufWritePost *.rs Neomake! cargo
+augroup END
 
 " 保存時にrustfmtで自動整形
 " 要 cargo install rustfmt

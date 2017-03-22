@@ -6,9 +6,16 @@ on_ft = 'javascript'
 repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
 
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
+# on_ft = ['ruby', 'go', 'rust']
+
 [[plugins]]
-repo = 'scrooloose/syntastic'
+repo = 'neomake/neomake'
 on_ft = ['ruby', 'go', 'rust']
+hook_add = '''
+autocmd! BufWritePost * Neomake
+'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'

@@ -53,7 +53,11 @@ source ~/dotfiles/_vim/rc/_vimrc.easymotion
 " source ~/dotfiles/_vim/rc/_vimrc.ctrlp
 
 "syntastic"
-source ~/dotfiles/_vim/rc/_vimrc.syntastic
+" source ~/dotfiles/_vim/rc/_vimrc.syntastic
+
+" Neomake
+source ~/dotfiles/_vim/rc/_vimrc.neomake
+
 if has("win32")
 elseif has('mac')
   source ~/dotfiles/_vim/rc/_vimrc.osx

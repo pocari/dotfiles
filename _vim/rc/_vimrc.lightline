@@ -14,7 +14,6 @@ let g:lightline = {
         \   ],
         \   'right': [
         \     ['denite_info'],
-        \     ['lineinfo', 'syntastic'],
         \     ['charcode', 'fileformat', 'fileencoding', 'filetype'],
         \   ]
         \ },
@@ -27,7 +26,6 @@ let g:lightline = {
         \   'filetype': 'MyFiletype',
         \   'fileencoding': 'MyFileencoding',
         \   'mode': 'MyMode',
-        \   'syntastic': 'SyntasticStatuslineFlag',
         \   'charcode': 'MyCharCode',
         \   'gitgutter': 'MyGitGutter',
         \   'denite_info': 'MyDeniteInfo',
