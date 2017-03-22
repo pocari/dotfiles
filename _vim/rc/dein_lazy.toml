@@ -13,7 +13,7 @@ on_ft = 'rust'
 [[plugins]]
 repo = 'neomake/neomake'
 on_ft = ['ruby', 'go', 'rust']
-hook_add = '''
+hook_source = '''
 autocmd! BufWritePost * Neomake
 '''
 
