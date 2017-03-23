@@ -62,6 +62,12 @@ hook_post_update = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/deoplete-rct'
+if = 'has("nvim")'
+on_ft = 'ruby'
+on_i = 1
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
