@@ -1,3 +1,5 @@
 # main viewに commit hash を表示する
 set main-view-id = yes
 
+color cursor black green
+
