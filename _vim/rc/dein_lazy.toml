@@ -220,6 +220,14 @@ on_if = 1
 on_source = ['unite.vim', 'denite.nvim']
 
 [[plugins]]
+# brew install --HEAD cmakeするとうまいこといった
+# https://github.com/nixprime/cpsm/issues/27#issuecomment-246595722
+if = 'has("nvim")'
+repo = 'nixprime/cpsm'
+build = 'env PY3=ON ./install.sh'
+on_source = ['denite.nvim']
+
+[[plugins]]
 repo = 'easymotion/vim-easymotion'
 on_map = '<Plug>(easymotion-'
 
