@@ -2,6 +2,6 @@
 
 # tmux のセッション内にいる場合、現在paneの番号を出力する
 if [ "${TMUX}" != "" ]; then
-  echo "($(tmux display-message -p  "#{pane_index}"))"
+  echo "($(tmux display -pt "${TMUX_PANE:?}" '#{pane_index}'))"
 fi
 
