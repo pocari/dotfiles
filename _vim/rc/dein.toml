@@ -62,9 +62,6 @@ repo = 'terryma/vim-multiple-cursors'
 # repo = 'pocari/neovim-rplugin-ruby-sample'
 
 [[plugins]]
-repo = 'rhysd/vim-color-spring-night'
-
-[[plugins]]
 repo = 'itchyny/vim-gitbranch'
 
 ####################################################################
@@ -72,6 +69,7 @@ repo = 'itchyny/vim-gitbranch'
 
 [[plugins]]
 # nvim で矩形ペーストが動かない件の対策直ったら不要
+# https://github.com/neovim/neovim/issues/1822
 if = 'has("nvim")'
 repo = 'bfredl/nvim-miniyank'
 hook_add = '''
@@ -123,6 +121,11 @@ repo = 'Shougo/neoyank.vim'
 [[plugins]]
 if = '!has("nvim")'
 repo = 'vim-jp/vital.vim'
+
+[[plugins]]
+# macvim用
+if = '!has("nvim")'
+repo = 'rhysd/vim-color-spring-night'
 
 # [[plugins]]
 # repo = 'justinmk/vim-dirvish'
