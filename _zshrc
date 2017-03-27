@@ -147,22 +147,18 @@ if (( ${+commands[peco]} )); then
   [ -f ~/dotfiles/_zsh/rc/_zshrc.peco ] && source ~/dotfiles/_zsh/rc/_zshrc.peco
 fi
 
-source ~/.tmuxinator/tmuxinator.zsh
-
-function manvi() {
-  /usr/bin/man $* -P "col -b | vim -Rc 'setl ft=man ts=8 nomod nolist nonu' -c 'nmap q :q<cr>' -"
-}
+# source ~/.tmuxinator/tmuxinator.zsh
 
 #nodeの設定
 if (( ${+commands[node]} )); then
   export PATH=$PATH:./node_modules/.bin
 fi
 
-#nviの設定ファイル用
+#nvimの設定ファイル用
 export XDG_CONFIG_HOME=$HOME/.config
 
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #===============================
 # source zsh-syntax-highlighting
