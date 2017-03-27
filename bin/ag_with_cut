@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# agの出力結果の行数を最大2000文時に制限するwrapper
+# agの出力結果の行の文字数を制限するwrapper
 # denite でpythonがハングするため
 
-ag $@ | cut -c 1-2000
+ag $@ | cut -c 1-200

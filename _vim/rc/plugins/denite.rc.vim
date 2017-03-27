@@ -33,18 +33,28 @@ endif
 call denite#custom#alias('source', 'file_rec/git', 'file_rec')
 call denite#custom#var('file_rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
 
-if executable('rg')
-  " Ripgrep command on grep source
-  " rg コマンドで検索するが、 minify したjsなど１行が極端に長いファイルがマッ
-  " チするとpythonがハングしてしまうので１行最大2000文字になるように検索結果の
-  " 行をカットするrg_with_cutコマンドでwrapして検索する
-  call denite#custom#var('grep', 'command', ['rg_with_cut'])
-  call denite#custom#var('grep', 'recursive_opts', [])
-  call denite#custom#var('grep', 'final_opts', [])
-  call denite#custom#var('grep', 'separator', ['--'])
-  call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '--smart-case'])
-endif
+" if executable('rg')
+"   " Ripgrep command on grep source
+"   " rg コマンドで検索するが、 minify したjsなど１行が極端に長いファイルがマッ
+"   " チするとpythonがハングしてしまうので１行最大2000文字になるように検索結果の
+"   " 行をカットするrg_with_cutコマンドでwrapして検索する
+"   call denite#custom#var('grep', 'command', ['rg_with_cut'])
+"   call denite#custom#var('grep', 'recursive_opts', [])
+"   call denite#custom#var('grep', 'final_opts', [])
+"   call denite#custom#var('grep', 'separator', ['--'])
+"   call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '--smart-case'])
+" endif
 
+if executable('ag')
+  " Ag command on grep source
+  call denite#custom#var('grep', 'command', ['ag_with_cut'])
+  call denite#custom#var('grep', 'default_opts',
+        \ ['-i', '--vimgrep'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'final_opts', [])
+endif
 call denite#custom#var('command_history', 'ignore_command_regexp', ['^q', '^w'])
 
 " Deniteのデフォルトマッピングが変わってしまったので元に戻す
