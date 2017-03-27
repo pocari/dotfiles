@@ -31,8 +31,8 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-[[plugins]]
-repo = 'Yggdroot/indentLine'
+# [[plugins]]
+# repo = 'Yggdroot/indentLine'
 
 # [[plugins]]
 # repo = 'thinca/vim-quickrun'
