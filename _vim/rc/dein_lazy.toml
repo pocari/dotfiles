@@ -92,9 +92,9 @@ depends = ['neosnippet-snippets']
 # repo = 'slim-template/vim-slim'
 # on_ft = 'slim'
 
-[[plugins]]
-repo = 'osyo-manga/vim-monster'
-on_ft = 'ruby'
+# [[plugins]]
+# repo = 'osyo-manga/vim-monster'
+# on_ft = 'ruby'
 
 # markdownのプレビュー
 # http://dackdive.hateblo.jp/entry/2014/09/11/213455
