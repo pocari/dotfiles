@@ -1,3 +1,6 @@
 #!/bin/sh
 
+# rgの出力結果の行数を最大2000文時に制限するwrapper
+# denite でpythonがハングするため
+
 rg $@ | cut -c 1-2000
