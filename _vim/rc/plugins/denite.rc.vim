@@ -35,7 +35,10 @@ call denite#custom#var('file_rec/git', 'command', ['git', 'ls-files', '-co', '--
 
 if executable('rg')
   " Ripgrep command on grep source
-  call denite#custom#var('grep', 'command', ['rg'])
+  " rg コマンドで検索するが、 minify したjsなど１行が極端に長いファイルがマッ
+  " チするとpythonがハングしてしまうので１行最大2000文字になるように検索結果の
+  " 行をカットするrg_with_cutコマンドでwrapして検索する
+  call denite#custom#var('grep', 'command', ['rg_with_cut'])
   call denite#custom#var('grep', 'recursive_opts', [])
   call denite#custom#var('grep', 'final_opts', [])
   call denite#custom#var('grep', 'separator', ['--'])
