@@ -147,8 +147,6 @@ if (( ${+commands[peco]} )); then
   [ -f ~/dotfiles/_zsh/rc/_zshrc.peco ] && source ~/dotfiles/_zsh/rc/_zshrc.peco
 fi
 
-# source ~/.tmuxinator/tmuxinator.zsh
-
 #nodeの設定
 if (( ${+commands[node]} )); then
   export PATH=$PATH:./node_modules/.bin
@@ -157,7 +155,7 @@ fi
 #nvimの設定ファイル用
 export XDG_CONFIG_HOME=$HOME/.config
 
-
+# iterm2のシェル統合を使う場合
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #===============================
