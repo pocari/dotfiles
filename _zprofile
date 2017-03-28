@@ -6,20 +6,3 @@
 autoload -U compinit
 compinit -C
 
-# rbenv
-if [ -d ${HOME}/.rbenv ] ; then
-  PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
-  export PATH
-  eval "$(rbenv init -)"
-fi
-
-# nodenv
-if [ -d ${HOME}/.nodenv ] ; then
-  PATH=${HOME}/.nodenv/bin:$PATH
-  eval "$(nodenv init -)"
-fi
-
-# rustup
-if [ -d ${HOME}/.cargo ] ; then
-  PATH=${HOME}/.cargo/bin:$PATH
-fi
