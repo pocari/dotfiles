@@ -296,7 +296,7 @@ function! s:CdToGitTop() abort
   if dir != ""
     execute 'cd ' . dir
   else
-    echo 'this directory is not git repository.'
+    echo 'this directory is not a git repository.'
   endif
 endfunction
 
