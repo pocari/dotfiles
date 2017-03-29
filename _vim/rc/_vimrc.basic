@@ -291,8 +291,8 @@ if has('nvim')
 endif
 
 " 今のpwdがgitのディレクトリなら、そのルートディレクトリにcdする
-function! s:CdToGitTop() abort
-  let dir = system('git-top')
+function! s:CdToGitRoot() abort
+  let dir = system('git-root-dir')
   if dir != ""
     execute 'cd ' . dir
   else
@@ -300,7 +300,7 @@ function! s:CdToGitTop() abort
   endif
 endfunction
 
-command! Gtop :call s:CdToGitTop()
+command! Groot :call s:CdToGitRoot()
 
 if has('vim_starting')
   syntax enable
