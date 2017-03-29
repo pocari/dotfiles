@@ -64,3 +64,6 @@ elseif has('mac')
 endif
 
 " source ~/dotfiles/_vim/rc/_vimrc.omnisharp
+
+" gina
+source ~/dotfiles/_vim/rc/_vimrc.gina
