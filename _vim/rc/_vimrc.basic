@@ -290,6 +290,18 @@ if has('nvim')
   command! Eterminal :call s:termopen_wrapper('s:onTermExit') | startinsert
 endif
 
+" 今のpwdがgitのディレクトリなら、そのルートディレクトリにcdする
+function! s:CdToGitTop() abort
+  let dir = system('git-top')
+  if dir != ""
+    execute 'cd ' . dir
+  else
+    echo 'this directory is not git repository.'
+  endif
+endfunction
+
+command! Gtop :call s:CdToGitTop()
+
 if has('vim_starting')
   syntax enable
   filetype plugin indent on

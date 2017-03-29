@@ -1,0 +1,12 @@
+#!/bin/sh
+
+is-git-dir
+in_git_repo=$?
+
+if [ $in_git_repo -eq 0 ] ; then
+  echo `git rev-parse --show-toplevel`
+else
+  exit $in_git_repo
+fi
+
+exit 0
