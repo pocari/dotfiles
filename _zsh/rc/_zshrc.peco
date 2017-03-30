@@ -1,12 +1,6 @@
 # vim: ft=sh
 
 #---------------------------------------------------------------------------------
-# agで見つかったpecoで選択してその行をvimで開く
-function agvim () {
-    vim $(ag $@ | peco --prompt "open vim>" --query "$LBUFFER" | awk -F : '{print "+" $2 " " $1}')
-}
-
-#---------------------------------------------------------------------------------
 # コマンド履歴をpecoで検索して表示
 function peco-select-history() {
     local tac
@@ -55,15 +49,6 @@ bindkey '^[g' peco-go-to-dir
 function kill-peco () {
     ps aux | peco --prompt "KILL >" | awk '{ print $2 }' | xargs kill -9
 }
-
-case "${OSTYPE}" in
-darwin*)
-    [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.osx ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.osx
-    ;;
-linux*)
-    [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.linux ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.linux
-    ;;
-esac
 
 #---------------------------------------------------------------------------------
 # pecoで選んだものをgit add
@@ -151,3 +136,13 @@ function peco-list-files() {
 }
 
 alias ff='peco-list-files'
+
+#---------------------------------------------------------------------------------
+case "${OSTYPE}" in
+darwin*)
+    [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.osx ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.osx
+    ;;
+linux*)
+    [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.linux ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.linux
+    ;;
+esac
