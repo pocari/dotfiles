@@ -250,10 +250,6 @@ on_source = ['denite.nvim']
 depends = ['vim-denite-kind-open-browser']
 
 [[plugins]]
-repo = 'pocari/vim-denite-command-history'
-on_source = ['denite.nvim']
-
-[[plugins]]
 repo = 'pocari/vim-denite-kind-open-browser'
 on_source = ['denite.nvim']
 depends = ['open-browser.vim']
