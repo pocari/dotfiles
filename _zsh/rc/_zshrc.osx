@@ -7,22 +7,6 @@
 export GOPATH=~/dev/repos
 export PATH=$PATH:$GOPATH/bin
 
-#####################################
-# 今はdocker-machineになってるので
-# docker-machine create --driver virtualbox default
-# eval "$(docker-machine env default)
-# で。
-#####################################
-#docker config
-# brew cask virtualbox
-# brew install docker boot2docker
-#
-# boot2docker init
-# boot2docker up
-# export DOCKER_HOST=tcp://192.168.59.104:2376
-# export DOCKER_CERT_PATH=/Users/pocari/.boot2docker/certs/boot2docker-vm
-# export DOCKER_TLS_VERIFY=1
-
 #export CC=gcc-4.2
 #alias gcc="$CC"
 alias javac='javac -J-Dfile.encoding=utf-8'
