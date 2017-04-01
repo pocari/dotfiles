@@ -43,8 +43,8 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'simeji/winresizer'
 
-# [[plugins]]
-# repo = 'vim-scripts/delek.vim'
+[[plugins]]
+repo = 'vim-scripts/delek.vim'
 # 
 # [[plugins]]
 # repo = 'tomasr/molokai'
