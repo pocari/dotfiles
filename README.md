@@ -42,6 +42,6 @@
 - completion files from Docker for Mac directory
 
   ```
-  ln -s /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion ~/dotfiles/_zsh/addhoc-completions/_docker
-  ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion ~/dotfiles/_zsh/addhoc-completions/_docker-compose
+  ln -sf /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion ~/dotfiles/_zsh/addhoc-completions/_docker
+  ln -sf /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion ~/dotfiles/_zsh/addhoc-completions/_docker-compose
   ```
