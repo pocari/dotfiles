@@ -1,5 +1,5 @@
 :colorscheme spring-night
-:set guifont=Ricty:h14
+:set guifont=Ricty_Diminished:h14
 :set transparency=7
 
 :set visualbell t_vb=
