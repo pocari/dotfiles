@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# TODO vimとneovimを共存させてるので
-# ~/.config/nvim を ~/.vimディレクトリへのsymlinkにする必要がある
-# ~/.config自体は他の処理からも作成されるので、まだ無い場合のみ作成する
 DOT_FILES=(
   .zshrc
   .zshenv
@@ -32,4 +29,8 @@ do
 
   ln -snf $HOME/dotfiles/$src_file $HOME/$file
 done
+
+# neovimとvimの共存用設定
+mkdir -p ~/.config
+ln -sf ~/.vim ~/.config/nvim
 
