@@ -285,3 +285,10 @@ repo = 'lambdalisue/gina.vim'
 on_cmd = [
   'Gina'
 ]
+
+[[plugins]]
+repo = 'git@bitbucket.org:caffepocari/vim-denite-a-ds-list.git'
+on_source = ['denite.nvim']
+depends = ['vim-denite-kind-open-browser']
+
+
