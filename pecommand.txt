@@ -13,3 +13,4 @@ ruby -run -e httpd -- --bind-address=0.0.0.0 --port=1234 .  # カレントディ
 lsof -i -P | grep 1080 # port 1080をlistenしているprocess（があれば)表示する
 screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty # docker for macのvmに入る。 Ctr-a, dで抜けられる
 sudo pfctl -F all -f /etc/pf.conf # pfctlでメモリ上に設定しているものリセットして、 /etc/pf.conf の設定内容のみにする
+aws ec2 describe-instances | jq -r '.Reservations[].Instances[] | (.Tags[] | select(.Key == "Name") | .Value) + ":" + (.NetworkInterfaces[] | select(.Status == "in-use") | .Association.PublicIp) + ":" + (.NetworkInterfaces[] | select(.Status == "in-use") | .PrivateIpAddress)'  | column -t -s ":" # elastic beanstalkから作成したEC2のpublic ip一覧を表示する
