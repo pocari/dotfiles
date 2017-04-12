@@ -67,11 +67,14 @@ stty -ixon -ixoff
 
 #補完設定
 #zsh-completion
-fpath=($fpath ~/.zsh/completion)
-fpath=($fpath ~/.zsh/addhoc-completions)
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
+if [ -e /usr/local/share/zsh/site-functions ]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
+fpath=($fpath ~/.zsh/completion)
+fpath=($fpath ~/.zsh/addhoc-completions)
 
 ## 補完時に大小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
