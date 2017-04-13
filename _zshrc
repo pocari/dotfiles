@@ -76,6 +76,11 @@ fi
 fpath=($fpath ~/.zsh/completion)
 fpath=($fpath ~/.zsh/addhoc-completions)
 
+if type aws 2>/dev/null 1>/dev/null; then
+  # _awsが存在するだけだと読み込まれなかったので明示的にsourceする
+  source /usr/local/share/zsh/site-functions/_aws
+fi
+
 ## 補完時に大小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=1
