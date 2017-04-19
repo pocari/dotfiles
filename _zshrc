@@ -5,6 +5,9 @@
 #また、最初にしておかないと、zshrcで各種bindkeyをした後にbindkey -eをしてしまうとリセットされてしまう
 bindkey -e
 
+autoload -U compinit
+compinit -C
+
 #pathの重複をさせない
 typeset -U path PATH
 
