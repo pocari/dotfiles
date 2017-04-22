@@ -1,10 +1,1 @@
-burntsushi/ripgrep
-caskroom/cask
-caskroom/versions
 homebrew/core
-homebrew/dupes
-homebrew/php
-motemen/ghq
-neovim/neovim
-sanemat/font
-snmsts/roswell
