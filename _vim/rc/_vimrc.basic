@@ -235,10 +235,10 @@ endif
 " 元ネタ
 " https://github.com/neovim/neovim/issues/2051
 " その後@_tsub_さんに教えてもらった設定
-if has('nvim')
-  set timeout
-  set timeoutlen=300
-endif
+" if has('nvim')
+"   set timeout
+"   set timeoutlen=300
+" endif
 
 " リロード用コマンド
 command! Reloadrc :source ~/.vimrc
