@@ -28,7 +28,9 @@ set mouse=a
 set nowrap "折り返さない
 set hidden  "バッファを編集中でも切り替えられるように
 set confirm "終了時に未保存バッファがあると確認する
-set clipboard+=unnamed "ヤンクした内容がシステムのクリップボードにも入るようにする
+if has('clipboard')
+  set clipboard+=unnamed "ヤンクした内容がシステムのクリップボードにも入るようにする
+endif
 set nrformats=  " Ctr-a, xは常に10進数
 set shortmess+=I  "ウガンダ非表示
 set cmdheight=1 "コマンド行は1行
