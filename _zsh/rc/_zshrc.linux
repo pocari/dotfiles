@@ -4,13 +4,15 @@ export EDITOR=/usr/local/bin/vim
 
 alias ls='ls --color=tty'
 alias vim='/usr/local/bin/vim'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
+alias iv='nvim'
+
 
 #golang config
 export GOPATH=~/dev/repos
 export PATH=$PATH:$GOPATH/bin
-
-
+export PATH=/usr/share/doc/git/contrib/diff-highlight/:$PATH
 #docker setting
 #/etc/init/docker.conf
 #DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
