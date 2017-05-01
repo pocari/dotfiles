@@ -5,6 +5,7 @@ awscli
 boost
 cmake
 ctags
+direnv
 freetype
 fswatch
 gawk
@@ -46,6 +47,7 @@ tig
 tmux
 tree
 unison
+unox
 xz
 zsh
 zsh-completions
