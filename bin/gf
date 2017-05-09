@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# http://qiita.com/takaakikasai/items/fc684d95c9841069889b
+git-foresta "$@" | less -RSX
+
