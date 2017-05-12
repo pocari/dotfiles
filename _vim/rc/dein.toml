@@ -124,7 +124,6 @@ repo = 'vim-jp/vital.vim'
 
 [[plugins]]
 # macvim用
-if = '!has("nvim")'
 repo = 'rhysd/vim-color-spring-night'
 
 # [[plugins]]
