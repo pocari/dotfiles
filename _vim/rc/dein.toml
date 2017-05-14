@@ -64,6 +64,10 @@ repo = 'terryma/vim-multiple-cursors'
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
 
+[[plugins]]
+# macvim用
+repo = 'rhysd/vim-color-spring-night'
+merged = 0
 ####################################################################
 # neovim only
 
@@ -121,10 +125,6 @@ repo = 'Shougo/neoyank.vim'
 [[plugins]]
 if = '!has("nvim")'
 repo = 'vim-jp/vital.vim'
-
-[[plugins]]
-# macvim用
-repo = 'rhysd/vim-color-spring-night'
 
 # [[plugins]]
 # repo = 'justinmk/vim-dirvish'
