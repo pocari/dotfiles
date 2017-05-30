@@ -11,7 +11,10 @@ if has('gui_running')
 endif
 
 if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+  " Neovim2.0からguicursor推奨になった
+  " https://github.com/neovim/neovim/wiki/Following-HEAD#20170402
+  " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+  set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 "  set termguicolors
 "  colorscheme dracula
 endif
