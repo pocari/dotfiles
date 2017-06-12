@@ -17,6 +17,7 @@
 	graph = log --graph --all --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
 	# browseはhubコマンド
 	see = browse
+	chpr = "!f(){ git fetch origin pull/$1/head:pr$1; git checkout pr$1; };f"
 [difftool]
 	prompt = false
 
