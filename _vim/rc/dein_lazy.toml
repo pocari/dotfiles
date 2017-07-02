@@ -31,9 +31,14 @@ call deoplete#custom#set('neosnippet', 'input_pattern', '.')
 call deoplete#custom#set('neosnippet', 'matchers', ['matcher_head'])
 '''
 
+# [[plugins]]
+# repo = 'sebastianmarkow/deoplete-rust'
+# if = 'has("nvim")'
+# on_ft = 'rust'
+
 [[plugins]]
-repo = 'sebastianmarkow/deoplete-rust'
 if = 'has("nvim")'
+repo = 'autozimu/LanguageClient-neovim'
 on_ft = 'rust'
 
 [[plugins]]
