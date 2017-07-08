@@ -3,6 +3,14 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = 'jsx'
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = 'jsx'
+
+[[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
 
