@@ -4,7 +4,7 @@
 
 augroup my_neomake_rust_cmds
   autocmd!
-  autocmd BufWritePost *.rs Neomake! cargo
+  autocmd BufWritePost *.rs Neomake cargo
 augroup END
 
 " 保存時にrustfmtで自動整形
