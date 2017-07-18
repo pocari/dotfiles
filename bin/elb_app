@@ -1,0 +1,23 @@
+#!/bin/bash
+
+ELB_LIST=$(aws elb describe-load-balancers | jq -r '.LoadBalancerDescriptions[] | .DNSName + "@" + .Instances[0].InstanceId')
+INSTANCE_LIST=$(aws elb describe-load-balancers | jq -r '.LoadBalancerDescriptions[] | .Instances[0].InstanceId')
+
+function normalize() {
+  echo $1 | sed 's/-/_/g'
+}
+
+for line in $(aws ec2 describe-instances --instance-ids ${INSTANCE_LIST} | jq -r '.Reservations[].Instances[] | .InstanceId + "@" + (.Tags[] | select(.Key == "Name") | .Value)'); do
+  IFS='@' read -ra instance <<< "$line"
+  eval ID_TO_TAGNAME_$(normalize ${instance[0]})=${instance[1]}
+done
+
+for line in ${ELB_LIST} ; do
+  IFS='@' read -ra elb <<< "$line"
+  ELB_DNS=${elb[0]}
+  NORMALIZED_INSTANCE_ID=$(normalize ${elb[1]})
+  TAG_NAME=$(eval echo \$ID_TO_TAGNAME_${NORMALIZED_INSTANCE_ID})
+
+  echo -e "${ELB_DNS}\t${TAG_NAME}"
+done
+
