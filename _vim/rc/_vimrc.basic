@@ -68,6 +68,7 @@ command! Tempfile :edit `=tempname()`
 
 "escは遠い 要Karabiner
 imap <C-j> <Esc>
+vmap <C-j> <Esc>
 
 " Turn off paste mode when leaving insert
 autocmd MyInit InsertLeave * set nopaste
