@@ -17,3 +17,8 @@ fi
 if [ -d ${HOME}/.goenv ] ; then
   eval "$(goenv init -)"
 fi
+
+# pyenv
+if [ -d ${HOME}/.pyenv ] ; then
+  eval "$(pyenv init -)"
+fi

@@ -41,3 +41,15 @@ if [ -d ${HOME}/.goenv ] ; then
   GOENV_ROOT="$HOME/.goenv"
   PATH="$GOENV_ROOT/bin:$PATH"
 fi
+
+# pyenv
+if [ -d ${HOME}/.pyenv ] ; then
+  PATH=${HOME}/.pyenv/bin:/usr/local/bin:${PATH}
+  export PATH
+  function pyenv() {
+    unset -f pyenv
+    eval "$(pyenv init -)"
+    pyenv "$@"
+  }
+fi
+
