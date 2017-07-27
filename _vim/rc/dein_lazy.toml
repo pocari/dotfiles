@@ -121,6 +121,15 @@ repo = 'kannokanno/previm'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+hook_post_source = '''
+  let g:openbrowser_browser_commands = [
+  \   {
+  \     'name': 'open',
+  \     'args': ['{browser}', '{uri}'],
+  \     'background': 0
+  \   }
+  \]
+'''
 
 # [[plugins]]
 # repo = 'mattn/benchvimrc-vim'
