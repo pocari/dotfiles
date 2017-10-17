@@ -28,13 +28,13 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-V> unite#do_action('right
 "入力モードで開始
 let g:unite_enable_start_insert=1
 
-" file_mrcの対象を現在のプロジェクトのファイルのみにする
-" (matcher_project_files)
-" 先頭に^が来た時だけ正規表現でマッチさせる。それ以外はglob検索
-" (matcher_context)
-call unite#custom#source(
-      \ 'file_mru', 'matchers',
-      \ ['matcher_project_files', 'matcher_context'])
+" " file_mrcの対象を現在のプロジェクトのファイルのみにする
+" " (matcher_project_files)
+" " 先頭に^が来た時だけ正規表現でマッチさせる。それ以外はglob検索
+" " (matcher_context)
+" call unite#custom#source(
+"       \ 'file_mru', 'matchers',
+"       \ ['matcher_project_files', 'matcher_context'])
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -51,9 +51,9 @@ if executable('rg')
 endif
 
 " 画像ファイルを無視する
-let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
-call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
-call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
+" let s:unite_ignore_patterns='\.\(gif\|jpe\?g\|png\|webp\)$'
+" call unite#custom#source('file_rec/async', 'ignore_pattern', s:unite_ignore_patterns)
+" call unite#custom#source('file_rec/git', 'ignore_pattern', s:unite_ignore_patterns)
 
 function! GetProjectDir() abort " {{{
   if exists('b:vimfiler.current_dir')
