@@ -152,7 +152,7 @@ alias pecontainer='peco-docker-exec'
 #---------------------------------------------------------------------------------
 # pecoでexitしてるコンテナを削除
 function peco-docker-kill-exited-container() {
-  local selected_buffer=$(docker ps -a --filter 'status=exited' --format "{{.Names}}\t{{.Command}}" | peco --prompt 'container>')
+  local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | peco --prompt 'container>')
   if [ -n "$selected_buffer" ]; then
     local containers=$(echo $selected_buffer | awk -F"\t" '{print $1}')
     docker rm $(echo ${containers} | tr '\n' ' ')
