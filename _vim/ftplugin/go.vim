@@ -4,11 +4,12 @@
 " let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 
 " neomakeの設定
-let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'errcheck']
+let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
 
 " 保存時にimportを自動補完
 let g:go_fmt_command = "goimports"
 
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 
 nnoremap [vimgo] <Nop>
 nmap <Leader>v [vimgo]
