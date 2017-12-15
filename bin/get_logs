@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ -z "$LOG_GROUP" ]; then
   LOG_GROUP=$(aws logs describe-log-groups | jq -r ".logGroups[].logGroupName" | grep -v  "/aws/lambda/" | peco)
   if [ -z "$LOG_GROUP" ]; then
@@ -7,19 +9,39 @@ if [ -z "$LOG_GROUP" ]; then
   fi
 fi
 
-LOG_STREAM=$(aws logs describe-log-streams \
-  --log-group-name=${LOG_GROUP} \
-  --order-by=LastEventTime --descending | \
-  jq -r '.logStreams[] | .logStreamName + "@" + ((.lastEventTimestamp // .creationTime) | (. / 1000) + (3600 * 9) | strftime("%Y-%m-%d %H:%M:%S"))' | \
-column -t -s "@" | peco | awk '{print $1}'
-)
-
 if [ -z "$LOG_STREAM" ]; then
-  exit 2
+  LOG_STREAM=$(aws logs describe-log-streams \
+    --log-group-name=${LOG_GROUP} \
+    --order-by=LastEventTime --descending | \
+    jq -r '.logStreams[] | .logStreamName + "@" + ((.lastEventTimestamp // .creationTime) | (. / 1000) + (3600 * 9) | strftime("%Y-%m-%d %H:%M:%S"))' | \
+  column -t -s "@" | peco | awk '{print $1}'
+  )
+
+  if [ -z "$LOG_STREAM" ]; then
+    exit 2
+  fi
 fi
 
-aws logs get-log-events \
-  --log-group-name=${LOG_GROUP} \
-  --log-stream-name=${LOG_STREAM} | \
-jq -r '.events[] | (.timestamp |  (. / 1000) + (3600 * 9) | strftime("%Y-%m-%d %H:%M:%S")) + "\t" + .message'
+prev_next_forward_token=""
+next_forward_token="dummy"
+while [ "$prev_next_forward_token" != "$next_forward_token" ]
+do
+  if [ "$next_forward_token" = "dummy" ]; then
+    option_next_token=""
+  else
+    option_next_token="--next-token=${next_forward_token}"
+  fi
 
+  log_events=$(aws logs get-log-events \
+      --log-group-name=${LOG_GROUP} \
+      --log-stream-name=${LOG_STREAM} \
+      --limit=10000 \
+      --start-from-head \
+      ${option_next_token} \
+  )
+  prev_next_forward_token=$next_forward_token
+  next_forward_token=$(echo ${log_events} | jq -r '.nextForwardToken')
+  echo ${log_events} | jq -r '.events[] | (.timestamp |  (. / 1000) + (3600 * 9) | strftime("%Y-%m-%d %H:%M:%S")) + "\t" + .message'
+  # echo "prev: ${prev_next_forward_token}"
+  # echo "next: ${next_forward_token}"
+done
