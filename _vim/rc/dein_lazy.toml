@@ -45,11 +45,6 @@ call deoplete#custom#set('neosnippet', 'matchers', ['matcher_head'])
 # on_ft = 'rust'
 
 [[plugins]]
-if = 'has("nvim")'
-repo = 'autozimu/LanguageClient-neovim'
-on_ft = 'rust'
-
-[[plugins]]
 repo = 'Shougo/neco-vim'
 if = 'has("nvim")'
 on_ft = 'vim'

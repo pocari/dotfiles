@@ -68,6 +68,8 @@ repo = 'itchyny/vim-gitbranch'
 # macvim用
 repo = 'rhysd/vim-color-spring-night'
 merged = 0
+
+
 ####################################################################
 # neovim only
 
@@ -80,6 +82,10 @@ hook_add = '''
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 '''
+
+[[plugins]]
+if = 'has("nvim")'
+repo = 'autozimu/LanguageClient-neovim'
 
 ####################################################################
 # vim only
