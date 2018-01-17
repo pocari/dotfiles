@@ -45,6 +45,8 @@ call denite#custom#var('file_rec/git', 'command', ['git', 'ls-files', '-co', '--
 "   call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '--smart-case'])
 " endif
 
+" grepの結果のファイル名でも絞りこめるようにする
+call denite#custom#source('grep', 'converters', ['converter_abbr_word'])
 if executable('ag')
   " Ag command on grep source
   call denite#custom#var('grep', 'command', ['ag_with_cut'])
