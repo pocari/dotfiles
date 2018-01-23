@@ -140,10 +140,11 @@ alias ff='peco-list-files'
 #---------------------------------------------------------------------------------
 # pecoでdocker exec -it container
 function peco-docker-exec() {
+  local exec_command=$1
   local selected_buffer=$(docker ps --format "{{.Names}}\t{{.Command}}" | peco --prompt 'container>')
   if [ -n "$selected_buffer" ]; then
     local container=$(echo $selected_buffer | awk -F"\t" '{print $1}')
-    docker exec -it ${container} ${EXEC_COMMAND:-bash}
+    docker exec -it ${container} ${exec_command:-bash}
   fi
 }
 
