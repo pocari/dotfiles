@@ -32,11 +32,11 @@ on_i = 1
 hook_post_source = '''
 " snippetだと一文字で定義されている場合にデフォルトの「2文字以上で発火」に
 " していると無視されるのでneosnippetだけは一文字から反応するようにする
-call deoplete#custom#set('neosnippet', 'input_pattern', '.')
+call deoplete#custom#source('neosnippet', 'input_pattern', '.')
 
 " 一文字で発火するようにすると、こんどはデフォルトの matcher_length で
 " 補完対象が一文字を超えるモノしか対象にならないので前方一致に変更する
-call deoplete#custom#set('neosnippet', 'matchers', ['matcher_head'])
+call deoplete#custom#source('neosnippet', 'matchers', ['matcher_head'])
 '''
 
 # [[plugins]]
