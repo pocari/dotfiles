@@ -18,3 +18,5 @@ sudo sysctl debug.lowpri_throttle_enabled=0 # 0: 速くなる, 1: 通常 timemac
 ssh -L 1234:host2:5678 ssh接続先 # ローカルのポート1234をhost2のポート5678に繋ぐ
 git merge --no-commit --no-ff [マージしたいブランチ名] # 今いるブランチに[マージしたいブランチ名]をmergeした結果をステージングした状態時する。この後コミットせずに git reset --hard HEAD すればもとに戻せる
 mysqldump -h 127.0.0.1 -P 13306 -uUSER -p DATABASE_NAME TABLE_NAME --where "k = 'v'" # 特定のテーブルからwhere 区指定してdump
+curl inet-ip.info # global ip 確認
+aws s3 cp s3://bucket名/対象ディレクトリのパス . --recursive # s3からディレクトリをダウンロード
