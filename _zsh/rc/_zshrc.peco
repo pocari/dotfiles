@@ -145,7 +145,7 @@ function peco-docker-exec() {
     docker ps --no-trunc --format 'table {{.ID | printf "%.10s"}}\t{{.Names}}\t{{.Command}}\t{{.RunningFor}}' | sed 1d | peco --prompt 'container >' | awk '{print $1}' \
   )
   if [ -n "$selected_container" ]; then
-    docker exec -it ${selected_container} ${exec_command:-bash}
+    docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -it ${selected_container} ${exec_command:-bash}
   fi
 }
 
