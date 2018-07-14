@@ -150,6 +150,7 @@ function peco-docker-exec() {
 }
 
 alias pecontainer='peco-docker-exec'
+alias pc='pecontainer'
 
 #---------------------------------------------------------------------------------
 # pecoでexitしてるコンテナを削除
