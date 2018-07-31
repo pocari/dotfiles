@@ -6,6 +6,7 @@ AllCops:
     - db/schema.rb
     - db/migrate/*
     - vendor/**/*
+  TargetRubyVersion: 2.5
 
 Rails:
   Enabled: true
@@ -20,4 +21,51 @@ Style/StringLiterals:
 
 # "Line is too long"を無効
 Metrics/LineLength:
+  Enabled: false
+
+# コメントに日本語ほしいので無効
+Style/AsciiComments:
+  Enabled: false
+
+# できるだけ後置ifにしてくるの無効
+Style/IfUnlessModifier:
+  Enabled: false
+
+# module長すぎるとエラーになるの無効
+Metrics/ModuleLength:
+  Enabled: false
+
+# block長すぎるとエラーになるの無効
+Metrics/BlockLength:
+  Enabled: false
+
+# 冗長なself書きたくなるので無効
+Style/RedundantSelf:
+  Enabled: false
+
+# 引数で直接渡すhash周りのために無効
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+# option 等、明示的にハッシュにした方が分かりやすい場合もある
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+# hashの最後の要素の,はつけたいので無効
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+# やっぱ大きなることもある
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+# dslっぽいときはいいときもあるので無効
+Style/BlockDelimiters:
+  Enabled: false
+
+# コメントなので無効
+Layout/LeadingCommentSpace
   Enabled: false
