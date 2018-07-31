@@ -67,3 +67,6 @@ endif
 
 " gina
 source ~/dotfiles/_vim/rc/_vimrc.gina
+
+" ale
+source ~/dotfiles/_vim/rc/_vimrc.ale

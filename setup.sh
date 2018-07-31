@@ -17,6 +17,7 @@ DOT_FILES=(
   .ctags
   .pryrc
   .tigrc
+  .rubocop.yml
 )
 
 for file in ${DOT_FILES[@]}

@@ -65,6 +65,9 @@ repo = 'terryma/vim-multiple-cursors'
 repo = 'itchyny/vim-gitbranch'
 
 [[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
 # macvim用
 repo = 'rhysd/vim-color-spring-night'
 merged = 0
