@@ -67,5 +67,5 @@ Style/BlockDelimiters:
   Enabled: false
 
 # コメントなので無効
-Layout/LeadingCommentSpace
+Layout/LeadingCommentSpace:
   Enabled: false
