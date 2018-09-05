@@ -35,6 +35,10 @@ Style/IfUnlessModifier:
 Metrics/ModuleLength:
   Enabled: false
 
+# class長すぎるとエラーになるの無効
+Metrics/ClassLength:
+  Enabled: false
+
 # block長すぎるとエラーになるの無効
 Metrics/BlockLength:
   Enabled: false
@@ -62,10 +66,32 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
 # dslっぽいときはいいときもあるので無効
 Style/BlockDelimiters:
   Enabled: false
 
 # コメントなので無効
 Layout/LeadingCommentSpace:
+  Enabled: false
+
+# 一文字引数は許す
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+
+# 複数行のブロックの連鎖は許す
+Style/MultilineBlockChain:
+  Enabled: false
+
+# ガード節(xxx if yyy)は使わないほうが見やすいこともあるので無効
+Style/GuardClause:
+  Enabled: false
+
+# 最後の引数のカンマは許す
+Style/TrailingCommaInArguments:
   Enabled: false
