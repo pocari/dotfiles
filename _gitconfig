@@ -16,7 +16,7 @@
 [alias]
 	graph = log --graph --all --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
 	# browseはhubコマンド
-	see = browse
+	see = "!f() { hub browse; }; f"
         openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 [difftool]
 	prompt = false
