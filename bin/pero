@@ -2,4 +2,5 @@
 
 # see http://blog.kazuhooku.com/2017/03/peco.html
 # exec ag --nocolor --nogroup "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -R '
-exec ag --nocolor --nogroup "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs nvim -R '
+# exec ag --nocolor --nogroup "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs nvim -R '
+exec rg --color never --no-heading --line-number "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs nvim -R '
