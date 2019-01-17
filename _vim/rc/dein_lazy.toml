@@ -18,12 +18,12 @@ on_ft = 'rust'
 # repo = 'scrooloose/syntastic'
 # on_ft = ['ruby', 'go', 'rust']
 
-[[plugins]]
-repo = 'neomake/neomake'
-on_ft = ['ruby', 'go', 'rust']
-hook_source = '''
-autocmd! BufWritePost * Neomake
-'''
+# [[plugins]]
+# repo = 'neomake/neomake'
+# on_ft = ['ruby', 'go', 'rust']
+# hook_source = '''
+# autocmd! BufWritePost * Neomake
+# '''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
