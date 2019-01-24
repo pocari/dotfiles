@@ -20,3 +20,4 @@ git merge --no-commit --no-ff [マージしたいブランチ名] # 今いるブ
 mysqldump -h 127.0.0.1 -P 13306 -uUSER -p DATABASE_NAME TABLE_NAME --where "k = 'v'" # 特定のテーブルからwhere 区指定してdump
 curl inet-ip.info # global ip 確認
 aws s3 cp s3://bucket名/対象ディレクトリのパス . --recursive # s3からディレクトリをダウンロード
+echo 'eval $(assume-role sikmi_google_profile)' > .envrc; direnv allow # sikmiのsamlの認証情報をdirenv用に展開するためのおenvrcを作成する
