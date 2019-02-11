@@ -267,6 +267,10 @@ on_source = ['denite.nvim']
 depends = ['vim-denite-kind-open-browser']
 
 [[plugins]]
+repo = '5t111111/denite-rails'
+on_source = ['denite.nvim']
+
+[[plugins]]
 repo = 'pocari/vim-denite-kind-open-browser'
 on_source = ['denite.nvim']
 depends = ['open-browser.vim']

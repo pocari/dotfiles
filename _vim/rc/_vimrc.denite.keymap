@@ -22,3 +22,15 @@ nnoremap <silent> [denite]h :<C-u>Denite command_history -default-action=edit_an
 
 " incremental grepのショートカット
 command! Dgrep :Denite grep:::!
+
+" Denite rails ショートカット
+nnoremap [drails] <Nop>
+nmap <Leader>r [drails]
+nnoremap [drails]r :Denite<Space>rails:
+nnoremap <silent> [drails]d :<C-u>Denite<Space>rails:dwim<Return>
+nnoremap <silent> [drails]m :<C-u>Denite<Space>rails:model<Return>
+nnoremap <silent> [drails]c :<C-u>Denite<Space>rails:controller<Return>
+nnoremap <silent> [drails]v :<C-u>Denite<Space>rails:view<Return>
+nnoremap <silent> [drails]h :<C-u>Denite<Space>rails:helper<Return>
+" nnoremap <silent> [drails]r :<C-u>Denite<Space>rails:test<Return>
+nnoremap <silent> [drails]s :<C-u>Denite<Space>rails:spec<Return>
