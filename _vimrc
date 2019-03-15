@@ -3,6 +3,11 @@ augroup MyInit
 augroup END
 
 "let g:python3_host_prog = '/usr/local/bin/python3'
+if has('nvim')
+  augroup MyInitNvim
+    autocmd!
+  augroup END
+endif
 " disable default plugins
 if has('vim_starting')
   source ~/dotfiles/_vim/rc/_vimrc.disable_default
