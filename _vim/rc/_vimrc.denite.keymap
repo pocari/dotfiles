@@ -4,21 +4,21 @@
 nnoremap [denite] <Nop>
 nmap <Leader>f [denite]
 
-nnoremap <silent> [denite]m :<C-u>Denite file_old<CR>
-nnoremap <silent> [denite]b :<C-u>Denite buffer -default-action=switch<CR>
-nnoremap <silent> [denite]d :<C-u>Denite directory_old<CR>
-nnoremap <silent> [denite]a :<C-u>Denite file_rec file_old buffer<CR>
-nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
-nnoremap <silent> [denite]l :<C-u>Denite line<CR>
-nnoremap <silent> [denite]o :<C-u>Denite outline<CR>
-nnoremap <silent> [denite]f :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+nnoremap <silent> [denite]m :<C-u>Denite -split=floating file_old<CR>
+nnoremap <silent> [denite]b :<C-u>Denite -split=floating buffer -default-action=switch<CR>
+nnoremap <silent> [denite]d :<C-u>Denite -split=floating directory_old<CR>
+nnoremap <silent> [denite]a :<C-u>Denite -split=floating file_rec file_old buffer<CR>
+nnoremap <silent> [denite]y :<C-u>Denite -split=floating neoyank<CR>
+nnoremap <silent> [denite]l :<C-u>Denite -split=floating line<CR>
+nnoremap <silent> [denite]o :<C-u>Denite -split=floating outline<CR>
+nnoremap <silent> [denite]f :<C-u>Denite -split=floating `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 " grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
-nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
+nnoremap <silent> [denite]g :<C-u>Denite -split=floating grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
 " grep検索結果の再呼出(同時に次の候補に移動した状態で開く)
-nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
-nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
-nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
-nnoremap <silent> [denite]h :<C-u>Denite command_history -default-action=edit_and_execute<CR>
+nnoremap <silent> [denite]r :<C-u>Denite -split=floating -resume -buffer-name=search-buffer-denite<CR>
+nnoremap <silent> [denite]n :<C-u>Denite -split=floating -resume -buffer-name=search-buffer-denite -select=+1 -immediately -no-cursor-wrap<CR>
+nnoremap <silent> [denite]p :<C-u>Denite -split=floating -resume -buffer-name=search-buffer-denite -select=-1 -immediately -no-cursor-wrap<CR>
+nnoremap <silent> [denite]h :<C-u>Denite -split=floating command_history -default-action=edit_and_execute<CR>
 
 " incremental grepのショートカット
 command! Dgrep :Denite grep:::!
@@ -27,10 +27,10 @@ command! Dgrep :Denite grep:::!
 nnoremap [drails] <Nop>
 nmap <Leader>r [drails]
 nnoremap [drails]r :Denite<Space>rails:
-nnoremap <silent> [drails]d :<C-u>Denite<Space>rails:dwim<Return>
-nnoremap <silent> [drails]m :<C-u>Denite<Space>rails:model<Return>
-nnoremap <silent> [drails]c :<C-u>Denite<Space>rails:controller<Return>
-nnoremap <silent> [drails]v :<C-u>Denite<Space>rails:view<Return>
-nnoremap <silent> [drails]h :<C-u>Denite<Space>rails:helper<Return>
+nnoremap <silent> [drails]d :<C-u>Denite<Space>-split=floating<Space>rails:dwim<Return>
+nnoremap <silent> [drails]m :<C-u>Denite<Space>-split=floating<Space>rails:model<Return>
+nnoremap <silent> [drails]c :<C-u>Denite<Space>-split=floating<Space>rails:controller<Return>
+nnoremap <silent> [drails]v :<C-u>Denite<Space>-split=floating<Space>rails:view<Return>
+nnoremap <silent> [drails]h :<C-u>Denite<Space>-split=floating<Space>rails:helper<Return>
 " nnoremap <silent> [drails]r :<C-u>Denite<Space>rails:test<Return>
-nnoremap <silent> [drails]s :<C-u>Denite<Space>rails:spec<Return>
+nnoremap <silent> [drails]s :<C-u>Denite<Space>-split=floating<Space>rails:spec<Return>
