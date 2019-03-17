@@ -6,8 +6,7 @@ noremap \  ,
 :set number
 
 nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
-
+nnoremap ZQ <Nop> 
 " Use English interface.
 language message C
 
@@ -308,6 +307,9 @@ function! s:CdToGitRoot() abort
 endfunction
 
 command! Groot :call s:CdToGitRoot()
+
+" コマンドラインの補完候補をwindowで表示
+set wildoptions=pum
 
 if has('vim_starting')
   syntax enable
