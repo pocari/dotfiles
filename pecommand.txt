@@ -21,3 +21,4 @@ mysqldump -h 127.0.0.1 -P 13306 -uUSER -p DATABASE_NAME TABLE_NAME --where "k = 
 curl inet-ip.info # global ip 確認
 aws s3 cp s3://bucket名/対象ディレクトリのパス . --recursive # s3からディレクトリをダウンロード
 echo 'eval $(assume-role sikmi_google_profile)' > .envrc; direnv allow # sikmiのsamlの認証情報をdirenv用に展開するためのおenvrcを作成する
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir') # remote debug mode chrome を独立して開く
