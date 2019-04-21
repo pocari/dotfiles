@@ -1,0 +1,68 @@
+" see
+" :h asyncomplete-global-config
+set shortmess+=c
+
+" asynccomplete-file
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+" asyncomplete-neosnippet.vim
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+" asynccomplete-lsp
+if executable('go-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'go-langserver',
+        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+        \ 'whitelist': ['go'],
+        \ })
+ endif
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+if executable('solargraph')
+  " gem install solargraph
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'solargraph',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+        \ 'initialization_options': {"diagnostics": "true"},
+        \ 'whitelist': ['ruby'],
+        \ })
+endif
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif

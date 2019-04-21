@@ -117,13 +117,13 @@ repo = 'rhysd/git-messenger.vim'
 repo = 'prabirshrestha/asyncomplete.vim'
 
 [[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-file.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
@@ -133,4 +133,13 @@ repo = 'natebosch/vim-lsc'
 
 [[plugins]]
 repo = 'ryanolsonx/vim-lsp-python'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 
