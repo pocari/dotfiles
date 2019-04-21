@@ -25,41 +25,17 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-# [[plugins]]
-# repo = 'tpope/vim-fugitive'
-
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-# [[plugins]]
-# repo = 'Yggdroot/indentLine'
-
-# [[plugins]]
-# repo = 'thinca/vim-quickrun'
-# 
-# [[plugins]]
-# repo = 'osyo-manga/shabadou.vim'
 
 [[plugins]]
 repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'vim-scripts/delek.vim'
-# 
-# [[plugins]]
-# repo = 'tomasr/molokai'
-# 
-# [[plugins]]
-# repo = 'sjl/badwolf'
-# 
-# [[plugins]]
-# repo = 'dracula/vim'
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
-
-# [[plugins]]
-# repo = 'pocari/neovim-rplugin-ruby-sample'
 
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
@@ -72,6 +48,9 @@ repo = 'w0rp/ale'
 repo = 'rhysd/vim-color-spring-night'
 merged = 0
 
+[[plugins]]
+if = 'has("nvim")'
+repo = 'Shougo/defx.nvim'
 
 ####################################################################
 # neovim only
@@ -85,10 +64,6 @@ hook_add = '''
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 '''
-
-[[plugins]]
-if = 'has("nvim")'
-repo = 'autozimu/LanguageClient-neovim'
 
 ####################################################################
 # vim only
@@ -135,6 +110,27 @@ repo = 'Shougo/neoyank.vim'
 if = '!has("nvim")'
 repo = 'vim-jp/vital.vim'
 
-# [[plugins]]
-# repo = 'justinmk/vim-dirvish'
+[[plugins]]
+repo = 'rhysd/git-messenger.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-file.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'natebosch/vim-lsc'
+
+[[plugins]]
+repo = 'ryanolsonx/vim-lsp-python'
 

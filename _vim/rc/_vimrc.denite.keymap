@@ -11,7 +11,8 @@ nnoremap <silent> [denite]a :<C-u>Denite -split=floating file_rec file_old buffe
 nnoremap <silent> [denite]y :<C-u>Denite -split=floating neoyank<CR>
 nnoremap <silent> [denite]l :<C-u>Denite -split=floating line<CR>
 nnoremap <silent> [denite]o :<C-u>Denite -split=floating outline<CR>
-nnoremap <silent> [denite]f :<C-u>Denite -split=floating `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+" nnoremap <silent> [denite]f :<C-u>Denite -split=floating `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+nnoremap <silent> [denite]f :<C-u>Denite -split=floating file/rec<CR>
 " grepしたウィンドウに名前をつけて(-buffer-name), もし検索結果が無い場合はウィンドウを開かない(-no-empty)
 nnoremap <silent> [denite]g :<C-u>Denite -split=floating grep -buffer-name=search-buffer-denite -no-empty -cursor-wrap<CR>
 " grep検索結果の再呼出(同時に次の候補に移動した状態で開く)

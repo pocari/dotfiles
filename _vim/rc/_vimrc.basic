@@ -309,7 +309,9 @@ endfunction
 command! Groot :call s:CdToGitRoot()
 
 " コマンドラインの補完候補をwindowで表示
-set wildoptions=pum
+if has('nvim')
+  set wildoptions+=pum
+end
 
 if has('vim_starting')
   syntax enable

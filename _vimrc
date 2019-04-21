@@ -2,12 +2,17 @@ augroup MyInit
   autocmd!
 augroup END
 
-"let g:python3_host_prog = '/usr/local/bin/python3'
 if has('nvim')
   augroup MyInitNvim
     autocmd!
   augroup END
 endif
+
+let g:python3_host_prog = '/usr/local/bin/python3'
+"let g:python3_host_prog = '/Users/pocari/.pyenv/shims/python'
+" 相対パスだと(~/)動かなので注意
+let g:node_host_prog = '/Users/pocari/.nodenv/versions/9.10.0/lib/node_modules/neovim/bin/cli.js'
+
 " disable default plugins
 if has('vim_starting')
   source ~/dotfiles/_vim/rc/_vimrc.disable_default
@@ -33,8 +38,16 @@ endif
 " VimFiler
 source ~/dotfiles/_vim/rc/_vimrc.vimfiler
 
-" NeoComplete/Deoplete
-source ~/dotfiles/_vim/rc/_vimrc.complete
+if has('nvim')
+" Defx
+  source ~/dotfiles/_vim/rc/_vimrc.defx
+endif
+
+" " NeoComplete/Deoplete
+" source ~/dotfiles/_vim/rc/_vimrc.complete
+
+" asyncomplete
+source ~/dotfiles/_vim/rc/_vimrc.asynccomplete
 
 " " QuickRun
 " source ~/dotfiles/_vim/rc/_vimrc.quickrun
@@ -73,5 +86,5 @@ endif
 " gina
 source ~/dotfiles/_vim/rc/_vimrc.gina
 
-" ale
-source ~/dotfiles/_vim/rc/_vimrc.ale
+" " ale
+" source ~/dotfiles/_vim/rc/_vimrc.ale

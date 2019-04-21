@@ -1,15 +1,42 @@
 " complete用設定
 if has('nvim')
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_ignore_case = 1
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#keyword_patterns = {}
-  let g:deoplete#keyword_patterns._ = '\\?[a-zA-Z_]\w*'
-  let g:deoplete#auto_complete_delay = 50
-  let g:monster#completion#rcodetools#backend = "async_rct_complete"
-  let g:deoplete#sources#omni#input_patterns = {
-        \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-        \}
+  " let g:deoplete#enable_at_startup = 1
+  " let g:deoplete#enable_ignore_case = 1
+  " let g:deoplete#enable_smart_case = 1
+  " let g:deoplete#keyword_patterns = {}
+  " let g:deoplete#keyword_patterns._ = '\\?[a-zA-Z_]\w*'
+  " let g:deoplete#auto_complete_delay = 50
+  " let g:monster#completion#rcodetools#backend = "async_rct_complete"
+  " let g:deoplete#sources#omni#input_patterns = {
+  "       \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+  "       \}
+  " let g:LanguageClient_serverCommands = {
+  "     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+  "     \ 'go': ['gopls']
+  "     \ }
+  " let g:LanguageClient_loadSettings = 1
+
+  " " Automatically start language servers.
+  " let g:LanguageClient_autoStart = 1
+
+  " let g:lsp_log_file='./lsp.log'
+  " NOTE: 2019/04/21現在 goplsと、bingoだとうまくいかなかったので
+  " go-languserverでいく
+  "
+  " if executable('gopls')
+  "   au User lsp_setup call lsp#register_server({
+  "       \ 'name': 'gopls',
+  "       \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+  "       \ 'whitelist': ['go'],
+  "       \ })
+  " endif
+  " if executable('bingo')
+  "     au User lsp_setup call lsp#register_server({
+  "         \ 'name': 'bingo',
+  "         \ 'cmd': {server_info->['bingo', '-mode', 'stdio']},
+  "         \ 'whitelist': ['go'],
+  "         \ })
+  " endif
 else
   let g:neocomplete#enable_at_startup = 1
   let g:neocomplete#enable_ignore_case = 1
@@ -21,19 +48,12 @@ else
 
 endif
 
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
-set hidden
+"set hidden
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls']
-    \ }
-
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>

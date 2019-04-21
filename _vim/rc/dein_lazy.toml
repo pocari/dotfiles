@@ -25,19 +25,19 @@ on_ft = 'rust'
 # autocmd! BufWritePost * Neomake
 # '''
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = 'has("nvim")'
-on_i = 1
-hook_post_source = '''
-" snippetだと一文字で定義されている場合にデフォルトの「2文字以上で発火」に
-" していると無視されるのでneosnippetだけは一文字から反応するようにする
-call deoplete#custom#source('neosnippet', 'input_pattern', '.')
-
-" 一文字で発火するようにすると、こんどはデフォルトの matcher_length で
-" 補完対象が一文字を超えるモノしか対象にならないので前方一致に変更する
-call deoplete#custom#source('neosnippet', 'matchers', ['matcher_head'])
-'''
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# if = 'has("nvim")'
+# on_i = 1
+# hook_post_source = '''
+# " snippetだと一文字で定義されている場合にデフォルトの「2文字以上で発火」に
+# " していると無視されるのでneosnippetだけは一文字から反応するようにする
+# call deoplete#custom#source('neosnippet', 'input_pattern', '.')
+# 
+# " 一文字で発火するようにすると、こんどはデフォルトの matcher_length で
+# " 補完対象が一文字を超えるモノしか対象にならないので前方一致に変更する
+# call deoplete#custom#source('neosnippet', 'matchers', ['matcher_head'])
+# '''
 
 # [[plugins]]
 # repo = 'sebastianmarkow/deoplete-rust'
@@ -50,29 +50,29 @@ if = 'has("nvim")'
 on_ft = 'vim'
 on_i = 1
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-if = 'has("nvim")'
-on_ft = 'go'
-on_i = 1
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
+# [[plugins]]
+# repo = 'zchee/deoplete-go'
+# if = 'has("nvim")'
+# on_ft = 'go'
+# on_i = 1
+# hook_post_update = '''
+#   if dein#util#_is_windows()
+#     let cmd = 'tools\\update-dll-mingw'
+#   elseif dein#util#_is_cygwin()
+#     let cmd = 'make -f make_cygwin.mak'
+#   elseif executable('gmake')
+#     let cmd = 'gmake'
+#   else
+#     let cmd = 'make'
+#   endif
+#   let g:dein#plugin.build = cmd
+# '''
 
-[[plugins]]
-repo = 'Shougo/deoplete-rct'
-if = 'has("nvim")'
-on_ft = 'ruby'
-on_i = 1
+# [[plugins]]
+# repo = 'Shougo/deoplete-rct'
+# if = 'has("nvim")'
+# on_ft = 'ruby'
+# on_i = 1
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -150,6 +150,10 @@ on_ft = 'json'
 repo = 'fatih/vim-go'
 on_ft = 'go'
 
+[[plugins]]
+repo = 'zah/nim.vim'
+on_ft = 'nim'
+
 # [[plugins]]
 # repo = 'toyamarinyon/vim-swift'
 # if   = '''has('mac')'''
@@ -159,22 +163,28 @@ on_ft = 'go'
 repo = 'jason0x43/vim-js-indent'
 on_ft = ['javascript', 'typescript']
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = 'typescript'
-depends = ['vim-js-indent']
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
+# on_ft = 'typescript'
+# depends = ['vim-js-indent']
 
-# インストール後初回一回だけ、insertモードにしてdeoplete読み込んでから :UpdateRemotePlugins する必要がある？？
-[[plugins]]
-repo = 'mhartington/deoplete-typescript'
-if = 'has("nvim")'
-on_i = 1
-on_ft = 'typescript'
+# [[plugins]]
+# repo = 'mhartington/nvim-typescript'
+# on_ft = 'typescript'
+# build = './install.sh'
 
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_i = 1
-on_ft = ['python', 'python3']
+# # インストール後初回一回だけ、insertモードにしてdeoplete読み込んでから :UpdateRemotePlugins する必要がある？？
+# [[plugins]]
+# repo = 'mhartington/deoplete-typescript'
+# if = 'has("nvim")'
+# on_i = 1
+# depends = ['nvim-typescript']
+# on_ft = 'typescript'
+
+# [[plugins]]
+# repo = 'zchee/deoplete-jedi'
+# on_i = 1
+# on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
@@ -211,6 +221,8 @@ on_source = 'denite.nvim'
 [[plugins]]
 if = 'has("nvim")'
 repo = 'Shougo/denite.nvim'
+# repo = 'pocari/denite.nvim'
+# rev = 'fix-floating-window-open-arguments'
 on_cmd = [
   'Denite',
   'DeniteBufferDir',
@@ -311,5 +323,4 @@ on_cmd = [
 repo = 'git@bitbucket.org:caffepocari/vim-denite-a-ds-list.git'
 on_source = ['denite.nvim']
 depends = ['vim-denite-kind-open-browser']
-
 
