@@ -1,7 +1,6 @@
-==> Auto-updated Homebrew!
-Updated 1 tap (caskroom/cask).
-No changes to formulae.
-
 caskroom/cask
 eugenmayer/dockersync
+homebrew/cask
 homebrew/core
+remind101/formulae
+versent/taps
