@@ -143,3 +143,5 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-buffer.vim'
