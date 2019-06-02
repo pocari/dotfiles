@@ -10,6 +10,13 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 
+" asyncomplete-buffer.vim
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+
 " asyncomplete-neosnippet.vim
 call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
     \ 'name': 'neosnippet',
