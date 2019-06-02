@@ -43,6 +43,15 @@ if has('conceal')
 endif
 
 " asynccomplete-lsp
+" let g:lsp_log_file='./lsp.log'
+
+" lsp serverの起動に時間がかかることがあるので、server初期化後にメッセージを表
+" 示する
+function! s:server_initialized() abort
+  echo "[vim-lsp-custom-hook] LSP server initialized!!!!!!!!!!!!!!!!!!!!!!"
+endfunction
+au User lsp_server_init call s:server_initialized()
+
 if executable('go-langserver')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'go-langserver',
