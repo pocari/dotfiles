@@ -18,7 +18,7 @@ call denite#custom#source('directory_rec', 'matchers', ['matcher_cpsm'])
 
 if executable('ag')
   " ファイル一覧はagの方が速いらしいのでagにする
-	call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 end
 
 " " -xだけだと、名称のアルファベット順になるので, --sort=noでファイル上での出現順に変更する
@@ -40,6 +40,7 @@ call denite#custom#var('file/rec/git', 'command', ['git', 'ls-files', '-co', '--
 
 " if executable('rg')
 "   " Ripgrep command on grep source
+"
 "   " rg コマンドで検索するが、 minify したjsなど１行が極端に長いファイルがマッ
 "   " チするとpythonがハングしてしまうので１行最大2000文字になるように検索結果の
 "   " 行をカットするrg_with_cutコマンドでwrapして検索する
