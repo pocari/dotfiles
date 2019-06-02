@@ -25,10 +25,15 @@ end
 " call denite#custom#var('outline', 'options', ['-x', '--sort=no'])
 
 call denite#custom#option('default', 'cursor_wrap', v:true)
-" if exists('g:loaded_lightline')
+
+" denite 起動時にfilter用のバッファをオープンした状態にする
+call denite#custom#option('_', 'start_filter', v:true)
+
+if exists('g:loaded_lightline')
 "   " lightline.vim側で描画するのでdeniteでstatuslineを描画しないようにする
 "   call denite#custom#option('default', 'statusline', v:false)
-" endif
+   call denite#custom#option('_', 'statusline', v:false)
+endif
 
 call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
