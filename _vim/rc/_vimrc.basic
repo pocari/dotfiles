@@ -313,7 +313,22 @@ if has('nvim')
   set wildoptions+=pum
 end
 
+function! s:ShowFuncHistory() abort
+  let funcname = cfi#format("%s", "")
+  let filename = expand("%")
+  if funcname != "" && filename != ""
+    let command = "git log -L :" . funcname . ":" . filename
+    new
+    execute '$read !' . command
+    execute "file " . command
+    normal! gg
+    setlocal nobuflisted nomodifiable readonly buftype=nofile ft=diff
+  endif
+endfunction
+command! ShowFuncHistory :call s:ShowFuncHistory()
+
 if has('vim_starting')
   syntax enable
   filetype plugin indent on
 endif
+

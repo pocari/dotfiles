@@ -145,3 +145,6 @@ repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-buffer.vim'
+
+[[plugins]]
+repo = 'tyru/current-func-info.vim'
