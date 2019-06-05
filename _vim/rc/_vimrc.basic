@@ -313,6 +313,7 @@ if has('nvim')
   set wildoptions+=pum
 end
 
+" カーソル位置の関数、メソッドの履歴をgit log する
 function! s:ShowFuncHistory() abort
   let funcname = cfi#format("%s", "")
   let filename = expand("%")
