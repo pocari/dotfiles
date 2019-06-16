@@ -24,6 +24,12 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=~/.composer/vendor/bin:$PATH
 
+# llvm設定
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# 一時的にmysql5.6が必要になったので、path設定
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
 if [ "$TMUX" != '' -a -x $(which reattach-to-user-namespace 2>/dev/null) ]; then
