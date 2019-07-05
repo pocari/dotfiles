@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DOT_FILES=(
+  .bashrc
   .zshrc
   .zshenv
   .zprofile

@@ -1,0 +1,11 @@
+# vim: ft=sh 
+
+# 普段bash使わないが、 vscodeでgoとか探すときに使うshellがbashだそうなのでgoenvとかで制御してる場合bashrcにも設定入れておかないとうまく探せないらしい
+# http://ka2u.hatenablog.com/entry/2019/01/31/235747
+
+# goenv
+if [ -d ${HOME}/.goenv ] ; then
+  GOENV_ROOT="$HOME/.goenv"
+  PATH="$GOENV_ROOT/bin:$PATH"
+fi
+
