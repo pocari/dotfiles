@@ -180,7 +180,7 @@ alias pecontainer-kill='peco-docker-kill-exited-container'
 function peco-checkout-github-pr() {
   local selected_buffer=$(hub pr list -s open -L 20 --format='%t :%H%n' | peco --prompt 'pull requests>')
   if [ -n "$selected_buffer" ]; then
-    local pr_branch=$(echo $selected_buffer | awk -F":" '{print $2}')
+    local pr_branch=$(echo $selected_buffer | awk -F":" '{print $NF}')
     if git branch | grep $pr_branch > /dev/null; then
       echo "switch: $pr_branch branch ... "
       # あるときは最新化
