@@ -178,20 +178,10 @@ alias pecontainer-kill='peco-docker-kill-exited-container'
 #---------------------------------------------------------------------------------
 # pecoでいまopenされているprのブランチをチェックアウトする
 function peco-checkout-github-pr() {
-  local selected_buffer=$(hub pr list -s open -L 20 --format='%t :%H%n' | peco --prompt 'pull requests>')
+  local selected_buffer=$(hub pr list -s open -L 20 --format='%t :%H :%I%n' | peco --prompt 'pull requests>')
   if [ -n "$selected_buffer" ]; then
-    local pr_branch=$(echo $selected_buffer | awk -F":" '{print $NF}')
-    if git branch | grep $pr_branch > /dev/null; then
-      echo "switch: $pr_branch branch ... "
-      # あるときは最新化
-      git checkout $pr_branch
-      git pull
-    else
-      echo "create: $pr_branch branch ... "
-      # なかったらブランチ作成
-      git fetch
-      git checkout -b $pr_branch origin/${pr_branch}
-    fi
+    local pr_no=$(echo $selected_buffer | awk -F":" '{print $NF}')
+    hub pr checkout $pr_no
   fi
 }
 alias ghpr='peco-checkout-github-pr'
