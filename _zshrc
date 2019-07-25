@@ -47,6 +47,9 @@ case ${UID} in
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+
+    [ -n "${AWS_VAULT}" ] &&
+      PROMPT="%{${fg[cyan]}%}(aws:${AWS_VAULT}) ${PROMPT}"
     ;;
 esac
 
