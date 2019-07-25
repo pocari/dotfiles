@@ -197,6 +197,16 @@ function peco-checkout-github-pr() {
 alias ghpr='peco-checkout-github-pr'
 
 #---------------------------------------------------------------------------------
+# pecoでaws-vaultに登録されているprofileのaws consoleを開く
+function peco-open-aws-vault-profile-console() {
+  local selected_buffer=$(aws-vault ls | grep -v '^default' | sed '1,2d' | peco --prompt 'select profile>' )
+  if [ -n "$selected_buffer" ]; then
+    local profile=$(echo $selected_buffer | awk '{print $1}')
+    aws-vault login $profile
+  fi
+}
+alias awsc='peco-open-aws-vault-profile-console'
+#---------------------------------------------------------------------------------
 case "${OSTYPE}" in
 darwin*)
     [ -f ~/dotfiles/_zsh/rc/_zshrc_peco.osx ] && source ~/dotfiles/_zsh/rc/_zshrc_peco.osx
