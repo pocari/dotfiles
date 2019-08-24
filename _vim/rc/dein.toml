@@ -40,7 +40,6 @@ repo = 'terryma/vim-multiple-cursors'
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
 
-[[plugins]]
 # [[plugins]]
 # repo = 'w0rp/ale'
 
