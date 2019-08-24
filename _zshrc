@@ -16,6 +16,7 @@ setopt TRANSIENT_RPROMPT
 setopt no_beep
 
 PATH=~/usr/local/bin:$PATH
+PATH=$HOME/bin:$PATH
 PATH=$HOME/dotfiles/bin:$PATH
 export PATH
 
@@ -189,6 +190,15 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # direnv
 if type direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
+fi
+
+# goenv
+if [ -d ${HOME}/.goenv ] ; then
+  export GOENV_ROOT="$HOME/.goenv"
+  export PATH="$GOENV_ROOT/bin:$PATH"
+  eval "$(goenv init -)"
+  export PATH="$GOROOT/bin:$PATH"
+  export PATH="$GOPATH/bin:$PATH"
 fi
 
 #---------------------------------------------------------------------------------------------------
