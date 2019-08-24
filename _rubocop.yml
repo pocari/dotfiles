@@ -95,3 +95,12 @@ Style/GuardClause:
 # 最後の引数のカンマは許す
 Style/TrailingCommaInArguments:
   Enabled: false
+
+# 多重代入してもいい
+Style/ParallelAssignment:
+  Enabled: false
+
+# caseの条件が空でもいい
+Style/EmptyCaseCondition:
+  Enabled: false
+
