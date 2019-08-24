@@ -41,7 +41,8 @@ repo = 'terryma/vim-multiple-cursors'
 repo = 'itchyny/vim-gitbranch'
 
 [[plugins]]
-repo = 'w0rp/ale'
+# [[plugins]]
+# repo = 'w0rp/ale'
 
 [[plugins]]
 # macvim用

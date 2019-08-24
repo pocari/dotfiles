@@ -1,7 +1,8 @@
 " エラーがなくなると画面全体が左によるので、それをやめる
 let g:ale_sign_column_always = 1
 
-let g:ale_fixers = {
-\   'ruby': ['rubocop'],
-\}
-
+" let g:ale_fixers = {
+" \   'ruby': ['rubocop'],
+" \}
+"
+let g:ale_linters = {'c': []}
