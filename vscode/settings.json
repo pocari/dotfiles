@@ -1,53 +1,79 @@
 {
-    "explorer.confirmDelete": false,
-    "terminal.integrated.macOptionIsMeta": true,
-    "window.zoomLevel": -1,
-    "editor.minimap.enabled": false,
-    "explorer.confirmDragAndDrop": false,
-
-    "vim.leader": ",",
-    "vim.easymotion": true,
-    "vim.history": 1000,
-    "vim.useSystemClipboard": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-       {
-         "before": ["u"],
-         "after": [],
-         "commands": [
-             {
-                 "command": "undo",
-                 "args": []
-             }
-         ]
-       },
-       {
-         "before": ["<C-r>"],
-         "after": [],
-         "commands": [
-             {
-                 "command": "redo",
-                 "args": []
-             }
-         ]
-       }
-    ],
-    "terminal.integrated.rendererType": "dom",
-    "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true,
-        "rename": true,
-        "goToDefinition": true,
-        "hover": true,
-        "signatureHelp": true,
-        "goToTypeDefinition": true,
-        "goToImplementation": true,
-        "documentSymbols": true,
-        "workspaceSymbols": true,
-        "findReferences": true
+  "explorer.confirmDelete": false,
+  "terminal.integrated.macOptionIsMeta": true,
+  "window.zoomLevel": -1,
+  "editor.minimap.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "vim.leader": ",",
+  "vim.easymotion": true,
+  "vim.history": 1000,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "u"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "undo",
+          "args": []
+        }
+      ]
     },
-    "go.toolsEnvVars": {
-      "GO111MODULE": "on"
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "redo",
+          "args": []
+        }
+      ]
     }
-
+  ],
+  "terminal.integrated.rendererType": "dom",
+  "go.useLanguageServer": true,
+  "go.alternateTools": {
+    "go-langserver": "gopls"
+  },
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true,
+    "rename": true,
+    "goToDefinition": true,
+    "hover": true,
+    "signatureHelp": true,
+    "goToTypeDefinition": true,
+    "goToImplementation": true,
+    "documentSymbols": true,
+    "workspaceSymbols": true,
+    "findReferences": true,
+    "diagnostics": true
+  },
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    "usePlaceholders": true,
+    "enhancedHover": true
+  },
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  },
+  "aws.profile": "tver",
+  "aws.samcli.location": "/usr/local/bin/sam",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true
 }

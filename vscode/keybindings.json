@@ -4,6 +4,10 @@
         "key": "ctrl+;",            "command": "workbench.action.terminal.focus",
                                     "when": "editorTextFocus"
     },
+    // {
+    //     "key": "ctrl+w",            "command": "remote-containers.openFolder",
+    //                                 "args": [ "/Users/pocari/dev/tmp/20190814/vscode-remote-test/vscode-remote-go-template" ]
+    // },
     {
         "key": "ctrl+;",            "command": "workbench.action.focusFirstEditorGroup",
                                     "when": "terminalFocus"
