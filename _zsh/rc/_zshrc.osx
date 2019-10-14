@@ -28,6 +28,11 @@ if [ -d ~/dev/flutter/bin ] ; then
   export PATH=$PATH:~/dev/flutter/bin
 fi
 
+
+if [ -d ~/.pub-cache/bin ] ; then
+  export PATH="$PATH":"$HOME/.pub-cache/bin"
+fi
+
 # llvm設定
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 

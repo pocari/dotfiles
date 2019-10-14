@@ -75,6 +75,14 @@ if executable('gopls')
         \ })
     autocmd BufWritePre *.go LspDocumentFormatSync
 endif
+if executable('dart_language_server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'dart_language_server',
+        \ 'cmd': {server_info->['dart_language_server']},
+        \ 'whitelist': ['dart'],
+        \ })
+    autocmd BufWritePre *.dart LspDocumentFormatSync
+endif
 " if executable('clangd')
 "     au User lsp_setup call lsp#register_server({
 "         \ 'name': 'clangd',
