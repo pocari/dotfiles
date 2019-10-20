@@ -28,6 +28,13 @@ if [ -d ~/dev/flutter/bin ] ; then
   export PATH=$PATH:~/dev/flutter/bin
 fi
 
+if [ -d ~/dev/flutter/bin/cache/dart-sdk/bin ] ; then
+  export PATH=$PATH:~/dev/flutter/bin/cache/dart-sdk/bin
+fi
+
+if [ -d ~/dev/flutter/.pub-cache/bin ] ; then
+  export PATH="$PATH":"$HOME/dev/flutter/.pub-cache/bin"
+fi
 
 if [ -d ~/.pub-cache/bin ] ; then
   export PATH="$PATH":"$HOME/.pub-cache/bin"
