@@ -35,12 +35,12 @@ else
   source ~/dotfiles/_vim/rc/_vimrc.unite
 endif
 
-" VimFiler
-source ~/dotfiles/_vim/rc/_vimrc.vimfiler
-
 if has('nvim')
 " Defx
   source ~/dotfiles/_vim/rc/_vimrc.defx
+else
+  " VimFiler
+  source ~/dotfiles/_vim/rc/_vimrc.vimfiler
 endif
 
 " " NeoComplete/Deoplete
