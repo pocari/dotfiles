@@ -134,14 +134,14 @@ repo = 'natebosch/vim-lsc'
 [[plugins]]
 repo = 'ryanolsonx/vim-lsp-python'
 
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+# [[plugins]]
+# repo = 'Shougo/neosnippet.vim'
+# 
+# [[plugins]]
+# repo = 'Shougo/neosnippet-snippets'
+# 
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-buffer.vim'
@@ -149,5 +149,4 @@ repo = 'prabirshrestha/asyncomplete-buffer.vim'
 [[plugins]]
 repo = 'tyru/current-func-info.vim'
 
-[[plugins]]
-repo = 'dart-lang/dart-vim-plugin'
+
