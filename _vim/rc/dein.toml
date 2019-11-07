@@ -149,4 +149,6 @@ repo = 'prabirshrestha/asyncomplete-buffer.vim'
 [[plugins]]
 repo = 'tyru/current-func-info.vim'
 
+# [[plugins]]
+# repo = 'thinca/vim-quickrun'
 

@@ -49,14 +49,14 @@ endif
 " asyncomplete
 source ~/dotfiles/_vim/rc/_vimrc.asynccomplete
 
-" " QuickRun
+" QuickRun
 " source ~/dotfiles/_vim/rc/_vimrc.quickrun
 
 "lightline
 source ~/dotfiles/_vim/rc/_vimrc.lightline
 
-"Gtags
-source ~/dotfiles/_vim/rc/_vimrc.gtags
+" "Gtags
+" source ~/dotfiles/_vim/rc/_vimrc.gtags
 
 " "test
 " source ~/dotfiles/_vim/rc/_vimrc.test
