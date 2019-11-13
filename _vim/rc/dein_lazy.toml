@@ -14,6 +14,10 @@ on_ft = 'jsx'
 repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
 
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = 'dart'
+
 # [[plugins]]
 # repo = 'scrooloose/syntastic'
 # on_ft = ['ruby', 'go', 'rust']
