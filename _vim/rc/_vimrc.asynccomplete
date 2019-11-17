@@ -72,6 +72,9 @@ if executable('gopls')
         \ 'name': 'gopls',
         \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
         \ 'whitelist': ['go'],
+        \ 'workspace_config': {'gopls': {
+        \     'completeUnimported': v:true,
+        \   }},
         \ })
     autocmd BufWritePre *.go LspDocumentFormatSync
 endif

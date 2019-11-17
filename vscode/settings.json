@@ -62,7 +62,8 @@
   },
   "gopls": {
     "usePlaceholders": true,
-    "enhancedHover": true
+    "enhancedHover": true,
+    "completeUnimported": true
   },
   "go.toolsEnvVars": {
     "GO111MODULE": "on"
