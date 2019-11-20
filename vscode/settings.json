@@ -1,7 +1,7 @@
 {
   "explorer.confirmDelete": false,
   "terminal.integrated.macOptionIsMeta": true,
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
   "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
   "vim.leader": ",",
@@ -74,9 +74,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
+  "editor.lineHeight": 16,
   "javascript.format.enable": false,
-  "prettier.eslintIntegration": true,
-  "prettier.tslintIntegration": true,
   "terminal.integrated.fontSize": 13,
   "dart.openDevTools": "flutter"
 }
