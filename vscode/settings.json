@@ -77,5 +77,10 @@
   "editor.lineHeight": 16,
   "javascript.format.enable": false,
   "terminal.integrated.fontSize": 13,
-  "dart.openDevTools": "flutter"
+  "dart.openDevTools": "flutter",
+  "editor.suggestSelection": "first",
+  "dart.analyzerAdditionalArgs": [
+    "--enable-completion-model"
+  ],
+  "languageServerHaskell.hieExecutablePath": "~/.local/bin/hie"
 }
