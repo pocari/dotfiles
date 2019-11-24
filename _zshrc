@@ -5,8 +5,10 @@
 #また、最初にしておかないと、zshrcで各種bindkeyをした後にbindkey -eをしてしまうとリセットされてしまう
 bindkey -e
 
-autoload -U compinit
+autoload -U +X compinit
+autoload -U +X bashcompinit
 compinit -C
+bashcompinit
 
 #pathの重複をさせない
 typeset -U path PATH
@@ -205,6 +207,16 @@ fi
 if type kubectl >/dev/null 2>&1; then
   source <(kubectl completion zsh)
   alias kc=kubectl
+fi
+
+# hie(haskell ide engine)
+if [ -d ${HOME}/.local ] ; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+if type stack >/dev/null 2>&1; then
+  # stackがインストールされてたら補完設定追加
+  eval "$(stack --bash-completion-script stack)"
 fi
 
 #---------------------------------------------------------------------------------------------------
