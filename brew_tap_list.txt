@@ -1,6 +1,11 @@
+aws/tap
 caskroom/cask
+dart-lang/dart
 eugenmayer/dockersync
 homebrew/cask
 homebrew/core
+homebrew/services
+knqyf263/trivy
 remind101/formulae
 versent/taps
+wercker/wercker
