@@ -43,7 +43,7 @@ set winwidth=8 " ウインドウ分割時の最低のwidth設定
 set completeopt=menuone "保管時にプレビューウィンドウを表示しない(デフォルトでmenuoneの他にpreviewがついていた)
 set nofoldenable " デフォルトはfoldingされてない状態で開く
 set noshowmode " echodoc plugin用
-set ambiwidth=double
+" set ambiwidth=double " なんとなくこれがあると挙動がおかしい？？
 
 " if has('nvim')
 "   set inccommand=nosplit  " %s/aa/bb でincrementalに置換する
