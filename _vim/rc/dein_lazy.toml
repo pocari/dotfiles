@@ -18,6 +18,10 @@ on_ft = 'rust'
 repo = 'dart-lang/dart-vim-plugin'
 on_ft = 'dart'
 
+[[plugins]]
+repo = 'itchyny/vim-haskell-indent'
+on_ft = 'haskell'
+
 # [[plugins]]
 # repo = 'scrooloose/syntastic'
 # on_ft = ['ruby', 'go', 'rust']
