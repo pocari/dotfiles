@@ -82,5 +82,6 @@
   "dart.analyzerAdditionalArgs": [
     "--enable-completion-model"
   ],
-  "languageServerHaskell.hieExecutablePath": "~/.local/bin/hie"
+  "languageServerHaskell.hieExecutablePath": "~/.local/bin/hie",
+  "editor.fontSize": 11
 }
