@@ -230,12 +230,3 @@ fi
 # # profile用ここまで
 [[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/pocari/dev/tmp/20190727/tver-viewing-logs/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/pocari/dev/tmp/20190727/tver-viewing-logs/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/pocari/dev/tmp/20190727/tver-viewing-logs/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/pocari/dev/tmp/20190727/tver-viewing-logs/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/pocari/dev/tmp/20190727/tver-viewing-logs/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/pocari/dev/tmp/20190727/tver-viewing-logs/node_modules/tabtab/.completions/slss.zsh
