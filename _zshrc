@@ -194,21 +194,6 @@ if type direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-# goenv
-if [ -d ${HOME}/.goenv ] ; then
-  export GOENV_ROOT="$HOME/.goenv"
-  export PATH="$GOENV_ROOT/bin:$PATH"
-  eval "$(goenv init -)"
-  export PATH="$GOROOT/bin:$PATH"
-  export PATH="$GOPATH/bin:$PATH"
-fi
-
-# kubectl
-if type kubectl >/dev/null 2>&1; then
-  source <(kubectl completion zsh)
-  alias kc=kubectl
-fi
-
 # hie(haskell ide engine)
 if [ -d ${HOME}/.local ] ; then
   export PATH="$HOME/.local/bin:$PATH"
