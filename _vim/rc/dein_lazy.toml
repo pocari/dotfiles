@@ -154,8 +154,12 @@ on_ft = 'yaml'
 repo = 'elzr/vim-json'
 on_ft = 'json'
 
+# [[plugins]]
+# repo = 'fatih/vim-go'
+# on_ft = 'go'
+
 [[plugins]]
-repo = 'fatih/vim-go'
+repo = 'mattn/vim-goimports'
 on_ft = 'go'
 
 [[plugins]]
@@ -269,6 +273,7 @@ repo = 'easymotion/vim-easymotion'
 on_map = '<Plug>(easymotion-'
 
 [[plugins]]
+if = '!has("nvim")'
 repo = 'Shougo/vimfiler'
 on_cmd = 'VimFilerBufferDir'
 depends = ['unite.vim']

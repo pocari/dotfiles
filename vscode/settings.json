@@ -1,7 +1,7 @@
 {
   "explorer.confirmDelete": false,
   "terminal.integrated.macOptionIsMeta": true,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "editor.minimap.enabled": false,
   "explorer.confirmDragAndDrop": false,
   "vim.leader": ",",

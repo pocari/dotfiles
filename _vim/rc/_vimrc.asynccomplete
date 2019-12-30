@@ -24,18 +24,18 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
 "     \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
 "     \ }))
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+"  \ pumvisible() ? "\<C-n>" :
+"  \ neosnippet#expandable_or_jumpable() ?
+"  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
@@ -74,12 +74,10 @@ if executable('gopls')
         \ 'whitelist': ['go'],
         \ 'workspace_config': {'gopls': {
         \     'staticcheck': v:true,
-        \     'completeUnimported': v:true,
         \     'caseSensitiveCompletion': v:true,
         \     'usePlaceholders': v:true,
         \     'completionDocumentation': v:true,
         \     'watchFileChanges': v:true,
-        \     'hoverKind': 'SingleLine',
         \   }},
         \ })
     autocmd BufWritePre *.go LspDocumentFormatSync
