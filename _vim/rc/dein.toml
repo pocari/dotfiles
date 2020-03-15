@@ -25,6 +25,10 @@ repo = 'terryma/vim-multiple-cursors'
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
 
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+merged = 0
+
 # [[plugins]]
 # repo = 'w0rp/ale'
 

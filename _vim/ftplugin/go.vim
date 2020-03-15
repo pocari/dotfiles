@@ -1,3 +1,4 @@
+"
 " 保存時にgolitをかける
 " syntasticの設定(neomakeに変えたのでコメント)
 " let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['go'] }

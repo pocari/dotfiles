@@ -16,3 +16,7 @@ let g:rustfmt_autosave = 1
 " " rustup component add rust-src でいれたstableの場所
 " let g:deoplete#sources#rust#rust_source_path = '/Users/pocari/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
+nnoremap <C-]> :<C-u>LspDefinition<CR>
+nnoremap K :<C-u>LspHover<CR>
+nnoremap <LocalLeader>R :<C-u>LspRename<CR>
+nnoremap <LocalLeader>n :<C-u>LspReferences<CR>

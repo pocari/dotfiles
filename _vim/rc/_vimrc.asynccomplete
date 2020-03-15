@@ -44,6 +44,7 @@ endif
 
 " asynccomplete-lsp
 " let g:lsp_log_file='./lsp.log'
+let g:lsp_log_file=''
 
 " lsp serverの起動に時間がかかることがあるので、server初期化後にメッセージを表
 " 示する
@@ -67,37 +68,40 @@ au User lsp_server_init call s:server_initialized()
 "         \ 'whitelist': ['go'],
 "         \ })
 " endif
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-        \ 'whitelist': ['go'],
-        \ 'workspace_config': {'gopls': {
-        \     'staticcheck': v:true,
-        \     'caseSensitiveCompletion': v:true,
-        \     'usePlaceholders': v:true,
-        \     'completionDocumentation': v:true,
-        \     'watchFileChanges': v:true,
-        \   }},
-        \ })
-    autocmd BufWritePre *.go LspDocumentFormatSync
-endif
-if executable('dart_language_server')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'dart_language_server',
-        \ 'cmd': {server_info->['dart_language_server']},
-        \ 'whitelist': ['dart'],
-        \ })
-    autocmd BufWritePre *.dart LspDocumentFormatSync
-endif
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'beta', 'rls']},
-        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
+" if executable('gopls')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'gopls',
+"         \ 'cmd': {server_info->['gopls']},
+"         \ 'initialization_options': {
+"         \     'diagnostics': v:true,
+"         \     'completeUnimported': v:true
+"         \ },
+"         \ 'whitelist': ['go'],
+"         \ 'workspace_config': {'gopls': {
+"         \     'staticcheck': v:true,
+"         \     'caseSensitiveCompletion': v:false,
+"         \     'usePlaceholders': v:true,
+"         \     'completionDocumentation': v:true,
+"         \   }},
+"         \ })
+"     autocmd BufWritePre *.go LspDocumentFormatSync
+" endif
+" if executable('dart_language_server')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'dart_language_server',
+"         \ 'cmd': {server_info->['dart_language_server']},
+"         \ 'whitelist': ['dart'],
+"         \ })
+"     autocmd BufWritePre *.dart LspDocumentFormatSync
+" endif
+" if executable('rls')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'rls',
+"         \ 'cmd': {server_info->['rustup', 'run', 'beta', 'rls']},
+"         \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+"         \ 'whitelist': ['rust'],
+"         \ })
+" endif
 if executable('hie')
   au User lsp_setup call lsp#register_server({
         \ 'name': 'hie',
@@ -107,34 +111,34 @@ if executable('hie')
 
     autocmd BufWritePre *.hs LspDocumentFormatSync
 endif
-
-" if executable('clangd')
+" 
+" " if executable('clangd')
+" "     au User lsp_setup call lsp#register_server({
+" "         \ 'name': 'clangd',
+" "         \ 'cmd': {server_info->['clangd', '-background-index']},
+" "         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+" "         \ })
+" " endif
+" " if executable('solargraph')
+" "   " gem install solargraph
+" "   au User lsp_setup call lsp#register_server({
+" "         \ 'name': 'solargraph',
+" "         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+" "         \ 'whitelist': ['ruby'],
+" "         \ })
+" " endif
+" " if executable('/Users/pocari/repos/github.com/sorbet/sorbet/bazel-bin/main/sorbet')
+" "   " gem install solargraph
+" "   au User lsp_setup call lsp#register_server({
+" "         \ 'name': 'sorbet',
+" "         \ 'cmd': {server_info->['/Users/pocari/repos/github.com/sorbet/sorbet/bazel-bin/main/sorbet', '--lsp', '--disable-watchman', '--enable-all-experimental-lsp-features']},
+" "         \ 'whitelist': ['ruby'],
+" "         \ })
+" " endif
+" if executable('pyls')
 "     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'clangd',
-"         \ 'cmd': {server_info->['clangd', '-background-index']},
-"         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+"         \ 'name': 'pyls',
+"         \ 'cmd': {server_info->['pyls']},
+"         \ 'whitelist': ['python'],
 "         \ })
 " endif
-" if executable('solargraph')
-"   " gem install solargraph
-"   au User lsp_setup call lsp#register_server({
-"         \ 'name': 'solargraph',
-"         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-"         \ 'whitelist': ['ruby'],
-"         \ })
-" endif
-" if executable('/Users/pocari/repos/github.com/sorbet/sorbet/bazel-bin/main/sorbet')
-"   " gem install solargraph
-"   au User lsp_setup call lsp#register_server({
-"         \ 'name': 'sorbet',
-"         \ 'cmd': {server_info->['/Users/pocari/repos/github.com/sorbet/sorbet/bazel-bin/main/sorbet', '--lsp', '--disable-watchman', '--enable-all-experimental-lsp-features']},
-"         \ 'whitelist': ['ruby'],
-"         \ })
-" endif
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
