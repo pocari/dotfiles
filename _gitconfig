@@ -1,7 +1,7 @@
 [include]
 	path = .gitconfig.local
 [core]
-	editor = vi -u NONE -c 'set nocompatible'
+	editor = vi -u NONE
 [push]
 	default = simple
 [diff]
@@ -32,3 +32,13 @@
 [github]
 	user = pocari
 
+[url "git://github.com/ghc/packages-"]
+	insteadOf = git://github.com/ghc/packages/
+[url "http://github.com/ghc/packages-"]
+	insteadOf = http://github.com/ghc/packages/
+[url "https://github.com/ghc/packages-"]
+	insteadOf = https://github.com/ghc/packages/
+[url "ssh://git@github.com/ghc/packages-"]
+	insteadOf = ssh://git@github.com/ghc/packages/
+[url "git@github.com:ghc/packages-"]
+	insteadOf = git@github.com:ghc/packages/
