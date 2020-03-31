@@ -175,14 +175,17 @@ on_ft = 'nim'
 # if   = '''has('mac')'''
 # on_ft = 'swift'
 
-[[plugins]]
-repo = 'jason0x43/vim-js-indent'
-on_ft = ['javascript', 'typescript']
-
 # [[plugins]]
-# repo = 'leafgarland/typescript-vim'
-# on_ft = 'typescript'
-# depends = ['vim-js-indent']
+# repo = 'jason0x43/vim-js-indent'
+# on_ft = ['javascript', 'typescript', 'typescript.tsx']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['javascript', 'typescript', 'typescript.tsx']
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript', 'typescript', 'typescript.tsx']
 
 # [[plugins]]
 # repo = 'mhartington/nvim-typescript'

@@ -42,3 +42,5 @@
 	insteadOf = ssh://git@github.com/ghc/packages/
 [url "git@github.com:ghc/packages-"]
 	insteadOf = git@github.com:ghc/packages/
+[pr-release]
+	token = e35f32c54e2d03d2d46254cf4ed6f1202a9749f7

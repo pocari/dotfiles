@@ -68,8 +68,6 @@
   "go.toolsEnvVars": {
     "GO111MODULE": "on"
   },
-  "aws.profile": "tver",
-  "aws.samcli.location": "/usr/local/bin/sam",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -83,5 +81,10 @@
     "--enable-completion-model"
   ],
   "languageServerHaskell.hieExecutablePath": "~/.local/bin/hie",
-  "editor.fontSize": 11
+  "editor.fontSize": 11,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
