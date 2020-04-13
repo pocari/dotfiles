@@ -207,17 +207,17 @@ if type stack >/dev/null 2>&1; then
   export PATH=$(stack path --compiler-bin):$PATH
 fi
 
-# kubectl
-if type kubectl >/dev/null 2>&1; then
-  source <(kubectl completion zsh)
-  alias kc=kubectl
-fi
+# # kubectl
+# if type kubectl >/dev/null 2>&1; then
+#   source <(kubectl completion zsh)
+#   alias kc=kubectl
+# fi
 
+[[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM
 #---------------------------------------------------------------------------------------------------
 # # profileするときは下のコメントを外す
 # if (which zprof > /dev/null 2>&1) ;then
 #     zprof
 # fi
 # # profile用ここまで
-[[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM
 

@@ -4,11 +4,11 @@ on_ft = 'javascript'
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
-on_ft = 'jsx'
+on_ft = ['javascript', 'jsx']
 
 [[plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = 'jsx'
+on_ft = ['javascript', 'jsx']
 
 [[plugins]]
 repo = 'mxw/vim-jsx'
