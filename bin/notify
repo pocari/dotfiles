@@ -1,0 +1,5 @@
+#!/bin/sh
+
+MSG=$1
+TITLE=${2:-通知}
+/usr/bin/osascript -e "display notification \"$MSG\" with title \"$TITLE\""
