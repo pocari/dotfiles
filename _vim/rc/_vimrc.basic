@@ -24,6 +24,7 @@ set noswapfile "swapファイルは作らない
 set nobackup   "バックアップファイルも作らない
 set noundofile  "undoファイルを作らない
 set mouse=a
+set nofixeol noeol
 set nowrap "折り返さない
 set hidden  "バッファを編集中でも切り替えられるように
 set confirm "終了時に未保存バッファがあると確認する
