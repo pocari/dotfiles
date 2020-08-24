@@ -137,8 +137,8 @@ repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
 repo = 'natebosch/vim-lsc'
 
-[[plugins]]
-repo = 'ryanolsonx/vim-lsp-python'
+# [[plugins]]
+# repo = 'ryanolsonx/vim-lsp-python'
 
 # [[plugins]]
 # repo = 'Shougo/neosnippet.vim'
