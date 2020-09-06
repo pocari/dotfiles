@@ -1,3 +1,20 @@
+" ~/.dein_github_update_token に githubのpersonal tokenを設定しておく
+fun! GetFileLine(fn, ln)
+  return readfile(a:fn,'',a:ln)[a:ln-1]
+endfun
+
+let g:dein#install_github_api_token = ""
+let s:token_file = expand('~/.dein_github_update_token')
+if filereadable(s:token_file)
+  let g:dein#install_github_api_token = GetFileLine(s:token_file, 1)
+endif
+
+"if g:dein#install_github_api_token != ""
+"  echo 'token exists'
+"else
+"  echo 'token not exits'
+"endif
+
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
