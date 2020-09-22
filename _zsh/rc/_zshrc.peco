@@ -57,7 +57,7 @@ function peco-select-gitadd() {
                                   peco --prompt "git add>" --query "$LBUFFER" | \
                                   awk -v path=$(git rev-parse --show-toplevel)/ -F ' ' '{print path $NF}')"
     if [ -n "$SELECTED_FILE_TO_ADD" ]; then
-      BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' ')"
+      BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}' | tr '\n' ' ')"
       CURSOR=$#BUFFER
     fi
     zle accept-line
@@ -90,12 +90,11 @@ bindkey "^g^b" peco-git-checkout
 function peco-select-from-git-status(){
     git status --short | \
     peco --prompt "git status>" | \
-    awk -F ' ' '{print $NF}' | \
-    tr '\n' ' '
+    awk -F ' ' '{print $NF}'
 }
 
 function peco-insert-selected-git-files(){
-    LBUFFER+=$(peco-select-from-git-status)
+    LBUFFER+=$(peco-select-from-git-status | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}')
     CURSOR=$#LBUFFER
     zle reset-prompt
 }
