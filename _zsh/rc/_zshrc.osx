@@ -23,6 +23,7 @@ alias iv='nvim'
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=~/.composer/vendor/bin:$PATH
+export PATH=~/Library/Python/3.8/bin:$PATH
 
 if [ -d ~/dev/flutter/bin ] ; then
   export PATH=$PATH:~/dev/flutter/bin
