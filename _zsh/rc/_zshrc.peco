@@ -200,7 +200,7 @@ alias awsc='peco-open-aws-vault-profile-console'
 # pecoで既存のtmuxのsessionにattachする
 function peco-attach-tumx-session() {
   # 複数行選んでも意味ないので、pecoのあとにheadで先頭1行だけ取得
-  local selected_buffer=$(tmux list-session  | peco --prompt 'select tmux session> | head -n 1' )
+  local selected_buffer=$(tmux list-session  | peco --prompt 'select tmux session>' | head -n 1 )
   if [ -n "$selected_buffer" ]; then
     local tmux_session_id=$(echo $selected_buffer | awk -F: '{print $1}')
     tmux attach -t${tmux_session_id}
