@@ -1,42 +1,42 @@
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = 'javascript'
+# [[plugins]]
+# repo = 'othree/yajs.vim'
+# on_ft = 'javascript'
 
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'prettier/vim-prettier'
-build = 'npm install'
-on_ft = ['typescript.tsx', 'typescript', 'javascript', 'css', 'sass', 'json']
-hook_source = '''
-  " @formatアノテーションを持ったファイルの自動フォーマットを無効にする
-  let g:prettier#autoformat = 0
-
-  " Prettierのパースエラーをquickfixに表示しない
-  let g:prettier#quickfix_enabled = 0
-
-  autocmd BufWritePre *.tsx,*.js,*.ts,*.css,*.scss,*.json PrettierAsync
-'''
-
-
-
-[[plugins]]
-repo = 'mxw/vim-jsx'
-on_ft = 'jsx'
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-
-[[plugins]]
-repo = 'dart-lang/dart-vim-plugin'
-on_ft = 'dart'
-
-[[plugins]]
-repo = 'itchyny/vim-haskell-indent'
-on_ft = 'haskell'
+# [[plugins]]
+# repo = 'pangloss/vim-javascript'
+# on_ft = ['javascript', 'jsx']
+# 
+# [[plugins]]
+# repo = 'prettier/vim-prettier'
+# build = 'npm install'
+# on_ft = ['typescript.tsx', 'typescript', 'javascript', 'css', 'sass', 'json']
+# hook_source = '''
+#   " @formatアノテーションを持ったファイルの自動フォーマットを無効にする
+#   let g:prettier#autoformat = 0
+# 
+#   " Prettierのパースエラーをquickfixに表示しない
+#   let g:prettier#quickfix_enabled = 0
+# 
+#   autocmd BufWritePre *.tsx,*.js,*.ts,*.css,*.scss,*.json PrettierAsync
+# '''
+# 
+# 
+# 
+# [[plugins]]
+# repo = 'mxw/vim-jsx'
+# on_ft = 'jsx'
+# 
+# [[plugins]]
+# repo = 'rust-lang/rust.vim'
+# on_ft = 'rust'
+# 
+# [[plugins]]
+# repo = 'dart-lang/dart-vim-plugin'
+# on_ft = 'dart'
+# 
+# [[plugins]]
+# repo = 'itchyny/vim-haskell-indent'
+# on_ft = 'haskell'
 
 # [[plugins]]
 # repo = 'scrooloose/syntastic'
@@ -154,33 +154,33 @@ hook_post_source = '''
 # repo = 'mattn/benchvimrc-vim'
 # on_cmd = ['BenchVimrc']
 
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
-
-[[plugins]]
-repo = 'stephpy/vim-yaml'
-on_ft = 'yaml'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
+# [[plugins]]
+# repo = 'cespare/vim-toml'
+# on_ft = 'toml'
+# 
+# [[plugins]]
+# repo = 'vim-jp/vimdoc-ja'
+# on_ft = 'help'
+# 
+# [[plugins]]
+# repo = 'stephpy/vim-yaml'
+# on_ft = 'yaml'
+# 
+# [[plugins]]
+# repo = 'elzr/vim-json'
+# on_ft = 'json'
+# 
+# # [[plugins]]
+# # repo = 'fatih/vim-go'
+# # on_ft = 'go'
 
 # [[plugins]]
-# repo = 'fatih/vim-go'
+# repo = 'mattn/vim-goimports'
 # on_ft = 'go'
 
-[[plugins]]
-repo = 'mattn/vim-goimports'
-on_ft = 'go'
-
-[[plugins]]
-repo = 'zah/nim.vim'
-on_ft = 'nim'
+# [[plugins]]
+# repo = 'zah/nim.vim'
+# on_ft = 'nim'
 
 # [[plugins]]
 # repo = 'toyamarinyon/vim-swift'
@@ -191,13 +191,13 @@ on_ft = 'nim'
 # repo = 'jason0x43/vim-js-indent'
 # on_ft = ['javascript', 'typescript', 'typescript.tsx']
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['javascript', 'typescript', 'typescript.tsx']
-
-[[plugins]]
-repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascript', 'typescript', 'typescript.tsx']
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
+# on_ft = ['javascript', 'typescript', 'typescript.tsx']
+# 
+# [[plugins]]
+# repo = 'maxmellon/vim-jsx-pretty'
+# on_ft = ['javascript', 'typescript', 'typescript.tsx']
 
 # [[plugins]]
 # repo = 'mhartington/nvim-typescript'
@@ -217,10 +217,10 @@ on_ft = ['javascript', 'typescript', 'typescript.tsx']
 # on_i = 1
 # on_ft = ['python', 'python3']
 
-[[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-on_i = 1
-on_ft = ['python', 'python3']
+# [[plugins]]
+# repo = 'hynek/vim-python-pep8-indent'
+# on_i = 1
+# on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 'Shougo/echodoc.vim'

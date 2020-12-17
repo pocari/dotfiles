@@ -88,3 +88,9 @@ source ~/dotfiles/_vim/rc/_vimrc.gina
 
 " " ale
 " source ~/dotfiles/_vim/rc/_vimrc.ale
+
+
+if has('nvim')
+  " treesitter
+  source ~/dotfiles/_vim/rc/_vimrc.nvim-treesitter
+endif

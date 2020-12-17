@@ -330,7 +330,8 @@ endfunction
 command! ShowFuncHistory :call s:ShowFuncHistory()
 
 if has('vim_starting')
-  syntax enable
+  " treesitterいれたら syntax enableいらなくなるか実験
+  " syntax enable
   filetype plugin indent on
 endif
 

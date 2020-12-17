@@ -29,6 +29,10 @@ repo = 'itchyny/vim-gitbranch'
 repo = 'mattn/vim-lsp-settings'
 merged = 0
 
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter''
+merged = 0
+
 # [[plugins]]
 # repo = 'w0rp/ale'
 
