@@ -20,10 +20,18 @@ alias iv='nvim'
 #see http://qiita.com/takc923/items/45386905f70fde9af0e7
 #alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 
+# llvm設定
+export PATH="$PATH:/usr/local/opt/llvm/bin"
+# なぜかbig surになってから、各種ビルドで
+# ld: library not found for -lSystem
+# のエラーがやたらでるようになったが、 pathの順番的にappleのclangが読まれていなかった模様
+# この順で見ると正しくビルドできたのでとりあえず。(llvmのパス設定より優先されるようにしたらOK?)
+export PATH="$PATH:/usr/bin"
+
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=~/.composer/vendor/bin:$PATH
-export PATH=~/Library/Python/3.8/bin:$PATH
+export PATH=~/Library/Python/3.9/bin:$PATH
 
 if [ -d ~/dev/flutter/bin ] ; then
   export PATH=$PATH:~/dev/flutter/bin
@@ -41,12 +49,12 @@ if [ -d ~/.pub-cache/bin ] ; then
   export PATH="$PATH":"$HOME/.pub-cache/bin"
 fi
 
-# llvm設定
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+
+# binutilsの設定
+export PATH="/usr/local/opt/binutils/bin:$PATH"
 
 if [ "$TMUX" != '' -a -x $(which reattach-to-user-namespace 2>/dev/null) ]; then
   alias osascript='reattach-to-user-namespace osascript'
