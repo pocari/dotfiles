@@ -222,10 +222,10 @@ hook_post_source = '''
 # on_i = 1
 # on_ft = ['python', 'python3']
 
-[[plugins]]
-repo = 'Shougo/echodoc.vim'
-on_event = 'CompleteDone'
-hook_source = 'call echodoc#enable()'
+# [[plugins]]
+# repo = 'Shougo/echodoc.vim'
+# on_event = 'CompleteDone'
+# hook_source = 'call echodoc#enable()'
 
 # [[plugins]]
 # repo = 'pocari/slimv'
