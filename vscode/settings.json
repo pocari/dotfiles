@@ -87,5 +87,6 @@
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "aws.samcli.location": "/usr/local/bin/sam"
+  "aws.samcli.location": "/usr/local/bin/sam",
+  "vsicons.dontShowNewVersionMessage": true
 }
