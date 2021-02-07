@@ -20,6 +20,7 @@ setopt no_beep
 PATH=~/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/dotfiles/bin:$PATH
+PATH=/opt/homebrew/bin:$PATH
 export PATH
 
 alias ls='ls -GF'
