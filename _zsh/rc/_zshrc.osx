@@ -48,6 +48,6 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
-if [ "$TMUX" != '' -a -x $(which reattach-to-user-namespace 2>/dev/null) ]; then
-  alias osascript='reattach-to-user-namespace osascript'
-fi
+# if [ "$TMUX" != '' -a -x $(which reattach-to-user-namespace 2>/dev/null) ]; then
+#   alias osascript='reattach-to-user-namespace osascript'
+# fi
