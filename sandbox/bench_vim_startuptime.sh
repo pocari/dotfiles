@@ -4,7 +4,7 @@ test -d ./startuptime_bench && rm -rf ./startuptime_bench
 mkdir -p ./startuptime_bench
 cd ./startuptime_bench
 
-total=100
+total=108
 for i in $(seq 1 $total)
 do
   ~/usr/local/bin/nvim \
