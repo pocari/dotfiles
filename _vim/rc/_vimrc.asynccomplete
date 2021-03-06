@@ -3,19 +3,19 @@
 set shortmess+=c
 
 " asynccomplete-file
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+au User asyncomplete_setup call asyncomplete#register_source({
     \ 'name': 'file',
     \ 'whitelist': ['*'],
     \ 'priority': 10,
     \ 'completor': function('asyncomplete#sources#file#completor')
-    \ }))
+    \ })
 
 " asyncomplete-buffer.vim
-call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+au User asyncomplete_setup call asyncomplete#register_source({
     \ 'name': 'buffer',
     \ 'whitelist': ['*'],
     \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ }))
+    \ })
 
 " " asyncomplete-neosnippet.vim
 " call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
