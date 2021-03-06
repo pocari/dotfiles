@@ -30,6 +30,7 @@ repo = 'mattn/vim-lsp-settings'
 merged = 0
 
 [[plugins]]
+if = 'has("nvim")'
 repo = 'nvim-treesitter/nvim-treesitter''
 merged = 0
 
