@@ -2,9 +2,14 @@
 
 CLUSTER_NAME=$1
 
-if [ -z $CLUSTER_NAME ]; then
-  echo "クラスタ名を指定してください"
+function usage_exit() {
+  echo "ERROR: クラスタ名を指定してください" >&2
+  echo "$(basename $0) cluster-name" >&2
   exit 1
+}
+
+if [ -z $CLUSTER_NAME ]; then
+  usage_exit
 fi
 
 
