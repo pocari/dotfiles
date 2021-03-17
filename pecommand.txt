@@ -24,4 +24,4 @@ echo 'eval $(assume-role sikmi_google_profile)' > .envrc; direnv allow # sikmi�
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir') # remote debug mode chrome を独立して開く
 sikmi_vpn_con #sikmiのVPNに接続する
 sikmi_vpn_dis #sikmiのVPNからの接続終了
-
+ruby -pe '$_.gsub!(/\n/, "\\n")' # 生の改行を文字列としての\nに変換する 改行を含むデータをjsonのvalueにするときなど
