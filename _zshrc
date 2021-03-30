@@ -215,6 +215,10 @@ fi
 #   alias kc=kubectl
 # fi
 
+# assume roleの時間が短いので変更
+# role chainingというのを使っていると最大1hになるらしい
+export AWS_ASSUME_ROLE_TTL=1h
+
 [[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM
 #---------------------------------------------------------------------------------------------------
 # # profileするときは下のコメントを外す
