@@ -8,9 +8,11 @@
 # fi
 # # profile用ここまで
 
+typeset -U path PATH
+
 # rbenv
 if [ -d ${HOME}/.rbenv ] ; then
-  PATH=${HOME}/.rbenv/bin:/usr/local/bin:${PATH}
+  PATH=${HOME}/.rbenv/bin:${PATH}
   export PATH
   # 初期化が遅いので遅延させる
   # rbenv自体はたまにしか打たないので都度初期化で問題ないはず
