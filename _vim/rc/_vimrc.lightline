@@ -14,7 +14,7 @@ let g:lightline = {
         \   ],
         \   'right': [
         \     ['denite_info'],
-        \     ['charcode', 'fileformat', 'fileencoding', 'filetype'],
+        \     ['current_column', 'charcode', 'fileformat', 'fileencoding', 'filetype'],
         \   ]
         \ },
         \ 'component_function': {
@@ -29,6 +29,7 @@ let g:lightline = {
         \   'charcode': 'MyCharCode',
         \   'gitgutter': 'MyGitGutter',
         \   'denite_info': 'MyDeniteInfo',
+        \   'current_column': 'MyCurrentColumn',
         \ },
         \ 'separator': {'left': '|', 'right': '|'},
         \ 'subseparator': {'left': '|', 'right': '|'}
@@ -182,3 +183,6 @@ function! MyCharCode()
   return "'". char ."' ". nr
 endfunction
 
+function! MyCurrentColumn()
+  return printf("%5d", col('.'))
+endfunction
