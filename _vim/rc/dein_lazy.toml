@@ -237,10 +237,10 @@ hook_post_source = '''
 repo = 'tpope/vim-endwise'
 on_i = 1
 
-[[plugins]]
-if = 'has("nvim")'
-repo = 'Shougo/unite.vim'
-on_source = 'denite.nvim'
+# [[plugins]]
+# if = 'has("nvim")'
+# repo = 'Shougo/unite.vim'
+# on_source = 'denite.nvim'
 
 # [[plugins]]
 # if = 'has("nvim")'

@@ -28,3 +28,14 @@ if dein#check_install()
   call dein#install()
 endif
 
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  }
+}
+EOF
+
