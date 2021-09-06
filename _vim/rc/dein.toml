@@ -63,13 +63,10 @@ repo = 'Shougo/defx.nvim'
 [[plugins]]
 if = 'has("nvim")'
 repo = 'lambdalisue/pastefix.vim'
-# 2021/09/06 なぜかhook_addの内容がnvim以外でも実行されてしまうため、hook_add内でも改めてnvimかどうかチェック
 hook_add = '''
-if has("nvim")
   let g:pastefix_no_default_mappings = 1
   nmap p <Plug>(pastefix-p)
   nmap P <Plug>(pastefix-P)
-endif
 '''
 
 ####################################################################
