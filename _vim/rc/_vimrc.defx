@@ -3,7 +3,7 @@ function! s:defx_my_settings() abort
 endfunction
 
 " explorer風に開く
-nnoremap <silent> <Leader>z :<C-u>:Defx -split=vertical -winwidth=30 -direction=topleft<CR>
+nnoremap <silent> <Leader>z :<C-u>:Defx -split=vertical -winwidth=40 -direction=topleft<CR>
 
 augroup MyInit
   " バッファ一覧に表示しない

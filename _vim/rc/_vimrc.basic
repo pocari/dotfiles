@@ -133,6 +133,9 @@ if has('vim_starting')
   endif
 endif
 
+" 補完のときのfloating windowの色
+highlight Pmenu ctermfg=255 ctermbg=237
+
 " insert mode->normal mode
 inoremap <silent> jj <ESC>
 
