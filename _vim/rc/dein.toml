@@ -64,9 +64,11 @@ repo = 'Shougo/defx.nvim'
 if = 'has("nvim")'
 repo = 'lambdalisue/pastefix.vim'
 hook_add = '''
-  let g:pastefix_no_default_mappings = 1
-  nmap p <Plug>(pastefix-p)
-  nmap P <Plug>(pastefix-P)
+  if 'has("nvim")'
+    let g:pastefix_no_default_mappings = 1
+    nmap p <Plug>(pastefix-p)
+    nmap P <Plug>(pastefix-P)
+  endif
 '''
 
 ####################################################################
