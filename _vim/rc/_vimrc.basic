@@ -145,7 +145,7 @@ set laststatus=2
 " grep設定
 " rg -> ag ->  grep の順に優先して使用
 if executable('rg')
-  set grepprg=rg\ --no-heading\ --vimgrep
+  set grepprg=rg\ --no-heading\ --vimgrep\ --sort\ path
   set grepformat=%f:%l:%c:%m
 elseif executable('ag')
   set grepprg=ag\ --nogroup\ -iS
