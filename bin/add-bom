@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+$stdout.print("\xEF\xBB\xBF")
+$stdout.print($stdin.read)
