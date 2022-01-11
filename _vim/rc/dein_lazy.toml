@@ -237,6 +237,11 @@ hook_post_source = '''
 repo = 'tpope/vim-endwise'
 on_i = 1
 
+[[plugins]]
+if = 'has("nvim")'
+repo = 'github/copilot.vim'
+on_event = 'InsertEnter'
+
 # [[plugins]]
 # if = 'has("nvim")'
 # repo = 'Shougo/unite.vim'
