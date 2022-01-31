@@ -10,7 +10,6 @@ DOT_FILES=(
   .vimrc
   .vim
   .zsh
-  .tmuxinator
   .gitconfig
   .globalrc
   .peco
