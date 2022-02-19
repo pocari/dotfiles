@@ -177,6 +177,9 @@ fi
 #nvimの設定ファイル用
 export XDG_CONFIG_HOME=$HOME/.config
 
+# go install の場所
+export GOBIN=$HOME/bin
+
 # iterm2のシェル統合を使う場合
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
