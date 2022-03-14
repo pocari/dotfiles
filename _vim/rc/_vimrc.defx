@@ -2,8 +2,19 @@ autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
 endfunction
 
+function! StartDefx() abort
+  if len(expand('%:p')) > 0
+    " 開いているバッファがあれば、そのバッファを選択した状態でdefx起動
+    execute 'Defx' '-search_recursive=' . expand('%:p') '-split=vertical -winwidth=40 -direction=topleft'
+  else
+    " 開いているバッファがなければ、カレントディレクトリでdefx起動
+    execute 'Defx -split=vertical -winwidth=40 -direction=topleft'
+  endif
+
+endfunction
+
 " explorer風に開く
-nnoremap <silent> <Leader>z :<C-u>:Defx -split=vertical -winwidth=40 -direction=topleft<CR>
+nnoremap <silent> <Leader>z :<C-u>:call StartDefx()<CR>
 
 augroup MyInit
   " バッファ一覧に表示しない
