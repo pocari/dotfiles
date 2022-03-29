@@ -17,4 +17,9 @@ export PATH=/usr/share/doc/git/contrib/diff-highlight/:$PATH
 #/etc/init/docker.conf
 #DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock'
 #export DOCKER_HOST=tcp://localhost:4243
+export PATH=~/go/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
 
+export AWS_VAULT_BACKEND=pass
+export AWS_VAULT_PASS_PREFIX=aws-vault
+export AWS_SESSION_TOKEN_TTL=3h
