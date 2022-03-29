@@ -73,7 +73,7 @@ kterm*|xterm*)
 esac
 
 #C-sを切る
-stty -ixon -ixoff
+stty -ixon
 
 #補完設定
 #zsh-completion
@@ -146,6 +146,10 @@ then
   zstyle ':chpwd:*' recent-dirs-default yes
   zstyle ':completion:*' recent-dirs-insert both
 fi
+
+# https://github.com/peco/peco/issues/417
+# 貼り付けたときに[200~, [201~ がついてしまうのを抑制
+unset zle_bracketed_paste
 
 #OS毎の設定をロード
 case "${OSTYPE}" in
