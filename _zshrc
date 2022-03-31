@@ -203,18 +203,18 @@ if type direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-# hie(haskell ide engine)
-if [ -d ${HOME}/.local ] ; then
-  export PATH="$HOME/.local/bin:$PATH"
-fi
-
-if type stack >/dev/null 2>&1; then
-  # stackがインストールされてたら補完設定追加
-  eval "$(stack --bash-completion-script stack)"
-  # 謎のエラー回避
-  # https://qiita.com/waddlaw/items/b83cd10311200095fe87#print-build-platform-exit-1-failed-%E3%81%A8%E3%81%84%E3%81%86%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E5%87%BA%E3%82%8B
-  export PATH=$(stack path --compiler-bin):$PATH
-fi
+# # hie(haskell ide engine)
+# if [ -d ${HOME}/.local ] ; then
+#   export PATH="$HOME/.local/bin:$PATH"
+# fi
+# 
+# if type stack >/dev/null 2>&1; then
+#   # stackがインストールされてたら補完設定追加
+#   eval "$(stack --bash-completion-script stack)"
+#   # 謎のエラー回避
+#   # https://qiita.com/waddlaw/items/b83cd10311200095fe87#print-build-platform-exit-1-failed-%E3%81%A8%E3%81%84%E3%81%86%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E5%87%BA%E3%82%8B
+#   export PATH=$(stack path --compiler-bin):$PATH
+# fi
 
 # # kubectl
 # if type kubectl >/dev/null 2>&1; then
@@ -226,7 +226,7 @@ fi
 # role chainingというのを使っていると最大1hになるらしい
 export AWS_ASSUME_ROLE_TTL=1h
 
-[[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM
+# [[ -s /Users/pocari/.rsvm/rsvm.sh ]] && . /Users/pocari/.rsvm/rsvm.sh # This loads RSVM
 #---------------------------------------------------------------------------------------------------
 # # profileするときは下のコメントを外す
 # if (which zprof > /dev/null 2>&1) ;then
