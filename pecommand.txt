@@ -27,3 +27,5 @@ sikmi_vpn_dis #sikmiのVPNからの接続終了
 ruby -pe '$_.gsub!(/\n/, "\\n")' # 生の改行を文字列としての\nに変換する 改行を含むデータをjsonのvalueにするときなど
 aws ec2 describe-nat-gateways | jq -r '.NatGateways[] | ((.Tags[] | select(.Key == "Name").Value) + " : " + .NatGatewayAddresses[].PublicIp)' | sort # nat gatewayのelastic ip(public ip)一覧をNameタグの値と一緒に表示
 aws ec2 describe-subnets | jq -r '.Subnets[] | ((select(.Tags != null) | .Tags[] | select(.Key == "Name").Value) + " : " + .CidrBlock)' | sort # NameタグのついているsubnetのcidrとNameを一緒に表示
+sudo nmcli connection down sikmi-vpn # ubuntu用 vpn切る
+sudo nmcli connection up sikmi-vpn # ubuntu用 vpnつなぐ
