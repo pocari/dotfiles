@@ -89,6 +89,7 @@ source ~/dotfiles/_vim/rc/_vimrc.gina
 " " ale
 " source ~/dotfiles/_vim/rc/_vimrc.ale
 
+source ~/dotfiles/_vim/rc/_vimrc.clipper
 
 if has('nvim')
   " treesitter

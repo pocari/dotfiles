@@ -1,0 +1,7 @@
+" mac側からssh指摘どうしているvim上で、yankしたときに、その内容をncコマンド経
+" 由で、mac側で開いているclipperのポート(8377)に送る設定
+if !empty("$REMOTEHOST$SSH_CONNECTION")
+  echo 'in ssh connection'
+else
+  echo 'normal terminal'
+endif
