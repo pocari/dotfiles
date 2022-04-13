@@ -2,6 +2,6 @@
 
 # pecoの結果をクリップボードに保存
 function pecopy () {
-    peco --query "$LBUFFER" | pbcopy
+    fzf --query "$LBUFFER" | pbcopy
 }
 

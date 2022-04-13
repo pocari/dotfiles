@@ -1,47 +1,47 @@
 # vim: ft=sh
 
-#---------------------------------------------------------------------------------
-# コマンド履歴をpecoで検索して表示
-function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --prompt "last command>" --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle clear-screen
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+# #---------------------------------------------------------------------------------
+# # コマンド履歴をpecoで検索して表示
+# function peco-select-history() {
+#     local tac
+#     if which tac > /dev/null; then
+#         tac="tac"
+#     else
+#         tac="tail -r"
+#     fi
+#     BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --prompt "last command>" --query "$LBUFFER")
+#     CURSOR=$#BUFFER
+#     zle clear-screen
+# }
+# zle -N peco-select-history
+# bindkey '^r' peco-select-history
 
-#---------------------------------------------------------------------------------
-# cd履歴をpecoで検索して表示
-function peco-go-to-dir () {
-  local line
-  local selected="$(
-    {
-      (
-        autoload -Uz chpwd_recent_filehandler
-        chpwd_recent_filehandler && for line in $reply; do
-          if [[ -d "$line" ]]; then
-            echo "$line"
-          fi
-        done
-      )
-      ghq list --full-path
-      for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done 2>/dev/null | sort -u
-    } | peco --prompt "cd history>" --query "$LBUFFER"
-  )"
-  if [ -n "$selected" ]; then
-    BUFFER="cd ${(q)selected}"
-    zle accept-line
-  fi
-  #zle clear-screen
-}
-zle -N peco-go-to-dir
-bindkey '^[g' peco-go-to-dir
+# #---------------------------------------------------------------------------------
+# # cd履歴をpecoで検索して表示
+# function peco-go-to-dir () {
+#   local line
+#   local selected="$(
+#     {
+#       (
+#         autoload -Uz chpwd_recent_filehandler
+#         chpwd_recent_filehandler && for line in $reply; do
+#           if [[ -d "$line" ]]; then
+#             echo "$line"
+#           fi
+#         done
+#       )
+#       ghq list --full-path
+#       for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done 2>/dev/null | sort -u
+#     } | peco --prompt "cd history>" --query "$LBUFFER"
+#   )"
+#   if [ -n "$selected" ]; then
+#     BUFFER="cd ${(q)selected}"
+#     zle accept-line
+#   fi
+#   #zle clear-screen
+# }
+# zle -N peco-go-to-dir
+# bindkey '^[g' peco-go-to-dir
 
 
 #---------------------------------------------------------------------------------
@@ -50,164 +50,164 @@ function kill-peco () {
     ps aux | peco --prompt "KILL >" | awk '{ print $2 }' | xargs kill -9
 }
 
-#---------------------------------------------------------------------------------
-# pecoで選んだものをgit add
-function peco-select-gitadd() {
-    local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
-                                  peco --prompt "git add>" --query "$LBUFFER" | \
-                                  awk -v path=$(git rev-parse --show-toplevel)/ -F ' ' '{print path $NF}')"
-    if [ -n "$SELECTED_FILE_TO_ADD" ]; then
-      BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}' | tr '\n' ' ')"
-      CURSOR=$#BUFFER
-    fi
-    zle accept-line
-    # zle clear-screen
-}
-zle -N peco-select-gitadd
-bindkey "^g^a" peco-select-gitadd
-
-#---------------------------------------------------------------------------------
-# pecoでブランチを選択してチェックアウト
-function peco-git-checkout() {
-  local selected_branch="$(
-    git for-each-ref \
-      --sort=-committerdate refs/heads/ \
-      --format='%(HEAD) %(refname:short) - %(objectname:short) - %(contents:subject) - %(authorname) - (%(committerdate:relative))' \
-    | peco --prompt "git branches>" \
-    | sed -e "s/\* //g" \
-    | awk "{print \$1}"
-  )"
-  if [ -n "$selected_branch" ]; then
-    git checkout $selected_branch
-  fi
-  zle accept-line
-}
-zle -N peco-git-checkout
-bindkey "^g^b" peco-git-checkout
-
-#---------------------------------------------------------------------------------
-# pecoでgit statusの結果を挿入
-function peco-select-from-git-status(){
-    git status --short | \
-    peco --prompt "git status>" | \
-    awk -F ' ' '{print $NF}'
-}
-
-function peco-insert-selected-git-files(){
-    LBUFFER+=$(peco-select-from-git-status | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}')
-    CURSOR=$#LBUFFER
-    zle reset-prompt
-}
-
-zle -N peco-insert-selected-git-files
-bindkey "^g^s" peco-insert-selected-git-files
-
-#---------------------------------------------------------------------------------
-# pecoでショートカットコマンドの結果を挿入
-function peco-select-shortcut(){
-    LBUFFER+=$( \
-      cat ~/dotfiles/pecommand.txt | \
-      grep -v -e '^\s*#' -e '^$' | \
-      peco --prompt "commands>" | \
-      sed -e 's/#.*$//' \
-    )
-    CURSOR=$#LBUFFER
-    zle reset-prompt
-}
-
-zle -N peco-select-shortcut
-bindkey '^s' peco-select-shortcut
-
-#---------------------------------------------------------------------------------
-# pecoでカレントディレクトリ以下のファイルをリスティング
-function peco-list-files() {
-  local selected_buffer=$(list-files | peco --prompt 'files>')
-  if [ -n "$selected_buffer" ]; then
-    if [ -t 1 ]; then
-      # 画面から叩かれているときはコマンドラインにvimの引数として表示
-      local files=$(echo $selected_buffer | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}')
-      print -z "vim ${files}"
-    else
-      # pipeでつながれているときは普通に出力
-      print $selected_buffer
-    fi
-  fi
-}
-
-alias ff='peco-list-files'
-
-#---------------------------------------------------------------------------------
-# pecoでdocker exec -it container
-function peco-docker-exec() {
-  local exec_command=$1
-  local selected_container=$( \
-    docker ps --no-trunc --format 'table {{.ID | printf "%.10s"}}\t{{.Names}}\t{{.Command}}\t{{.RunningFor}}' | sed 1d | peco --prompt 'container >' | awk '{print $1}' \
-  )
-  if [ -n "$selected_container" ]; then
-    docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -it ${selected_container} ${exec_command:-bash}
-  fi
-}
-
-alias pecontainer='peco-docker-exec'
-alias pc='pecontainer'
-
-#---------------------------------------------------------------------------------
-# pecoでexitしてるコンテナを削除
-function peco-docker-rm-exited-container() {
-  local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | peco --prompt 'container>')
-  if [ -n "$selected_buffer" ]; then
-    local containers=$(echo $selected_buffer | awk -F"\t" '{print $1}')
-    docker rm $(echo ${containers} | tr '\n' ' ')
-  fi
-}
-
-alias pecontainer-rm='peco-docker-rm-exited-container'
-#---------------------------------------------------------------------------------
-# pecoでコンテナkill
-function peco-docker-kill-exited-container() {
-  local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | peco --prompt 'container>')
-  if [ -n "$selected_buffer" ]; then
-    local containers=$(echo $selected_buffer | awk -F"\t" '{print $1}')
-    docker kill $(echo ${containers} | tr '\n' ' ')
-  fi
-}
-
-alias pecontainer-kill='peco-docker-kill-exited-container'
-
-#---------------------------------------------------------------------------------
-# pecoでいまopenされているprのブランチをチェックアウトする
-function peco-checkout-github-pr() {
-  local selected_buffer=$(hub pr list -s open -L 20 --format='%t :%H :%I%n' | peco --prompt 'pull requests>')
-  if [ -n "$selected_buffer" ]; then
-    local pr_no=$(echo $selected_buffer | awk -F":" '{print $NF}')
-    hub pr checkout $pr_no
-  fi
-}
-alias ghpr='peco-checkout-github-pr'
-
-#---------------------------------------------------------------------------------
-# pecoでaws-vaultに登録されているprofileのaws consoleを開く
-function peco-open-aws-vault-profile-console() {
-  local selected_buffer=$(aws-vault ls | grep -v '^default' | sed '1,2d' | peco --prompt 'select profile>' )
-  if [ -n "$selected_buffer" ]; then
-    local profile=$(echo $selected_buffer | awk '{print $1}')
-    aws-vault login $profile
-  fi
-}
-alias awsc='peco-open-aws-vault-profile-console'
-
-#---------------------------------------------------------------------------------
-# pecoで既存のtmuxのsessionにattachする
-function peco-attach-tumx-session() {
-  # 複数行選んでも意味ないので、pecoのあとにheadで先頭1行だけ取得
-  local selected_buffer=$(tmux list-session  | peco --prompt 'select tmux session>' | head -n 1 )
-  if [ -n "$selected_buffer" ]; then
-    local tmux_session_id=$(echo $selected_buffer | awk -F: '{print $1}')
-    tmux attach -t${tmux_session_id}
-  fi
-}
-
-alias pta='peco-attach-tumx-session'
+# #---------------------------------------------------------------------------------
+# # pecoで選んだものをgit add
+# function peco-select-gitadd() {
+#     local SELECTED_FILE_TO_ADD="$(git status --porcelain | \
+#                                   peco --prompt "git add>" --query "$LBUFFER" | \
+#                                   awk -v path=$(git rev-parse --show-toplevel)/ -F ' ' '{print path $NF}')"
+#     if [ -n "$SELECTED_FILE_TO_ADD" ]; then
+#       BUFFER="git add $(echo "$SELECTED_FILE_TO_ADD" | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}' | tr '\n' ' ')"
+#       CURSOR=$#BUFFER
+#     fi
+#     zle accept-line
+#     # zle clear-screen
+# }
+# zle -N peco-select-gitadd
+# bindkey "^g^a" peco-select-gitadd
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでブランチを選択してチェックアウト
+# function peco-git-checkout() {
+#   local selected_branch="$(
+#     git for-each-ref \
+#       --sort=-committerdate refs/heads/ \
+#       --format='%(HEAD) %(refname:short) - %(objectname:short) - %(contents:subject) - %(authorname) - (%(committerdate:relative))' \
+#     | peco --prompt "git branches>" \
+#     | sed -e "s/\* //g" \
+#     | awk "{print \$1}"
+#   )"
+#   if [ -n "$selected_branch" ]; then
+#     git checkout $selected_branch
+#   fi
+#   zle accept-line
+# }
+# zle -N peco-git-checkout
+# bindkey "^g^b" peco-git-checkout
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでgit statusの結果を挿入
+# function peco-select-from-git-status(){
+#     git status --short | \
+#     peco --prompt "git status>" | \
+#     awk -F ' ' '{print $NF}'
+# }
+# 
+# function peco-insert-selected-git-files(){
+#     LBUFFER+=$(peco-select-from-git-status | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}')
+#     CURSOR=$#LBUFFER
+#     zle reset-prompt
+# }
+# 
+# zle -N peco-insert-selected-git-files
+# bindkey "^g^s" peco-insert-selected-git-files
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでショートカットコマンドの結果を挿入
+# function peco-select-shortcut(){
+#     LBUFFER+=$( \
+#       cat ~/dotfiles/pecommand.txt | \
+#       grep -v -e '^\s*#' -e '^$' | \
+#       peco --prompt "commands>" | \
+#       sed -e 's/#.*$//' \
+#     )
+#     CURSOR=$#LBUFFER
+#     zle reset-prompt
+# }
+# 
+# zle -N peco-select-shortcut
+# bindkey '^s' peco-select-shortcut
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでカレントディレクトリ以下のファイルをリスティング
+# function peco-list-files() {
+#   local selected_buffer=$(list-files | peco --prompt 'files>')
+#   if [ -n "$selected_buffer" ]; then
+#     if [ -t 1 ]; then
+#       # 画面から叩かれているときはコマンドラインにvimの引数として表示
+#       local files=$(echo $selected_buffer | awk -F\n -v ORS=' ' '{print "\"" $0 "\""}')
+#       print -z "vim ${files}"
+#     else
+#       # pipeでつながれているときは普通に出力
+#       print $selected_buffer
+#     fi
+#   fi
+# }
+# 
+# alias ff='peco-list-files'
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでdocker exec -it container
+# function peco-docker-exec() {
+#   local exec_command=$1
+#   local selected_container=$( \
+#     docker ps --no-trunc --format 'table {{.ID | printf "%.10s"}}\t{{.Names}}\t{{.Command}}\t{{.RunningFor}}' | sed 1d | peco --prompt 'container >' | awk '{print $1}' \
+#   )
+#   if [ -n "$selected_container" ]; then
+#     docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -it ${selected_container} ${exec_command:-bash}
+#   fi
+# }
+# 
+# alias pecontainer='peco-docker-exec'
+# alias pc='pecontainer'
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでexitしてるコンテナを削除
+# function peco-docker-rm-exited-container() {
+#   local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | peco --prompt 'container>')
+#   if [ -n "$selected_buffer" ]; then
+#     local containers=$(echo $selected_buffer | awk -F"\t" '{print $1}')
+#     docker rm $(echo ${containers} | tr '\n' ' ')
+#   fi
+# }
+# 
+# alias pecontainer-rm='peco-docker-rm-exited-container'
+# #---------------------------------------------------------------------------------
+# # pecoでコンテナkill
+# function peco-docker-kill-exited-container() {
+#   local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | peco --prompt 'container>')
+#   if [ -n "$selected_buffer" ]; then
+#     local containers=$(echo $selected_buffer | awk -F"\t" '{print $1}')
+#     docker kill $(echo ${containers} | tr '\n' ' ')
+#   fi
+# }
+# 
+# alias pecontainer-kill='peco-docker-kill-exited-container'
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでいまopenされているprのブランチをチェックアウトする
+# function peco-checkout-github-pr() {
+#   local selected_buffer=$(hub pr list -s open -L 20 --format='%t :%H :%I%n' | peco --prompt 'pull requests>')
+#   if [ -n "$selected_buffer" ]; then
+#     local pr_no=$(echo $selected_buffer | awk -F":" '{print $NF}')
+#     hub pr checkout $pr_no
+#   fi
+# }
+# alias ghpr='peco-checkout-github-pr'
+# 
+# #---------------------------------------------------------------------------------
+# # pecoでaws-vaultに登録されているprofileのaws consoleを開く
+# function peco-open-aws-vault-profile-console() {
+#   local selected_buffer=$(aws-vault ls | grep -v '^default' | sed '1,2d' | peco --prompt 'select profile>' )
+#   if [ -n "$selected_buffer" ]; then
+#     local profile=$(echo $selected_buffer | awk '{print $1}')
+#     aws-vault login $profile
+#   fi
+# }
+# alias awsc='peco-open-aws-vault-profile-console'
+# 
+# #---------------------------------------------------------------------------------
+# # pecoで既存のtmuxのsessionにattachする
+# function peco-attach-tumx-session() {
+#   # 複数行選んでも意味ないので、pecoのあとにheadで先頭1行だけ取得
+#   local selected_buffer=$(tmux list-session  | peco --prompt 'select tmux session>' | head -n 1 )
+#   if [ -n "$selected_buffer" ]; then
+#     local tmux_session_id=$(echo $selected_buffer | awk -F: '{print $1}')
+#     tmux attach -t${tmux_session_id}
+#   fi
+# }
+# 
+# alias pta='peco-attach-tumx-session'
 
 #---------------------------------------------------------------------------------
 case "${OSTYPE}" in

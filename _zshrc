@@ -173,6 +173,10 @@ if (( ${+commands[peco]} )); then
   [ -f ~/dotfiles/_zsh/rc/_zshrc.peco ] && source ~/dotfiles/_zsh/rc/_zshrc.peco
 fi
 
+#fzfがインストールされている場合コマンド定義
+if (( ${+commands[fzf]} )); then
+  [ -f ~/dotfiles/_zsh/rc/_zshrc.fzf ] && source ~/dotfiles/_zsh/rc/_zshrc.fzf
+fi
 #nodeの設定
 if (( ${+commands[node]} )); then
   export PATH=$PATH:./node_modules/.bin
