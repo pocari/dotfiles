@@ -91,7 +91,7 @@ bindkey "^g^b" fuzzy-finder-git-checkout
 # pecoでgit statusの結果を挿入
 function fuzzy-finder-select-from-git-status(){
     git status --short | \
-    fzf --prompt "git status>" | \
+    fzf --prompt "git status> " | \
     awk -F ' ' '{print $NF}'
 }
 
@@ -110,7 +110,7 @@ function fuzzy-finder-select-shortcut(){
     LBUFFER+=$( \
       cat ~/dotfiles/pecommand.txt | \
       grep -v -e '^\s*#' -e '^$' | \
-      fzf --prompt "commands >" | \
+      fzf --prompt "commands > " | \
       sed -e 's/#.*$//' \
     )
     CURSOR=$#LBUFFER
