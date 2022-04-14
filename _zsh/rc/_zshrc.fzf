@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-export FZF_DEFAULT_OPTS='--bind=ctrl-a:select-all,ctrl-y:toggle+down -m --reverse'
+export FZF_DEFAULT_OPTS='--bind=ctrl-a:select-all,ctrl-y:toggle+down -m --reverse --no-sort'
 
  #---------------------------------------------------------------------------------
  # コマンド履歴をpecoで検索して表示
