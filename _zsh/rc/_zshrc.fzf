@@ -1,22 +1,31 @@
 # vim: ft=sh
 
-export FZF_DEFAULT_OPTS='--bind=ctrl-a:select-all,ctrl-y:toggle+down -m --reverse --no-sort'
+# 色はdoracuraからもってきてちょっと変更
+# https://draculatheme.com/fzf
 
- #---------------------------------------------------------------------------------
- # コマンド履歴をpecoで検索して表示
- function fuzzy-finder-select-history() {
-     local tac
-     if which tac > /dev/null; then
-         tac="tac"
-     else
-         tac="tail -r"
-     fi
-     BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | fzf --prompt "last command> " --query "$LBUFFER")
-     CURSOR=$#BUFFER
-     zle clear-screen
- }
- zle -N fuzzy-finder-select-history
- bindkey '^r' fuzzy-finder-select-history
+#  --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 は無し
+export FZF_DEFAULT_OPTS='
+  --bind=ctrl-a:select-all,ctrl-y:toggle+down -m --reverse --no-sort
+  --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9
+  --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4
+  --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6
+'
+
+#---------------------------------------------------------------------------------
+# コマンド履歴をpecoで検索して表示
+function fuzzy-finder-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | fzf --prompt "last command> " --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N fuzzy-finder-select-history
+bindkey '^r' fuzzy-finder-select-history
 
 #---------------------------------------------------------------------------------
 # cd履歴をpecoで検索して表示
