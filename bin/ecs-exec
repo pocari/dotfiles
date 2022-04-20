@@ -3,18 +3,18 @@
 set -e
 
 select-cluster() {
-  aws ecs list-clusters | jq -r '.clusterArns[]' | sed 's#^.*:cluster/##' | peco --prompt "select ecs cluster > "
+  aws ecs list-clusters | jq -r '.clusterArns[]' | sed 's#^.*:cluster/##' | fzf --prompt "select ecs cluster > "
 }
 
 select-task() {
   local cluster=$1
-  ecs-active-tasks ${cluster} | peco --prompt "select task > " | awk '{print $1}'
+  ecs-active-tasks ${cluster} | fzf --prompt "select task > " | awk '{print $1}'
 }
 
 select-container() {
   local cluster=$1
   local task_id=$2
-  aws ecs describe-tasks --tasks ${task_id} --cluster ${cluster} | jq -r '.tasks[0].containers[].name' | peco --prompt "select container > "
+  aws ecs describe-tasks --tasks ${task_id} --cluster ${cluster} | jq -r '.tasks[0].containers[].name' | fzf --prompt "select container > "
 }
 
 read-exec-command() {
