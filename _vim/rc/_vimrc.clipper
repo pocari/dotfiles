@@ -5,6 +5,9 @@ function! SetupClipper() abort
   let s:is_remote = expand("$REMOTEHOST$SSH_CONNECTION")
   if !empty(s:is_remote) && s:is_remote != expand('\$REMOTEHOST\$SSH_CONNECTION')
     echo 'in ssh connection'
+    "send to clipboard"
+    vnoremap <silent>y y :call system('nc -N localhost 8377', @0)<CR>
+    vnoremap <silent>d d :call system('nc -N localhost 8377', @1)<CR>
   else
     echo 'normal terminal'
   endif
