@@ -1,9 +1,7 @@
+" indent は微妙なことおおいので tree-sitterでは設定しない
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
-    enable = true,
-  },
-  indent = {
     enable = true,
   }
 }
