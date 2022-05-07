@@ -1,0 +1,8 @@
+# vim: ft=sh
+
+ranger() {
+  if [ -n "$RANGER_LEVEL" ]; then
+    exit
+  fi
+  EDITOR=nvim command ranger
+}

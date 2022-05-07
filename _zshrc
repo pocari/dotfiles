@@ -43,6 +43,8 @@ case ${UID} in
     SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+    [ -n "$RANGER_LEVEL" ] &&
+        PROMPT="[ranger]${PROMPT}"
     ;;
 *)
     PROMPT="%{${fg[red]}%}[%~]%{${reset_color}%}
@@ -54,6 +56,9 @@ case ${UID} in
 
     [ -n "${AWS_VAULT}" ] &&
       PROMPT="%{${fg[cyan]}%}(aws:${AWS_VAULT}) ${PROMPT}"
+
+    [ -n "$RANGER_LEVEL" ] &&
+      PROMPT="%{${fg[cyan]}%}[ranger] ${PROMPT}"
     ;;
 esac
 
@@ -176,6 +181,11 @@ fi
 #fzfがインストールされている場合コマンド定義
 if (( ${+commands[fzf]} )); then
   [ -f ~/dotfiles/_zsh/rc/_zshrc.fzf ] && source ~/dotfiles/_zsh/rc/_zshrc.fzf
+fi
+
+#rangerがインストールされている場合コマンド定義
+if (( ${+commands[ranger]} )); then
+  [ -f ~/dotfiles/_zsh/rc/_zshrc.ranger ] && source ~/dotfiles/_zsh/rc/_zshrc.ranger
 fi
 #nodeの設定
 if (( ${+commands[node]} )); then
