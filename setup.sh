@@ -35,3 +35,5 @@ done
 mkdir -p ~/.config
 ln -sf ~/.vim ~/.config/nvim
 
+# 個別の設定処理実行
+$HOME/dotfiles/ranger/setup.sh
