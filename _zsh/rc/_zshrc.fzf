@@ -191,7 +191,7 @@ function fuzzy-finder-checkout-github-pr() {
   local selected_buffer=$(gh pr list -L 50 --json title,number,headRefName | jq -r '.[] | [.title, .headRefName, .number | tostring ] | join("\t:")' | fzf --prompt 'pull requests> ' --preview "fuzzy-finder-git-checkout-pr-branch-preview {}")
   if [ -n "$selected_buffer" ]; then
     local pr_no=$(echo $selected_buffer | awk -F":" '{print $NF}')
-    hub pr checkout $pr_no
+    gh pr checkout $pr_no
   fi
 }
 alias ghpr='fuzzy-finder-checkout-github-pr'
