@@ -176,7 +176,7 @@ alias pecontainer-rm='fuzzy-finder-docker-rm-exited-container'
 #---------------------------------------------------------------------------------
 # pecoでコã³テナkill
 function fuzzy-finder-docker-kill-exited-container() {
-  local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | peco --prompt 'container>')
+  local selected_buffer=$(docker ps -a --format "{{.Names}}\t{{.Command}}\t{{.Status}}" | fzf --prompt 'container> ')
   if [ -n "$selected_buffer" ]; then
     local containers=$(echo $selected_buffer | awk -F"\t" '{print $1}')
     docker kill $(echo ${containers} | tr '\n' ' ')
