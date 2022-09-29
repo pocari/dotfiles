@@ -9,6 +9,7 @@
 "   setlocal omnifunc=TSScompleteFunc
 "   let g:deoplete#sources#omni#input_patterns.typescript = '\h\w*\|[^. \t]\.\w*'
 " endif
+let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server', 'deno']
 
 nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
 nnoremap K :<C-u>LspHover<CR>
