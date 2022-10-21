@@ -23,3 +23,5 @@ export PATH=/usr/local/go/bin:$PATH
 export AWS_VAULT_BACKEND=pass
 export AWS_VAULT_PASS_PREFIX=aws-vault
 export AWS_SESSION_TOKEN_TTL=3h
+
+export SAML2AWS_KEYRING_BACKEND=pass
