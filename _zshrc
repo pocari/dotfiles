@@ -201,6 +201,8 @@ export GOBIN=$HOME/bin
 # iterm2のシェル統合を使う場合
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export DENO_INSTALL="/home/pocari/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 #===============================
 # source zsh-syntax-highlighting
 #===============================
