@@ -19,7 +19,7 @@ echo
 
 for file in vim-startup-*.log
 do
-    awk 'END {print $1}' "$file"
+    cat "$file" | tail -n 2 | head -1
 done \
     | awk '
 NR == 1{
