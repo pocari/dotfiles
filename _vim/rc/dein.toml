@@ -132,8 +132,8 @@ repo = 'Shougo/neoyank.vim'
 if = '!has("nvim")'
 repo = 'vim-jp/vital.vim'
 
-[[plugins]]
-repo = 'rhysd/git-messenger.vim'
+# [[plugins]]
+# repo = 'rhysd/git-messenger.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
@@ -174,11 +174,11 @@ repo = 'tyru/current-func-info.vim'
 # [[plugins]]
 # repo = 'thinca/vim-quickrun'
 
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
-repo = 'vim-denops/denops-helloworld.vim'
+# [[plugins]]
+# repo = 'vim-denops/denops.vim'
+# 
+# [[plugins]]
+# repo = 'vim-denops/denops-helloworld.vim'
 
 # [[plugins]]
 # repo = 'Shougo/ddu.vim'
@@ -209,3 +209,6 @@ repo = 'vim-denops/denops-helloworld.vim'
 
 [[plugins]]
 repo = 'evanleck/vim-svelte'
+
+[[plugins]]
+repo = 'gyim/vim-boxdraw'

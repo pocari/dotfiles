@@ -9,3 +9,4 @@
 #   PATH="$GOENV_ROOT/bin:$PATH"
 # fi
 
+. "$HOME/.cargo/env"

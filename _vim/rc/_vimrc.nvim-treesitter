@@ -1,6 +1,7 @@
 " indent は微妙なことおおいので tree-sitterでは設定しない
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
+  ignore_install = { "ruby" },
   highlight = {
     enable = true,
   }

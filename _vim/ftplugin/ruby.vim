@@ -14,3 +14,8 @@
 " 
 " autocmd BufReadPost *_spec.rb call RSpecQuickrun()
 setlocal re=1 " ft=rubyのときに遅くなるのを解消。ちょっとだけマシになる。正規表現エンジンを変えるらしい
+
+nnoremap <C-]> :<C-u>LspDefinition<CR>
+nnoremap K :<C-u>LspHover<CR>
+nnoremap <LocalLeader>R :<C-u>LspRename<CR>
+nnoremap <LocalLeader>n :<C-u>LspReferences<CR>

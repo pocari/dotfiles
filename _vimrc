@@ -95,3 +95,10 @@ if has('nvim')
   " treesitter
   source ~/dotfiles/_vim/rc/_vimrc.nvim-treesitter
 endif
+
+source ~/dotfiles/_vim/rc/_vimrc.lsp
+
+" if has('nvim')
+"   " ddu
+"   source ~/dotfiles/_vim/rc/_vimrc.ddu
+" endif
